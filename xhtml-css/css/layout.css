@@ -75,7 +75,7 @@ body{font:9px/11px "Tahoma", Arial, Helvetica, sans-serif; background:#3d3d3d ur
 /***** success story starts *****/
 .success_story{float:left; width:329px; height:201px; background:url(../images/success_story_bg.png) no-repeat 0 0}
 .success_story h5{float:left; width:280px; font-size:10px; line-height:12px; font-weight:bold; color:#740808; padding:97px 0 7px 13px}
-.success_story p{float:left; width:120px; text-align:justify; color:#424339; padding:0 0 0 11px}
+.success_story p{float:left; width:120px; text-align:justify; color:#dedcbc; padding:0 0 0 11px}
 /***** success story ends *****/
 
 /***** more success story starts *****/
