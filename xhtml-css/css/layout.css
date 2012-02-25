@@ -45,6 +45,7 @@ body{font:9px/11px "Tahoma", Arial, Helvetica, sans-serif; background:#3d3d3d ur
 .form_container input.search_btn{float:left; width:auto; padding:0; margin:0 0 0 0}
 .form_container select{float:left; width:60px; height:19px; font-size:9px}
 .form_container select.gender{float:left; width:56px;}
+.form_container select.gender2{float:left; width:70px;}
 .form_container select.date{float:left; width:174px;}
 .form_container select.studentYear{float:left; width:56px; font-size:10px; margin:0 3px 0 0}
 /***** form container ends *****/
