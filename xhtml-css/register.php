@@ -27,80 +27,12 @@
     </div>
     <!--menu ends-->
     <div id="banner_inner">
-      <div class="find_love">
-        <h2><img src="images/find_your_love.gif" alt="" /></h2>
+      
+        
         <!--form container starts-->
         <div class="form_container">
-          <form action="" method="get">
-            <fieldset>
-            <div class="search_row">
-              <div class="search_column_1">
-                <label>I am a</label>
-              </div>
-              <div class="search_column_2">
-                <select class="gender">
-                  <option>Male</option>
-				  <option>Female</option>
-                </select>
-                <label class="seeking">Seeking a</label>
-                <select class="gender">
-                  <option>Female</option>
-				  <option>Male</option>
-				  <option>No preference</option>
-                </select>
-              </div>
-            </div>
-            <div class="search_row">
-              <div class="search_column_1">
-                <label>Looking for a</label>
-              </div>
-              <div class="search_column_2">
-                <select class="date">
-                  <option>Date</option>
-				  <option>Relationship</option>
-				<option>Study Group</option>
-				<option>Sports Activities</option>
-				<option>Friendship</option>
-                </select>
-              </div>
-            </div>
-            <div class="search_row">
-              <div class="search_column_1">
-                <label>Looking for</label>
-              </div>
-              <div class="search_column_2">
-                <select class="studentYear">
-                  <option>Freshmen</option>
-				  <option>Sophomore</option>
-				  <option>Junior</option>
-				  <option>Senior</option>
-				  <option>Professor</option>
-				  <option>N/A</option>
-				  <option>No Preference</option>
-                </select>
-				
-                
-              </div>
-            </div>
-            <div class="search_row">
-              <div class="search_column_1">
-                <label>Name</label>
-              </div>
-              <div class="search_column_2">
-                <input type="text" name="" value="" />
-                <label class="check">With Photo</label>
-                <input type="checkbox" name="" value="" class="checkbox"/>
-              </div>
-            </div>
-            <div class="search_row last">
-              <div class="search_column_1">&nbsp;</div>
-              <div class="search_column_2">
-                <input type="image" src="images/find_btn.gif" class="search_btn"/>
-              </div>
-            </div>
-            </fieldset>
-          </form>
-        </div>
+          
+        
       </div>
       <!--form container ends-->
     </div>
@@ -115,7 +47,7 @@
       <h1><span>Register </span></h1>
       <div style="float:right; width:auto"><img src="images/ico-terms.png" alt="" /></div>
       <div> <strong> <br />
-	  <form method="post" action="login.php">
+	  <form method="post" action="my_profile.php">
 				<label for="email">Email address:</label>
 				<input type="text" id="email" name="email" /><br />
 				<label for="pw">Password:</label>
