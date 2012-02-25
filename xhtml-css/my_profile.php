@@ -1,3 +1,6 @@
+<?php
+session_start()
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -7,6 +10,32 @@
 @import url("css/layout.css");
 </style>
 </head>
+<?php
+	include "db_connect.php";
+	$email = $_POST['email'];
+	$pw = $_POST['pw'];
+	$query = "SELECT * FROM Login WHERE email = '$email' AND pw = '$pw'";
+	$result = mysqli_query($db, $query);
+	if ($row = mysqli_fetch_array($result))
+  	{
+   		$_SESSION['email'] = $row['email'];
+		$query = "SELECT * FROM Users WHERE email = '$email'";
+		$result = mysqli_query($db, $query);
+		if ($row = mysqli_fetch_array($result))
+  			{
+   				$_SESSION['firstname'] = $row['firstname'];
+   				$_SESSION['lastname'] = $row['lastname'];
+   				$_SESSION['gender'] = $row['gender'];
+   				$_SESSION['phone'] = $row['phone'];
+   				$_SESSION['interests'] = $row['interests'];
+   				$_SESSION['description'] = $row['description'];
+   				$_SESSION['lookingFor'] = $row['lookingFor'];
+   				$_SESSION['major'] = $row['major'];
+   				echo "<p>".$_SESSION['email']."</p>";
+   			}
+   	}
+
+?>
 <body>
 <!--layout starts-->
 <div id="layout">
@@ -26,102 +55,39 @@
       </ul>
     </div>
     <!--menu ends-->
-    <div id="banner_inner">
-      <div class="find_love">
-        <h2><img src="images/find_your_love.gif" alt="" /></h2>
-        <!--form container starts-->
-        <div class="form_container">
-          <form action="" method="get">
-            <fieldset>
-            <div class="search_row">
-              <div class="search_column_1">
-                <label>I am a</label>
-              </div>
-              <div class="search_column_2">
-                <select class="gender">
-                  <option>Male</option>
-				  <option>Female</option>
-                </select>
-                <label class="seeking">Seeking a</label>
-                <select class="gender">
-                  <option>Female</option>
-				  <option>Male</option>
-				  <option>No preference</option>
-                </select>
-              </div>
-            </div>
-            <div class="search_row">
-              <div class="search_column_1">
-                <label>Looking for a</label>
-              </div>
-              <div class="search_column_2">
-                <select class="date">
-                  <option>Date</option>
-				   <option>Relationship</option>
-				<option>Study Group</option>
-				<option>Sports Activities</option>
-				<option>Friendship</option>
-                </select>
-                </select>
-              </div>
-            </div>
-            <div class="search_row">
-              <div class="search_column_1">
-                <label>Looking for</label>
-              </div>
-              <div class="search_column_2">
-                <select class="studentYear">
-                  <option>Freshmen</option>
-				  <option>Sophomore</option>
-				  <option>Junior</option>
-				  <option>Senior</option>
-				  <option>Professor</option>
-				  <option>N/A</option>
-				  <option>No Preference</option>
-                </select>
-				
-                
-              </div>
-            </div>
-            <div class="search_row">
-              <div class="search_column_1">
-                <label>By Name</label>
-              </div>
-              <div class="search_column_2">
-                <input type="text" name="" value="" />
-                <label class="check">With Photo</label>
-                <input type="checkbox" name="" value="" class="checkbox"/>
-              </div>
-            </div>
-            <div class="search_row last">
-              <div class="search_column_1">&nbsp;</div>
-              <div class="search_column_2">
-                <input type="image" src="images/find_btn.gif" class="search_btn"/>
-              </div>
-            </div>
-            </fieldset>
-          </form>
-        </div>
-      </div>
-      <!--form container ends-->
-    </div>
-  </div>
+	<!--header begins-->
+	
   <!--header ends-->
   <!--body container starts-->
   <div id="body_container">
     <!--left container starts-->
     <div id="left_container">
       <div style="padding:20px 15px 30px 15px;">
-      <h1><span>Our</span> Projects</h1>
+      
+      <h1><span><?php echo "Welcome ".$_SESSION['firstname']."!" ?></span></h1>
       <div class="ourprojectrow">
-        <h6 class="inner"> Project One</h6>
+        <h6 class="inner"> Your profile details: </h6>
         <div> <img src="images/projectimg1.jpg" alt="" width="210" height="139" class="project-img" /> <br />
           <br />
           <br />
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, risus neque venenatis arcu, a semper massa mi eget ipsum. Proin  sed odio et ante adipiscing lobortis. Lorem ipsum dolor sit amet,  consectetuer adipiscing elit. Proin sed odio et ante adipiscing  lobortis. Quisque eleifend, arcu a dictum varius, risus neque venenatis  arcu, a semper massa mi eget ipsum. Proin sed odio et ante adipiscing  lobortis.
+           Name: <?php echo $_SESSION['firstname'] ?> <?php echo $_SESSION['lastname']?>
+           <br />
+           Gender: <?php echo $_SESSION['gender']?>
+           <br />
+           Major: <?php echo $_SESSION['major'] ?>
+           <br />
+           Phone Number: <?php echo $_SESSION['phone']?>
+           <br />
+           Description of yourself: <?php echo $_SESSION['description'] ?>
+           <br />
+           What you're looking for: <?php echo $_SESSION['lookingFor']?>
+           <br />
+           Your interests: <?php echo $_SESSION['interests'] ?>
           <div class="clear"></div>
         </div>
-        <br />
+       
+ <br />
+ <!--
         <div style="font-weight:bold;"><img src="images/arrow.png" alt="" width="16" height="16" border="0" /> <a href="#" class="projects">View this project</a>
           <div class="clear"></div>
         </div>
@@ -151,10 +117,12 @@
         <div style="font-weight:bold;"><img src="images/arrow.png" alt="" width="16" height="16" border="0" /> <a href="#" class="projects">View this project</a>
           <div class="clear"></div>
         </div>
+        -->
       </div>
     </div>
       <div class="clear"></div>
     </div>
+
     <!--left container ends-->
     <!--right container starts-->
     <div id="right_container">
