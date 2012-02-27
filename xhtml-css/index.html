@@ -31,19 +31,19 @@
         <h2><img src="images/find_your_love.gif" alt="" /></h2>
         <!--form container starts-->
         <div class="form_container">
-          <form action="" method="get">
+          <form method="post" action="results.php">
             <fieldset>
             <div class="search_row">
               <div class="search_column_1">
                 <label>I am a</label>
               </div>
               <div class="search_column_2">
-                <select class="gender">
+                <select name="gender" class="gender">
                   <option>Male</option>
 				  <option>Female</option>
                 </select>
                 <label class="seeking">Seeking a</label>
-                <select class="gender2">
+                <select name="gender2" class="gender2">
                   <option>Female</option>
 				  <option>Male</option>
 				  <option>No preference</option>
@@ -55,7 +55,7 @@
                 <label>Looking for </label>
               </div>
               <div class="search_column_2">
-                <select class="date">
+                <select name="lookingFor" class="date">
                 <option>Date</option>
 				<option>Relationship</option>
 				<option>Study Group</option>
@@ -70,7 +70,7 @@
                 <label>Looking for </label>
               </div>
               <div class="search_column_2">
-                <select class="studentYear">
+                <select name="lookingFor2" class="studentYear">
                   <option>Freshmen</option>
 				  <option>Sophomore</option>
 				  <option>Junior</option>
@@ -87,7 +87,7 @@
                 <label>Name</label>
               </div>
               <div class="search_column_2">
-                <input type="text" name="" value="" />
+                <input type="text" name="name" name="" value="" />
                 <label class="check">With Photo</label>
                 <input type="checkbox" name="" value="" class="checkbox"/>
               </div>
