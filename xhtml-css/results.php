@@ -52,13 +52,26 @@
 			$gender=$_POST['gender2'];
 			$lookingFor=$_POST['lookingFor'];
 			$year=$_POST['lookingFor2'];
-			$name=$_POST['name'];
+			$firstName=$_POST['firstName'];
+			$lastName=$_POST['lastName'];
 			
-			#$query = "SELECT * FROM Users WHERE gender = '$gender2' AND lookingFor = '$lookingFor' AND year = '$lookingFor2'";
-			$query = "SELECT * FROM Users WHERE year = '$year'";
+			$query = "SELECT * FROM Users WHERE lookingFor = '$lookingFor'";
+			if($gender!='No preference'){
+				$query.=" AND gender='$gender'";
+			}
+			if($year!='No preference'){
+				$query.=" AND year='$year'";
+			}
+			if($firstName!=''){
+				$query.=" AND firstname = '$firstName'";
+			}
+			if($lastName!=''){
+				$query.=" AND lastname = '$lastName'";
+			}
+			
 			$result = mysqli_query($db, $query);
 			
-			if($row = mysqli_fetch_array($result)){
+			while($row = mysqli_fetch_array($result)){
 			echo "Name: ".$row['firstname'];
 			}
 		?>	
