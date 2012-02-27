@@ -18,133 +18,116 @@
       <ul>
         <li class="first"><a href="index.html">home</a></li>
         <li><a href="about_us.html" class="about_us.html">about us</a></li>
-        <li><a href="privacy.html">privacy</a></li>
-        <li><a class="current">projects</a></li>
-        <li><a href="services.html">services</a></li>
+        <li><a href="register.php">create account</a></li>
+        <li><a href="my_profile.php">my profile</a></li>
+        <li><a class="current">advanced search</a></li>
         <li><a href="support.html">support</a></li>
-        <li><a href="contact_us.html">contact Us</a></li>
+        <li><a href="contact_us.php">contact Us</a></li>
       </ul>
     </div>
     <!--menu ends-->
-    <div id="banner_inner">
-      <div class="find_love">
-        <h2><img src="images/find_your_love.gif" alt="" /></h2>
+    <!--<div id="banner_inner">
+      
         <!--form container starts-->
-        <div class="form_container">
-          <form action="" method="get">
-            <fieldset>
-            <div class="search_row">
-              <div class="search_column_1">
-                <label>I am a</label>
-              </div>
-              <div class="search_column_2">
-                <select class="gender">
-                  <option>Male</option>
-                </select>
-                <label class="seeking">Seeking a</label>
-                <select class="gender">
-                  <option>Female</option>
-                </select>
-              </div>
-            </div>
-            <div class="search_row">
-              <div class="search_column_1">
-                <label>Looking for a</label>
-              </div>
-              <div class="search_column_2">
-                <select class="date">
-                  <option>Date</option>
-                </select>
-              </div>
-            </div>
-            <div class="search_row">
-              <div class="search_column_1">
-                <label>I was born</label>
-              </div>
-              <div class="search_column_2">
-                <select class="dob">
-                  <option>Month</option>
-                </select>
-                <select class="dob">
-                  <option>Date</option>
-                </select>
-                <select class="dob">
-                  <option>Year</option>
-                </select>
-              </div>
-            </div>
-            <div class="search_row">
-              <div class="search_column_1">
-                <label>By Profile ID</label>
-              </div>
-              <div class="search_column_2">
-                <input type="text" name="" value="" />
-                <label class="check">With Photo</label>
-                <input type="checkbox" name="" value="" class="checkbox"/>
-              </div>
-            </div>
-            <div class="search_row last">
-              <div class="search_column_1">&nbsp;</div>
-              <div class="search_column_2">
-                <input type="image" src="images/find_btn.gif" class="search_btn"/>
-              </div>
-            </div>
-            </fieldset>
-          </form>
-        </div>
-      </div>
+        
+        
+     
       <!--form container ends-->
-    </div>
+    
   </div>
+  -->
   <!--header ends-->
   <!--body container starts-->
   <div id="body_container">
     <!--left container starts-->
     <div id="left_container">
       <div style="padding:20px 15px 30px 15px;">
-      <h1><span>Our</span> Projects</h1>
-      <div class="ourprojectrow">
-        <h6 class="inner"> Project One</h6>
-        <div> <img src="images/projectimg1.jpg" alt="" width="210" height="139" class="project-img" /> <br />
-          <br />
-          <br />
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, risus neque venenatis arcu, a semper massa mi eget ipsum. Proin  sed odio et ante adipiscing lobortis. Lorem ipsum dolor sit amet,  consectetuer adipiscing elit. Proin sed odio et ante adipiscing  lobortis. Quisque eleifend, arcu a dictum varius, risus neque venenatis  arcu, a semper massa mi eget ipsum. Proin sed odio et ante adipiscing  lobortis.
-          <div class="clear"></div>
-        </div>
+      <h1><span>Search Results </span></h1>
+      <div>
+      <!--<strong> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin  sed odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, risus neque venenatis arcu, a semper massa mi eget ipsum. </strong> <br />
+        -->
         <br />
-        <div style="font-weight:bold;"><img src="images/arrow.png" alt="" width="16" height="16" border="0" /> <a href="#" class="projects">View this project</a>
-          <div class="clear"></div>
-        </div>
-      </div>
-      <div class="ourprojectrow">
-        <h6 class="inner">Project Two </h6>
-        <div> <img src="images/projectimg2.jpg" alt="" width="210" height="139" class="project-img" /> <br />
-          <br />
-          <br />
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, risus neque venenatis arcu, a semper massa mi eget ipsum. Proin  sed odio et ante adipiscing lobortis. Lorem ipsum dolor sit amet,  consectetuer adipiscing elit. Proin sed odio et ante adipiscing  lobortis. Quisque eleifend, arcu a dictum varius, risus neque venenatis  arcu, a semper massa mi eget ipsum. Proin sed odio et ante adipiscing  lobortis. <br />
-          <div class="clear"></div>
-        </div>
+        <?php
+			include "db_connect.php";
+			$gender=$_POST['gender2'];
+			$lookingFor=$_POST['lookingFor'];
+			$year=$_POST['lookingFor2'];
+			$firstName=$_POST['firstName'];
+			$lastName=$_POST['lastName'];
+			
+			$query = "SELECT * FROM Users WHERE lookingFor = '$lookingFor'";
+			if($gender!='No preference'){
+				$query.=" AND gender='$gender'";
+			}
+			if($year!='No preference'){
+				$query.=" AND year='$year'";
+			}
+			if($firstName!=''){
+				$query.=" AND firstname = '$firstName'";
+			}
+			if($lastName!=''){
+				$query.=" AND lastname = '$lastName'";
+			}
+			
+			$result = mysqli_query($db, $query);
+			
+			while($row = mysqli_fetch_array($result)){
+			echo "Name: ".$row['firstname'];
+			}
+		?>	
         <br />
-        <div style="font-weight:bold;"><img src="images/arrow.png" alt="" width="16" height="16" border="0" /> <a href="#" class="projects">View this project</a>
-          <div class="clear"></div>
-        </div>
+      <div class="clear"></div>
+      <div class="clear"></div>
       </div>
-      <div class="ourprojectrow">
-        <h6 class="inner">Project Three </h6>
-        <div> <img src="images/projectimg3.jpg" alt="" width="210" height="139" class="project-img" /> <br />
-          <br />
-          <br />
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, risus neque venenatis arcu, a semper massa mi eget ipsum. Proin  sed odio et ante adipiscing lobortis. Lorem ipsum dolor sit amet,  consectetuer adipiscing elit. Proin sed odio et ante adipiscing  lobortis. Quisque eleifend, arcu a dictum varius, risus neque venenatis  arcu, a semper massa mi eget ipsum. Proin sed odio et ante adipiscing  lobortis.<br />
-          <div class="clear"></div>
-        </div>
-        <br />
-        <div style="font-weight:bold;"><img src="images/arrow.png" alt="" width="16" height="16" border="0" /> <a href="#" class="projects">View this project</a>
-          <div class="clear"></div>
-        </div>
       </div>
+      </div>
+      <!--
+      <div class="servicecolumnzone">
+        <div class="servicecolumn1">
+          <div>
+            <h5 class="inner"> Service 1</h5>
+            <img src="images/ico1.png" alt="" class="abouticon" />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, </div>
+          <div class="clear"></div>
+        </div>
+        <div class="servicecolumn2">
+          <div>
+            <h5 class="inner">Service 2</h5>
+            <img src="images/ico2.png" alt="" width="65" height="65" class="abouticon" />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, </div>
+          <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+        <div class="servicecolumn1">
+          <div>
+            <h5 class="inner">Service 3 </h5>
+            <img src="images/ico3.png" alt="" width="65" height="65" class="abouticon" />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, </div>
+          <div class="clear"></div>
+        </div>
+        <div class="servicecolumn2">
+          <div>
+            <h5 class="inner">Service 4 </h5>
+            <img src="images/ico4.png" alt="" width="65" height="65" class="abouticon" />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, </div>
+          <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+        <div class="servicecolumn1">
+          <div>
+            <h5 class="inner">Service 5 </h5>
+            <img src="images/ico5.png" alt="" width="65" height="65" class="abouticon" />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, </div>
+          <div class="clear"></div>
+        </div>
+        <div class="servicecolumn2">
+          <div>
+            <h5 class="inner">Service 6 </h5>
+            <img src="images/ico6.png" alt="" width="65" height="65" class="abouticon" />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, </div>
+          <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div style="padding-top:10px;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, risus neque venenatis arcu, a semper massa mi eget ipsum. Proin  sed odio et ante adipiscing lobortis. Lorem ipsum dolor sit amet,  consectetuer adipiscing elit. Proin sed odio et ante adipiscing  lobortis. Quisque eleifend, arcu a dictum varius, risus neque venenatis  arcu, a semper massa mi eget ipsum. Proin sed odio et ante adipiscing  lobortis.</div>
     </div>
       <div class="clear"></div>
     </div>
+    -->
     <!--left container ends-->
     <!--right container starts-->
     <div id="right_container">
@@ -284,7 +267,7 @@
   <!--footer starts-->
   <div id="footer"> <span class="footer_logo"><a href="#"><img src="images/single_2_mingle.gif" alt="" /></a></span>
     <div class="footer_link">
-       <ul style="color:#FFF;">
+        <ul style="color:#FFF;">
         Copyright (c) Sitename.com. All rights reserved. Design by Stylish <a style="color:#FFF; text-decoration:underline;" href="http://www.stylishtemplate.com">Website Templates</a>.
       </ul>
     </div>

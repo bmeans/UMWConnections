@@ -1,3 +1,6 @@
+<?php
+session_start()
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -7,6 +10,32 @@
 @import url("css/layout.css");
 </style>
 </head>
+<?php
+	include "db_connect.php";
+	$email = $_POST['email'];
+	$pw = $_POST['pw'];
+	$query = "SELECT * FROM Login WHERE email = '$email' AND pw = '$pw'";
+	$result = mysqli_query($db, $query);
+	if ($row = mysqli_fetch_array($result))
+  	{
+   		$_SESSION['email'] = $row['email'];
+		$query = "SELECT * FROM Users WHERE email = '$email'";
+		$result = mysqli_query($db, $query);
+		if ($row = mysqli_fetch_array($result))
+  			{
+   				$_SESSION['firstname'] = $row['firstname'];
+   				$_SESSION['lastname'] = $row['lastname'];
+   				$_SESSION['gender'] = $row['gender'];
+   				$_SESSION['phone'] = $row['phone'];
+   				$_SESSION['interests'] = $row['interests'];
+   				$_SESSION['description'] = $row['description'];
+   				$_SESSION['lookingFor'] = $row['lookingFor'];
+   				$_SESSION['major'] = $row['major'];
+   				echo "<p>".$_SESSION['email']."</p>";
+   			}
+   	}
+
+?>
 <body>
 <!--layout starts-->
 <div id="layout">
@@ -16,142 +45,84 @@
     <div id="menu"> <span class="logo"><a href="#"><img src="images/logo.gif" alt="" /></a></span>
       <p>Fusce tristique, nisl vel gravida venenatis, risus magna eleifend pede, id bibendum mauris metus et erat.</p>
       <ul>
-        <li class="first"><a class="current">home</a></li>
-        <li><a href="about_us.html">about us</a></li>
+        <li class="first"><a href="index.html">home</a></li>
+        <li><a href="about_us.html" class="about_us.html">about us</a></li>
         <li><a href="register.php">create account</a></li>
-        <li><a href="my_profile.php">my profile</a></li>
-        <li><a href="advanced_search.php">advanced search</a></li>
+        <li><a class="my_profile.php">my profile</a></li>
+        <li><a href="advanced_search.php">advanced_search</a></li>
         <li><a href="support.html">support</a></li>
         <li><a href="contact_us.php">contact Us</a></li>
       </ul>
     </div>
     <!--menu ends-->
-    <div id="banner">
-      <div class="find_love">
-        <h2><img src="images/find_your_love.gif" alt="" /></h2>
-        <!--form container starts-->
-        <div class="form_container">
-          <form method="post" action="results.php">
-            <fieldset>
-            <div class="search_row">
-              <div class="search_column_1">
-                <label>I am a</label>
-              </div>
-              <div class="search_column_2">
-                <select name="gender" class="gender">
-                  <option>Male</option>
-				  <option>Female</option>
-                </select>
-                <label class="seeking">Seeking a</label>
-                <select name="gender2" class="gender2">
-                  <option>Female</option>
-				  <option>Male</option>
-				  <option>No preference</option>
-                </select>
-              </div>
-            </div>
-            <div class="search_row">
-              <div class="search_column_1">
-                <label>Looking for </label>
-              </div>
-              <div class="search_column_2">
-                <select name="lookingFor" class="date">
-                <option>Date</option>
-				<option>Relationship</option>
-				<option>Study Group</option>
-				<option>Sports Activities</option>
-				<option>Friendship</option>
-				
-				</select>
-              </div>
-            </div>
-            <div class="search_row">
-              <div class="search_column_1">
-                <label>Looking for </label>
-              </div>
-              <div class="search_column_2">
-                <select name="lookingFor2" class="studentYear">
-                  <option>Freshmen</option>
-				  <option>Sophomore</option>
-				  <option>Junior</option>
-				  <option>Senior</option>
-				  <option>Professor</option>
-				  <option>No Preference</option>
-                </select>
-               
-              </div>
-            </div>
-            <div class="search_row">
-              <div class="search_column_1">
-                <label>First Name</label>
-              </div>
-              <div class="search_column_2">
-                <input type="text" name="firstName" value="" />
-              </div>
-            </div>
-			<div class="search_row">
-              <div class="search_column_1">
-                <label>Last Name</label>
-              </div>
-              <div class="search_column_2">
-                <input type="text" name="lastName" value="" />
-              </div>
-            </div>
-            <div class="search_row last">
-              <div class="search_column_1">&nbsp;</div>
-              <div class="search_column_2">
-                <input type="image" src="images/find_btn.gif" class="search_btn"/>
-              </div>
-            </div>
-            </fieldset>
-          </form>
-        </div>
-      </div>
-      <!--form container ends-->
-    </div>
-  </div>
+	<!--header begins-->
+	
   <!--header ends-->
   <!--body container starts-->
   <div id="body_container">
     <!--left container starts-->
     <div id="left_container">
-      <h1>Welcome to <span>UMW Connections</span></h1>
-     <div class="detail_containt">
-        <h3>Get Connected Now!</h3>
-        <p>Are you tired of dating the guy who lives 4 hours away?  Tired of sitting in your room every Thursday night while all the upperclassmen are barhopping?  Are you a new freshmen looking to meet some students in your major?  Or are you just looking for some new friends? We're here to help you get connected!  Our site features search results with students who have the same interests and expectations as you! Free to all UMW students! lalalalalala somebody add a cool paragraph here please!! </p>
-        <p class="last"> Fusce tristique, nisl vel gravida venenatis, risus magna eleifend pede, id bibendum mauris metus et erat. Morbi in leo. Quisque sollicitudin sagittis est. Aliquam non nulla. Fusce malesuada. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur dolor. Vivamus eleifend sollicitudin velit.</p>
-        <a href="#"><img src="images/more_btn.gif" alt="" /></a> </div>
-      <!-- bottom container starts-->
-      <div class="bottom_container">
-        <!--login container starts-->
-        <div class="dating_tips">	
-          <h3>Returning Members Login</h3>
-			<form method="post" action="my_profile.php">
-		
-				<label for="email">Email address:</label>
-				<input type="text" id="email" name="email" /><br/>
-				<label for="pw">Password:</label>
-				<input type="password" id="pw" name="pw" /></br>
-				
-				<center><input type="submit" value="Login" name="submit" /></center>
-			</form>
-			<a href="register.html">Create Account</a>
-		</div>
-        <!--login container ends-->
-        <!--success_story starts-->
-        <div class="success_story">
-          <h5>Taylor &amp; Brendan &amp; Sally</h5>
-          <p>Thanks to UMW Connections, these three students met at the Underground and have been inseparable ever since!</p>
+      <div style="padding:20px 15px 30px 15px;">
+      
+      <h1><span><?php echo "Welcome ".$_SESSION['firstname']."!" ?></span></h1>
+      <div class="ourprojectrow">
+        <h6 class="inner"> Your profile details: </h6>
+        <div> <img src="images/projectimg1.jpg" alt="" width="210" height="139" class="project-img" /> <br />
+          <br />
+          <br />
+           Name: <?php echo $_SESSION['firstname'] ?> <?php echo $_SESSION['lastname']?>
+           <br />
+           Gender: <?php echo $_SESSION['gender']?>
+           <br />
+           Major: <?php echo $_SESSION['major'] ?>
+           <br />
+           Phone Number: <?php echo $_SESSION['phone']?>
+           <br />
+           Description of yourself: <?php echo $_SESSION['description'] ?>
+           <br />
+           What you're looking for: <?php echo $_SESSION['lookingFor']?>
+           <br />
+           Your interests: <?php echo $_SESSION['interests'] ?>
+          <div class="clear"></div>
         </div>
-        <!--success_story ends-->
-        <!--more success_story starts-->
-        <div class="more_success_story">
-          <p>Lorem ipsum dolor sit amet, purus nibh imperdiet enim, vel fringilla neque tellus mi. <a href="#">more success stories</a> </p>
-        </div><span class="clear"></span>
-        <!--more success_story ends-->
+       
+ <br />
+ <!--
+        <div style="font-weight:bold;"><img src="images/arrow.png" alt="" width="16" height="16" border="0" /> <a href="#" class="projects">View this project</a>
+          <div class="clear"></div>
+        </div>
       </div>
-      <!-- bottom container ends-->
+      <div class="ourprojectrow">
+        <h6 class="inner">Project Two </h6>
+        <div> <img src="images/projectimg2.jpg" alt="" width="210" height="139" class="project-img" /> <br />
+          <br />
+          <br />
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, risus neque venenatis arcu, a semper massa mi eget ipsum. Proin  sed odio et ante adipiscing lobortis. Lorem ipsum dolor sit amet,  consectetuer adipiscing elit. Proin sed odio et ante adipiscing  lobortis. Quisque eleifend, arcu a dictum varius, risus neque venenatis  arcu, a semper massa mi eget ipsum. Proin sed odio et ante adipiscing  lobortis. <br />
+          <div class="clear"></div>
+        </div>
+        <br />
+        <div style="font-weight:bold;"><img src="images/arrow.png" alt="" width="16" height="16" border="0" /> <a href="#" class="projects">View this project</a>
+          <div class="clear"></div>
+        </div>
+      </div>
+      <div class="ourprojectrow">
+        <h6 class="inner">Project Three </h6>
+        <div> <img src="images/projectimg3.jpg" alt="" width="210" height="139" class="project-img" /> <br />
+          <br />
+          <br />
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, risus neque venenatis arcu, a semper massa mi eget ipsum. Proin  sed odio et ante adipiscing lobortis. Lorem ipsum dolor sit amet,  consectetuer adipiscing elit. Proin sed odio et ante adipiscing  lobortis. Quisque eleifend, arcu a dictum varius, risus neque venenatis  arcu, a semper massa mi eget ipsum. Proin sed odio et ante adipiscing  lobortis.<br />
+          <div class="clear"></div>
+        </div>
+        <br />
+        <div style="font-weight:bold;"><img src="images/arrow.png" alt="" width="16" height="16" border="0" /> <a href="#" class="projects">View this project</a>
+          <div class="clear"></div>
+        </div>
+        -->
+      </div>
     </div>
+      <div class="clear"></div>
+    </div>
+
     <!--left container ends-->
     <!--right container starts-->
     <div id="right_container">
@@ -168,7 +139,7 @@
                     <div class="pro_detail_content">
                       <div class="row">
                         <p class="left">Name :</p>
-                        <p class="right">Brendan</p>
+                        <p class="right">Jenifer</p>
                       </div>
                       <div class="row">
                         <p class="left">Age :</p>
@@ -180,7 +151,7 @@
                       </div>
                       <div class="row last">
                         <p class="left">Likes :</p>
-                        <p class="right">Tanning on the beach</p>
+                        <p class="right">Duis cursus tortor elit</p>
                       </div>
                     </div>
                   </div>
@@ -199,19 +170,19 @@
                     <div class="pro_detail_content">
                       <div class="row">
                         <p class="left">Name :</p>
-                        <p class="right">Aaron</p>
+                        <p class="right">David Martin</p>
                       </div>
                       <div class="row">
                         <p class="left">Age :</p>
-                        <p class="right">21 Years</p>
+                        <p class="right">28 Years</p>
                       </div>
                       <div class="row">
                         <p class="left">Location :</p>
-                        <p class="right">Fredvegas</p>
+                        <p class="right">England</p>
                       </div>
                       <div class="row last">
                         <p class="left">Likes :</p>
-                        <p class="right">Programming, Costume Parties</p>
+                        <p class="right">Duis cursus tortor elit</p>
                       </div>
                     </div>
                   </div>
@@ -234,15 +205,15 @@
                       </div>
                       <div class="row">
                         <p class="left">Age :</p>
-                        <p class="right">24 3/4 Years</p>
+                        <p class="right">25 Years</p>
                       </div>
                       <div class="row">
                         <p class="left">Location :</p>
-                        <p class="right">Holly Woods</p>
+                        <p class="right">Argentina</p>
                       </div>
                       <div class="row last">
                         <p class="left">Likes :</p>
-                        <p class="right">Eating</p>
+                        <p class="right">Duis cursus tortor elit</p>
                       </div>
                     </div>
                   </div>
@@ -287,7 +258,7 @@
     </div>
     <!--right container ends-->
   </div>
-  <!--body container starts-->
+  <!--body container ends-->
   <!--footer starts-->
   <div id="footer"> <span class="footer_logo"><a href="#"><img src="images/single_2_mingle.gif" alt="" /></a></span>
     <div class="footer_link">

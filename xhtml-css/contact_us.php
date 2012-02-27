@@ -18,9 +18,9 @@
       <ul>
         <li class="first"><a href="index.html">home</a></li>
         <li><a href="about_us.html" >about us</a></li>
-        <li><a href="privacy.html">privacy</a></li>
-        <li><a href="projects.html">projects</a></li>
-        <li><a href="services.html">services</a></li>
+        <li><a href="register.php">create account</a></li>
+        <li><a href="my_profile.php">my profile</a></li>
+        <li><a href="advanced_search.php">advanced search</a></li>
         <li><a href="support.html">support</a></li>
         <li><a class="current">contact Us</a></li>
       </ul>

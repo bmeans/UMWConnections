@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -16,142 +17,103 @@
     <div id="menu"> <span class="logo"><a href="#"><img src="images/logo.gif" alt="" /></a></span>
       <p>Fusce tristique, nisl vel gravida venenatis, risus magna eleifend pede, id bibendum mauris metus et erat.</p>
       <ul>
-        <li class="first"><a class="current">home</a></li>
-        <li><a href="about_us.html">about us</a></li>
+        <li class="first"><a href="index.html">home</a></li>
+        <li><a href="about_us.html" class="about_us.html">about us</a></li>
         <li><a href="register.php">create account</a></li>
         <li><a href="my_profile.php">my profile</a></li>
-        <li><a href="advanced_search.php">advanced search</a></li>
+        <li><a class="current">advanced search</a></li>
         <li><a href="support.html">support</a></li>
         <li><a href="contact_us.php">contact Us</a></li>
       </ul>
     </div>
     <!--menu ends-->
-    <div id="banner">
-      <div class="find_love">
-        <h2><img src="images/find_your_love.gif" alt="" /></h2>
+    <!--<div id="banner_inner">
+      
         <!--form container starts-->
-        <div class="form_container">
-          <form method="post" action="results.php">
-            <fieldset>
-            <div class="search_row">
-              <div class="search_column_1">
-                <label>I am a</label>
-              </div>
-              <div class="search_column_2">
-                <select name="gender" class="gender">
-                  <option>Male</option>
-				  <option>Female</option>
-                </select>
-                <label class="seeking">Seeking a</label>
-                <select name="gender2" class="gender2">
-                  <option>Female</option>
-				  <option>Male</option>
-				  <option>No preference</option>
-                </select>
-              </div>
-            </div>
-            <div class="search_row">
-              <div class="search_column_1">
-                <label>Looking for </label>
-              </div>
-              <div class="search_column_2">
-                <select name="lookingFor" class="date">
-                <option>Date</option>
-				<option>Relationship</option>
-				<option>Study Group</option>
-				<option>Sports Activities</option>
-				<option>Friendship</option>
-				
-				</select>
-              </div>
-            </div>
-            <div class="search_row">
-              <div class="search_column_1">
-                <label>Looking for </label>
-              </div>
-              <div class="search_column_2">
-                <select name="lookingFor2" class="studentYear">
-                  <option>Freshmen</option>
-				  <option>Sophomore</option>
-				  <option>Junior</option>
-				  <option>Senior</option>
-				  <option>Professor</option>
-				  <option>No Preference</option>
-                </select>
-               
-              </div>
-            </div>
-            <div class="search_row">
-              <div class="search_column_1">
-                <label>First Name</label>
-              </div>
-              <div class="search_column_2">
-                <input type="text" name="firstName" value="" />
-              </div>
-            </div>
-			<div class="search_row">
-              <div class="search_column_1">
-                <label>Last Name</label>
-              </div>
-              <div class="search_column_2">
-                <input type="text" name="lastName" value="" />
-              </div>
-            </div>
-            <div class="search_row last">
-              <div class="search_column_1">&nbsp;</div>
-              <div class="search_column_2">
-                <input type="image" src="images/find_btn.gif" class="search_btn"/>
-              </div>
-            </div>
-            </fieldset>
-          </form>
-        </div>
-      </div>
+        
+        
+     
       <!--form container ends-->
-    </div>
+    
   </div>
+  -->
   <!--header ends-->
   <!--body container starts-->
   <div id="body_container">
     <!--left container starts-->
     <div id="left_container">
-      <h1>Welcome to <span>UMW Connections</span></h1>
-     <div class="detail_containt">
-        <h3>Get Connected Now!</h3>
-        <p>Are you tired of dating the guy who lives 4 hours away?  Tired of sitting in your room every Thursday night while all the upperclassmen are barhopping?  Are you a new freshmen looking to meet some students in your major?  Or are you just looking for some new friends? We're here to help you get connected!  Our site features search results with students who have the same interests and expectations as you! Free to all UMW students! lalalalalala somebody add a cool paragraph here please!! </p>
-        <p class="last"> Fusce tristique, nisl vel gravida venenatis, risus magna eleifend pede, id bibendum mauris metus et erat. Morbi in leo. Quisque sollicitudin sagittis est. Aliquam non nulla. Fusce malesuada. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur dolor. Vivamus eleifend sollicitudin velit.</p>
-        <a href="#"><img src="images/more_btn.gif" alt="" /></a> </div>
-      <!-- bottom container starts-->
-      <div class="bottom_container">
-        <!--login container starts-->
-        <div class="dating_tips">	
-          <h3>Returning Members Login</h3>
-			<form method="post" action="my_profile.php">
+      <div style="padding:20px 15px 30px 15px;">
+      <h1><span>Search Results </span></h1>
+      <div>
+      <!--<strong> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin  sed odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, risus neque venenatis arcu, a semper massa mi eget ipsum. </strong> <br />
+        -->
+        <br />
+        <?php
+			include "db_connect.php";
+			$email = $_POST['email'];
+			$pw = $_POST['pw'];
+			$reg_query= "INSERT INTO Login(email, pw) Values('$email', '$pw'); 
 		
-				<label for="email">Email address:</label>
-				<input type="text" id="email" name="email" /><br/>
-				<label for="pw">Password:</label>
-				<input type="password" id="pw" name="pw" /></br>
-				
-				<center><input type="submit" value="Login" name="submit" /></center>
-			</form>
-			<a href="register.html">Create Account</a>
-		</div>
-        <!--login container ends-->
-        <!--success_story starts-->
-        <div class="success_story">
-          <h5>Taylor &amp; Brendan &amp; Sally</h5>
-          <p>Thanks to UMW Connections, these three students met at the Underground and have been inseparable ever since!</p>
-        </div>
-        <!--success_story ends-->
-        <!--more success_story starts-->
-        <div class="more_success_story">
-          <p>Lorem ipsum dolor sit amet, purus nibh imperdiet enim, vel fringilla neque tellus mi. <a href="#">more success stories</a> </p>
-        </div><span class="clear"></span>
-        <!--more success_story ends-->
+	?>
+		<form method = "post" action = "my_profile.php">
+					<input type="hidden" name="email" value="'$email'" />
+					<input type="hidden" name="pw" value="'pw'" />
+					<input type="submit" value="View Profile" name="submit" />
+		</form>
+		
+        <br />
+      <div class="clear"></div>
+      <div class="clear"></div>
       </div>
-      <!-- bottom container ends-->
+      </div>
+      </div>
+      <!--
+      <div class="servicecolumnzone">
+        <div class="servicecolumn1">
+          <div>
+            <h5 class="inner"> Service 1</h5>
+            <img src="images/ico1.png" alt="" class="abouticon" />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, </div>
+          <div class="clear"></div>
+        </div>
+        <div class="servicecolumn2">
+          <div>
+            <h5 class="inner">Service 2</h5>
+            <img src="images/ico2.png" alt="" width="65" height="65" class="abouticon" />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, </div>
+          <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+        <div class="servicecolumn1">
+          <div>
+            <h5 class="inner">Service 3 </h5>
+            <img src="images/ico3.png" alt="" width="65" height="65" class="abouticon" />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, </div>
+          <div class="clear"></div>
+        </div>
+        <div class="servicecolumn2">
+          <div>
+            <h5 class="inner">Service 4 </h5>
+            <img src="images/ico4.png" alt="" width="65" height="65" class="abouticon" />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, </div>
+          <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+        <div class="servicecolumn1">
+          <div>
+            <h5 class="inner">Service 5 </h5>
+            <img src="images/ico5.png" alt="" width="65" height="65" class="abouticon" />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, </div>
+          <div class="clear"></div>
+        </div>
+        <div class="servicecolumn2">
+          <div>
+            <h5 class="inner">Service 6 </h5>
+            <img src="images/ico6.png" alt="" width="65" height="65" class="abouticon" />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, </div>
+          <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div style="padding-top:10px;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, risus neque venenatis arcu, a semper massa mi eget ipsum. Proin  sed odio et ante adipiscing lobortis. Lorem ipsum dolor sit amet,  consectetuer adipiscing elit. Proin sed odio et ante adipiscing  lobortis. Quisque eleifend, arcu a dictum varius, risus neque venenatis  arcu, a semper massa mi eget ipsum. Proin sed odio et ante adipiscing  lobortis.</div>
     </div>
+      <div class="clear"></div>
+    </div>
+    -->
     <!--left container ends-->
     <!--right container starts-->
     <div id="right_container">
@@ -168,7 +130,7 @@
                     <div class="pro_detail_content">
                       <div class="row">
                         <p class="left">Name :</p>
-                        <p class="right">Brendan</p>
+                        <p class="right">Jenifer</p>
                       </div>
                       <div class="row">
                         <p class="left">Age :</p>
@@ -180,7 +142,7 @@
                       </div>
                       <div class="row last">
                         <p class="left">Likes :</p>
-                        <p class="right">Tanning on the beach</p>
+                        <p class="right">Duis cursus tortor elit</p>
                       </div>
                     </div>
                   </div>
@@ -199,19 +161,19 @@
                     <div class="pro_detail_content">
                       <div class="row">
                         <p class="left">Name :</p>
-                        <p class="right">Aaron</p>
+                        <p class="right">David Martin</p>
                       </div>
                       <div class="row">
                         <p class="left">Age :</p>
-                        <p class="right">21 Years</p>
+                        <p class="right">28 Years</p>
                       </div>
                       <div class="row">
                         <p class="left">Location :</p>
-                        <p class="right">Fredvegas</p>
+                        <p class="right">England</p>
                       </div>
                       <div class="row last">
                         <p class="left">Likes :</p>
-                        <p class="right">Programming, Costume Parties</p>
+                        <p class="right">Duis cursus tortor elit</p>
                       </div>
                     </div>
                   </div>
@@ -234,15 +196,15 @@
                       </div>
                       <div class="row">
                         <p class="left">Age :</p>
-                        <p class="right">24 3/4 Years</p>
+                        <p class="right">25 Years</p>
                       </div>
                       <div class="row">
                         <p class="left">Location :</p>
-                        <p class="right">Holly Woods</p>
+                        <p class="right">Argentina</p>
                       </div>
                       <div class="row last">
                         <p class="left">Likes :</p>
-                        <p class="right">Eating</p>
+                        <p class="right">Duis cursus tortor elit</p>
                       </div>
                     </div>
                   </div>
@@ -287,11 +249,11 @@
     </div>
     <!--right container ends-->
   </div>
-  <!--body container starts-->
+  <!--body container ends-->
   <!--footer starts-->
   <div id="footer"> <span class="footer_logo"><a href="#"><img src="images/single_2_mingle.gif" alt="" /></a></span>
     <div class="footer_link">
-       <ul style="color:#FFF;">
+        <ul style="color:#FFF;">
         Copyright (c) Sitename.com. All rights reserved. Design by Stylish <a style="color:#FFF; text-decoration:underline;" href="http://www.stylishtemplate.com">Website Templates</a>.
       </ul>
     </div>
