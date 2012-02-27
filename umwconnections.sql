@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS Users (
   	lastname varchar(25) NOT NULL,
   	firstname varchar(25) NOT NULL,
   	gender ENUM('Male', 'Female') NOT NULL,
-	year ENUM('Freshmen', 'Sophomore', 'Junior', 'Senior') NOT NULL,
+	year ENUM('Freshmen', 'Sophomore', 'Junior', 'Senior', 'NA') NOT NULL,
   	phone varchar(10) NOT NULL,
   	interests blob NOT NULL,
   	description blob,
@@ -35,6 +35,6 @@ INSERT INTO Users (year,email,lastname,firstname,gender,phone,interests,descript
 ('Junior','ligula.Aliquam.erat@Vestibulum.ca','Jarvis','Indira','Male','7614598990','Lorem ipsum dolor','Lorem ipsum dolor sit amet,','Sports','cursus vestibulum.'),
 ('Senior','ac@Nulla.org','Hutchinson','Declan','Male','3702463813','Lorem ipsum dolor sit','Lorem ipsum dolor','Date','feugiat tellus'),
 ('Senior','lectus.pede@felisadipiscing.com','Browning','Alan','Male','8484753990','Lorem ipsum','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer','Date','consequat'),
-('Senior','Fusce.aliquet@adipiscingligula.com','Sweet','Noel','Female','3838685961','Lorem ipsum','Lorem ipsum dolor sit amet, consectetuer adipiscing elit.','Relationship','lacinia vitae,');
+('NA','Fusce.aliquet@adipiscingligula.com','Sweet','Noel','Female','3838685961','Lorem ipsum','Lorem ipsum dolor sit amet, consectetuer adipiscing elit.','Relationship','lacinia vitae,');
 
 INSERT INTO login VALUES('semper@eu.ca','semper'),('amet.faucibus.ut@hendrerit.com','kittycat'),('lorem.ut.aliquam@vulputateposuerevulputate.ca','heythere');
