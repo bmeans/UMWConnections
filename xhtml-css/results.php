@@ -70,10 +70,10 @@
 			if($lastName!=''){
 				$query.=" AND last_name = '$lastName'";
 			}
-			if ($lookingFor!='Date'){
+			if ($lookingFor=='Date'){
 				$query.=" AND interested_in='$gender'";
 			}
-			if ($lookingFor!='Relationship'){
+			if ($lookingFor=='Relationship'){
 				$query.=" AND interested_in='$gender'";
 			}
 			
@@ -97,7 +97,7 @@
 			echo "Looking for: ".$row['lookingFor'];
 			echo "<br>";
 			echo "Major: ".$row['major'];
-			
+			echo "AHHHHHHHHH";
 			}
 		?>	
         <br />

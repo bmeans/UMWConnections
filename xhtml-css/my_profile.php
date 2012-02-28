@@ -69,7 +69,6 @@ session_start()
         <li><a href="register.php">create account</a></li>
         <li><a class="my_profile.php">my profile</a></li>
         <li><a href="advanced_search.php">advanced_search</a></li>
-        <li><a href="support.html">support</a></li>
         <li><a href="contact_us.php">contact Us</a></li>
         <li><a href="logout.php">logout</a></li>
       </ul>
