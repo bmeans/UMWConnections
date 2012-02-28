@@ -23,6 +23,7 @@
         <li><a class="current">advanced search</a></li>
         <li><a href="support.html">support</a></li>
         <li><a href="contact_us.php">contact Us</a></li>
+        <li><a href="logout.php">logout</a></li>
       </ul>
     </div>
     <!--menu ends-->

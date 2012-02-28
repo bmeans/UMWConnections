@@ -23,6 +23,7 @@
         <li><a href="advanced_search.php">advanced search</a></li>
         <li><a href="support.html">support</a></li>
         <li><a href="contact_us.php">contact Us</a></li>
+        <li><a href="logout.php">logout</a></li>
       </ul>
     </div>
     <!--menu ends-->
@@ -60,7 +61,7 @@
 			if($gender2!='No preference'){
 				$query.=" AND gender='$gender2'";
 			}
-			if($year!='No preference'){
+			if($year!='No Preference'){
 				$query.=" AND year='$year'";
 			}
 			if($firstName!=''){
@@ -79,7 +80,24 @@
 			$result = mysqli_query($db, $query);
 			
 			while($row = mysqli_fetch_array($result)){
-			echo "Name: ".$row['first_name'];
+			echo "Name: ".$row['first_name']." ".$row['last_name'];
+			echo "<br>";
+			echo "Gender: ".$row['gender'];
+			echo "<br>";
+			echo "Interested in: ".$row['interested_in'];
+			echo "<br>";
+			echo "Year: ".$row['year'];
+			echo "<br>";
+			echo "Phone number: ".$row['phone'];
+			echo "<br>";
+			echo "Interests: ".$row['interests'];
+			echo "<br>";
+			echo "Description: ".$row['description'];
+			echo "<br>";
+			echo "Looking for: ".$row['lookingFor'];
+			echo "<br>";
+			echo "Major: ".$row['major'];
+			
 			}
 		?>	
         <br />

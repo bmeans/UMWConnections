@@ -27,6 +27,7 @@
         <li><a href="advanced_search.php">advanced search</a></li>
         <li><a href="support.html">support</a></li>
         <li><a href="contact_us.php">contact Us</a></li>
+        <li><a href="logout.php">logout</a></li>
       </ul>
     </div>
     <!--menu ends-->
@@ -60,9 +61,7 @@
 	?>
 		
 	
-		<form method = "post" action = "my_profile.php">
-					<input type="submit" value="View Profile" name="submit" />
-		</form>
+		<meta http-equiv="REFRESH" content="0;url=my_profile.html"></HEAD>
 
 		
         <br />
