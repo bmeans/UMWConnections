@@ -79,7 +79,24 @@
 			$result = mysqli_query($db, $query);
 			
 			while($row = mysqli_fetch_array($result)){
-			echo "Name: ".$row['first_name'];
+			echo "Name: ".$row['first_name']." ".$row['last_name'];
+			echo "<br>";
+			echo "Gender: ".$row['gender'];
+			echo "<br>";
+			echo "Interested in: ".$row['interested_in'];
+			echo "<br>";
+			echo "Year: ".$row['year'];
+			echo "<br>";
+			echo "Phone number: ".$row['phone'];
+			echo "<br>";
+			echo "Interests: ".$row['interests'];
+			echo "<br>";
+			echo "Description: ".$row['description'];
+			echo "<br>";
+			echo "Looking for: ".$row['lookingFor'];
+			echo "<br>";
+			echo "Major: ".$row['major'];
+			
 			}
 		?>	
         <br />
