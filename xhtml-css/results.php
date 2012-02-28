@@ -79,7 +79,7 @@
 			$result = mysqli_query($db, $query);
 			
 			while($row = mysqli_fetch_array($result)){
-			echo "Name: ".$row['firstname'];
+			echo "Name: ".$row['first_name'];
 			}
 		?>	
         <br />
