@@ -16,13 +16,13 @@
     <div id="menu"> <span class="logo"><a href="#"><img src="images/logo.gif" alt="" /></a></span>
       <p>Fusce tristique, nisl vel gravida venenatis, risus magna eleifend pede, id bibendum mauris metus et erat.</p>
       <ul>
-        <li class="first"><a class="current">home</a></li>
+        <li class="first"><a href="index.html">home</a></li>
         <li><a href="about_us.html">about us</a></li>
         <li><a href="register.php">create account</a></li>
         <li><a href="my_profile.php">my profile</a></li>
         <li><a href="advanced_search.php">advanced search</a></li>
         <li><a href="support.html">support</a></li>
-        <li><a href="contact_us.php">contact Us</a></li>
+        <li><a class="current">contact Us</a></li>
       </ul>
     </div>
     <!--menu ends-->

@@ -21,10 +21,10 @@
       <p>Fusce tristique, nisl vel gravida venenatis, risus magna eleifend pede, id bibendum mauris metus et erat.</p>
       <ul>
         <li class="first"><a href="index.html">home</a></li>
-        <li><a href="about_us.html" class="about_us.html">about us</a></li>
+        <li><a href="about_us.html">about us</a></li>
         <li><a href="register.php">create account</a></li>
         <li><a href="my_profile.php">my profile</a></li>
-        <li><a class="current">advanced search</a></li>
+        <li><a href="advanced_search.php">advanced search</a></li>
         <li><a href="support.html">support</a></li>
         <li><a href="contact_us.php">contact Us</a></li>
       </ul>
@@ -56,7 +56,7 @@
 			$_SESSION['email'] = $_POST['email'];
 			$_SESSION['pw'] = $_POST['pw'];
 			$reg_query= "INSERT INTO Login(email, pw) Values(".$_SESSiON['email'].",".$_SESSION['$pw'].")";
-			$result= mysqli_query($db, $query);
+			$result= mysqli_query($db, $reg_query);
 	?>
 		
 	
