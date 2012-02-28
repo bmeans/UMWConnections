@@ -61,7 +61,7 @@
 			if($gender2!='No preference'){
 				$query.=" AND gender='$gender2'";
 			}
-			if($year!='No preference'){
+			if($year!='No Preference'){
 				$query.=" AND year='$year'";
 			}
 			if($firstName!=''){
