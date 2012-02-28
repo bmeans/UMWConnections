@@ -61,9 +61,7 @@
 	?>
 		
 	
-		<form method = "post" action = "my_profile.php">
-					<input type="submit" value="View Profile" name="submit" />
-		</form>
+		<meta http-equiv="REFRESH" content="0;url=my_profile.html"></HEAD>
 
 		
         <br />
