@@ -77,8 +77,9 @@
 			}
 			
 			$result = mysqli_query($db, $query);
-			
+			echo "<br>";
 			while($row = mysqli_fetch_array($result)){
+			
 			echo "<br>";
 			echo "<br>";
 			echo "Name: ".$row['first_name']." ".$row['last_name'];
@@ -98,6 +99,9 @@
 			echo "Looking for: ".$row['lookingFor'];
 			echo "<br>";
 			echo "Major: ".$row['major'];
+			}
+			if (mysqli_num_rows($result)==0){
+				echo "Your search did not return any results";
 			}
 		?>	
         <br />
