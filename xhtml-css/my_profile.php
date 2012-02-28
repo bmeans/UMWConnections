@@ -13,7 +13,7 @@ session_start()
 <?php
 	include "db_connect.php";
 	if (!isset($_SESSION['email'])){
-		header("Location: index.html");
+		?> <meta http-equiv = "REFRESH" content="0;url=index.html"> <?php
 	}
 	else{
 	$email = $_SESSION['email'];
