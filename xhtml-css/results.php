@@ -97,7 +97,7 @@
 			echo "Looking for: ".$row['lookingFor'];
 			echo "<br>";
 			echo "Major: ".$row['major'];
-			echo "AHHHHHHHHH";
+			
 			}
 		?>	
         <br />
