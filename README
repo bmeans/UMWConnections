@@ -1,5 +1,6 @@
 Start an sql server using xampp
 Open git bash
 Move to your xampp/htdocs folder
-Run: git init
-Run: git clone
+Run: "git init"
+Run: "git clone" followed by repository path
+In browser type in url: localhost/UMWConnections/xhtml-css 
