@@ -17,7 +17,7 @@
   <!--header starts-->
   <div id="header">
     <!--menu starts-->
-    <div id="menu"> <span class="logo"><a href="#"><img src="images/logo.gif" alt="" /></a></span>
+    <div id="menu"> <span class="logo"><a href="http://localhost/UMWconnections/UMWConnections/xhtml-css/index.html"><img src="images/logo.gif" alt="" /></a></span>
       <p>Fusce tristique, nisl vel gravida venenatis, risus magna eleifend pede, id bibendum mauris metus et erat.</p>
       <ul>
         <li class="first"><a href="index.html">home</a></li>
@@ -127,26 +127,26 @@
         <div class="profile_box">
           <div class="top_curve">
             <div class="profile_content">
-              <div class="pro_photo"><a href="#"><img src="images/pic_1.gif" alt="" /></a></div>
+              <div class="pro_photo"><a href="#"><img src="images/pic_1.png" alt="" /></a></div>
               <div class="outer">
                 <div class="pro_detail_box">
                   <div class="pro_top_curve">
                     <div class="pro_detail_content">
                       <div class="row">
                         <p class="left">Name :</p>
-                        <p class="right">Jenifer</p>
+                        <p class="right">Nelly</p>
                       </div>
                       <div class="row">
                         <p class="left">Age :</p>
-                        <p class="right">23 Years</p>
+                        <p class="right">20 Years</p>
                       </div>
                       <div class="row">
                         <p class="left">Location :</p>
-                        <p class="right">South Korea</p>
+                        <p class="right">Orange County</p>
                       </div>
                       <div class="row last">
                         <p class="left">Likes :</p>
-                        <p class="right">Duis cursus tortor elit</p>
+                        <p class="right">sleeping</p>
                       </div>
                     </div>
                   </div>
@@ -165,19 +165,19 @@
                     <div class="pro_detail_content">
                       <div class="row">
                         <p class="left">Name :</p>
-                        <p class="right">David Martin</p>
+                        <p class="right">Aaron</p>
                       </div>
                       <div class="row">
                         <p class="left">Age :</p>
-                        <p class="right">28 Years</p>
+                        <p class="right">21 Years</p>
                       </div>
                       <div class="row">
                         <p class="left">Location :</p>
-                        <p class="right">England</p>
+                        <p class="right">Fredvegas</p>
                       </div>
                       <div class="row last">
                         <p class="left">Likes :</p>
-                        <p class="right">Duis cursus tortor elit</p>
+                        <p class="right">programming, costume parties</p>
                       </div>
                     </div>
                   </div>
@@ -208,7 +208,7 @@
                       </div>
                       <div class="row last">
                         <p class="left">Likes :</p>
-                        <p class="right">Duis cursus tortor elit</p>
+                        <p class="right">eating</p>
                       </div>
                     </div>
                   </div>
@@ -220,18 +220,18 @@
         <div class="profile_box last">
           <div class="top_curve">
             <div class="profile_content">
-              <div class="pro_photo"><a href="#"><img src="images/pic_4.gif" alt="" /></a></div>
+              <div class="pro_photo"><a href="#"><img src="images/pic_4.png" alt="" /></a></div>
               <div class="outer">
                 <div class="pro_detail_box">
                   <div class="pro_top_curve">
                     <div class="pro_detail_content">
                       <div class="row">
                         <p class="left">Name :</p>
-                        <p class="right">Jenifer</p>
+                        <p class="right">Keith</p>
                       </div>
                       <div class="row">
                         <p class="left">Age :</p>
-                        <p class="right">23 Years</p>
+                        <p class="right">32 Years</p>
                       </div>
                       <div class="row">
                         <p class="left">Location :</p>
@@ -239,7 +239,7 @@
                       </div>
                       <div class="row last">
                         <p class="left">Likes :</p>
-                        <p class="right">Duis cursus tortor elit</p>
+                        <p class="right">Watching anime, skyping with pretty ladies</p>
                       </div>
                     </div>
                   </div>
