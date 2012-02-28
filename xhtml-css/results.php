@@ -79,6 +79,8 @@
 			$result = mysqli_query($db, $query);
 			
 			while($row = mysqli_fetch_array($result)){
+			echo "<br>";
+			echo "<br>";
 			echo "Name: ".$row['first_name']." ".$row['last_name'];
 			echo "<br>";
 			echo "Gender: ".$row['gender'];
@@ -96,7 +98,6 @@
 			echo "Looking for: ".$row['lookingFor'];
 			echo "<br>";
 			echo "Major: ".$row['major'];
-			
 			}
 		?>	
         <br />
