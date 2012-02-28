@@ -23,8 +23,8 @@ session_start()
 		$result = mysqli_query($db, $query);
 		if ($row = mysqli_fetch_array($result))
   			{
-   				$_SESSION['firstname'] = $row['firstname'];
-   				$_SESSION['lastname'] = $row['lastname'];
+   				$_SESSION['first_name'] = $row['first_name'];
+   				$_SESSION['last_name'] = $row['last_name'];
    				$_SESSION['gender'] = $row['gender'];
    				$_SESSION['phone'] = $row['phone'];
    				$_SESSION['interests'] = $row['interests'];
@@ -64,13 +64,13 @@ session_start()
     <div id="left_container">
       <div style="padding:20px 15px 30px 15px;">
       
-      <h1><span><?php echo "Welcome ".$_SESSION['firstname']."!" ?></span></h1>
+      <h1><span><?php echo "Welcome ".$_SESSION['first_name']."!" ?></span></h1>
       <div class="ourprojectrow">
         <h6 class="inner"> Your profile details: </h6>
         <div> <img src="images/projectimg1.jpg" alt="" width="210" height="139" class="project-img" /> <br />
           <br />
           <br />
-           Name: <?php echo $_SESSION['firstname'] ?> <?php echo $_SESSION['lastname']?>
+           Name: <?php echo $_SESSION['first_name'] ?> <?php echo $_SESSION['last_name']?>
            <br />
            Gender: <?php echo $_SESSION['gender']?>
            <br />
