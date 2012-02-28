@@ -38,4 +38,4 @@ INSERT INTO Users (interested_in,year,email,last_name,first_name,gender,phone,in
 ('Female','Senior','lectus.pede@felisadipiscing.com','Browning','Alan','Male','8484753990','Lorem ipsum','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer','','consequat'),
 ('Male','Professor','Fusce.aliquet@adipiscingligula.com','Sweet','Noel','Female','3838685961','Lorem ipsum','Lorem ipsum dolor sit amet, consectetuer adipiscing elit.','Relationship','lacinia vitae,');
 
-INSERT INTO login VALUES('tgray@mail.umw.edu','tgray'),('rhorn@mail.umw.edu','rhorn'),('yfisher@mail.umw.edu','yfisher');
+INSERT INTO login VALUES('tgray@mail.umw.edu','tgray'),('rhorn@mail.umw.edu','rhorn'),('yfisher@mail.umw.edu','yfisher'), ('acrowe@mail.umw.edu','acrowe');
