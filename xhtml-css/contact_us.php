@@ -21,7 +21,7 @@
         <li><a href="register.php">create account</a></li>
         <li><a href="my_profile.php">my profile</a></li>
         <li><a href="advanced_search.php">advanced search</a></li>
-        <li><a class="current">contact Us</a></li>
+        <li><a class="current">contact us</a></li>
         <li><a href="logout.php">logout</a></li>
       </ul>
     </div>
