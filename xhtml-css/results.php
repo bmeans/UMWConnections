@@ -49,30 +49,37 @@
         <br />
         <?php
 			include "db_connect.php";
-			$gender=$_POST['gender2'];
+			$gender=$_POST['gender'];
+			$gender2=$_POST['gender2'];
 			$lookingFor=$_POST['lookingFor'];
 			$year=$_POST['lookingFor2'];
 			$firstName=$_POST['firstName'];
 			$lastName=$_POST['lastName'];
 			
 			$query = "SELECT * FROM Users WHERE lookingFor = '$lookingFor'";
-			if($gender!='No preference'){
-				$query.=" AND gender='$gender'";
+			if($gender2!='No preference'){
+				$query.=" AND gender='$gender2'";
 			}
 			if($year!='No preference'){
 				$query.=" AND year='$year'";
 			}
 			if($firstName!=''){
-				$query.=" AND firstname = '$firstName'";
+				$query.=" AND first_name = '$firstName'";
 			}
 			if($lastName!=''){
-				$query.=" AND lastname = '$lastName'";
+				$query.=" AND last_name = '$lastName'";
+			}
+			if ($lookingFor!='Date'){
+				$query.=" AND interested_in='$gender'";
+			}
+			if ($lookingFor!='Relationship'){
+				$query.=" AND interested_in='$gender'";
 			}
 			
 			$result = mysqli_query($db, $query);
 			
 			while($row = mysqli_fetch_array($result)){
-			echo "Name: ".$row['firstname'];
+			echo "Name: ".$row['first_name'];
 			}
 		?>	
         <br />
