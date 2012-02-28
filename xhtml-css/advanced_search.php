@@ -41,7 +41,7 @@
     <!--left container starts-->
     <div id="left_container">
       <div style="padding:20px 15px 30px 15px;">
-      <h1><span>Services </span>for you</h1>
+      <h1><span>This page is Under Construction, </span>please come back soon!</h1>
       <div><strong> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin  sed odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, risus neque venenatis arcu, a semper massa mi eget ipsum. </strong> <br />
         <br />
         Lorem  ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed odio et  ante adipiscing lobortis. Quisque eleifend, arcu a dictum varius, risus  neque venenatis arcu, a semper massa mi eget ipsum. Proin sed odio et  ante adipiscing lobortis. Lorem ipsum dolor sit amet, consectetuer  adipiscing elit. Proin sed odio et ante adipiscing lobortis. Quisque  eleifend, arcu a dictum varius, risus neque venenatis arcu, a semper  massa mi eget ipsum. Proin sed odio et ante adipiscing lobortis.<br />
