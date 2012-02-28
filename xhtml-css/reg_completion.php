@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -49,18 +53,17 @@
         <br />
         <?php
 			include "db_connect.php";
-			$email = $_POST['email'];
-			$pw = $_POST['pw'];
-			$reg_query= "INSERT INTO Login(email, pw) Values('$email', '$pw')";
+			$_SESSION['email'] = $_POST['email'];
+			$_SESSION['pw'] = $_POST['pw'];
+			$reg_query= "INSERT INTO Login(email, pw) Values(".$_SESSiON['email'].",".$_SESSION['$pw'].")";
 			$result= mysqli_query($db, $query);
+	?>
 		
 	
 		<form method = "post" action = "my_profile.php">
-					<input type="hidden" name="email" value="'$email'" />
-					<input type="hidden" name="pw" value="'$pw'" />
 					<input type="submit" value="View Profile" name="submit" />
 		</form>
-	?>
+
 		
         <br />
       <div class="clear"></div>
