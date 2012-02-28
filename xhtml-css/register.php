@@ -48,6 +48,10 @@
       <div style="float:right; width:auto"><img src="images/ico-terms.png" alt="" /></div>
       <div> <strong> <br />
 	  <form method="post" action="reg_completion.php">
+	  			<label for="fname">First Name:</label>
+	  			<input type="text" id="fname" name="fname" /><br />
+	  			<label for="lname">Last Name:</label>
+	  			<input type="text" id="lname" name="lname" /><br />
 				<label for="email">Email address:</label>
 				<input type="text" id="email" name="email" /><br />
 				<label for="pw">Password:</label>
