@@ -56,7 +56,7 @@
 			$_SESSION['email'] = $_POST['email'];
 			$_SESSION['pw'] = $_POST['pw'];
 			$reg_query= "INSERT INTO Login(email, pw) Values(".$_SESSiON['email'].",".$_SESSION['$pw'].")";
-			$result= mysqli_query($db, $query);
+			$result= mysqli_query($db, $red_query);
 	?>
 		
 	
