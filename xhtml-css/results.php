@@ -21,7 +21,6 @@
         <li><a href="register.php">create account</a></li>
         <li><a href="my_profile.php">my profile</a></li>
         <li><a href="advanced_search.php">advanced search</a></li>
-        <li><a href="support.html">support</a></li>
         <li><a href="contact_us.php">contact Us</a></li>
         <li><a href="logout.php">logout</a></li>
       </ul>
@@ -80,6 +79,8 @@
 			$result = mysqli_query($db, $query);
 			
 			while($row = mysqli_fetch_array($result)){
+			echo "<br>";
+			echo "<br>";
 			echo "Name: ".$row['first_name']." ".$row['last_name'];
 			echo "<br>";
 			echo "Gender: ".$row['gender'];
@@ -97,7 +98,6 @@
 			echo "Looking for: ".$row['lookingFor'];
 			echo "<br>";
 			echo "Major: ".$row['major'];
-			echo "AHHHHHHHHH";
 			}
 		?>	
         <br />

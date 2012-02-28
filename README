@@ -1,1 +1,5 @@
-add files to your htdocs folder
+Start an sql server using xampp
+Open git bash
+Move to your xampp/htdocs folder
+Run: git init
+Run: git clone

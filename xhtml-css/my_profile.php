@@ -13,31 +13,10 @@ session_start()
 <?php
 	include "db_connect.php";
 	if (!isset($_SESSION['email'])){
-		$email = $_POST['email'];
-		$pw = $_POST['pw'];
-		$query = "SELECT * FROM Login WHERE email = '$email' AND pw = '$pw'";
-		$result = mysqli_query($db, $query);
-		if ($row = mysqli_fetch_array($result))
-		{
-			$_SESSION['email'] = $row['email'];
-			$query = "SELECT * FROM Users WHERE email = '$email'";
-			$result = mysqli_query($db, $query);
-			if ($row = mysqli_fetch_array($result))
-				{
-					$_SESSION['first_name'] = $row['first_name'];
-					$_SESSION['last_name'] = $row['last_name'];
-					$_SESSION['gender'] = $row['gender'];
-					$_SESSION['phone'] = $row['phone'];
-					$_SESSION['interests'] = $row['interests'];
-					$_SESSION['description'] = $row['description'];
-					$_SESSION['lookingFor'] = $row['lookingFor'];
-					$_SESSION['major'] = $row['major'];
-					echo "<p>".$_SESSION['email']."</p>";
-				}
-		}
+		?> <meta http-equiv = "REFRESH" content="0;url=index.html"> <?php
 	}
 	else{
-	$_SESSION['email'] = $row['email'];
+	$email = $_SESSION['email'];
 	$query = "SELECT * FROM Users WHERE email = '$email'";
 	$result = mysqli_query($db, $query);
 	if ($row = mysqli_fetch_array($result))
