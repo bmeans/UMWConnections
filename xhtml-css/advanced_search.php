@@ -20,13 +20,13 @@
         <li><a href="about_us.html" class="about_us.html">about us</a></li>
         <li><a href="register.php">create account</a></li>
         <li><a href="my_profile.php">my profile</a></li>
-        <li><a class="current">advanced search</a></li>
+        <li><a href="advanced_search.php">advanced search</a></li>
         <li><a href="contact_us.php">contact Us</a></li>
         <li><a href="logout.php">logout</a></li>
       </ul>
     </div>
     <!--menu ends-->
-    <div id="banner_inner">
+    <!--<div id="banner_inner">
       
         <!--form container starts-->
         
@@ -35,20 +35,27 @@
       <!--form container ends-->
     
   </div>
+  -->
   <!--header ends-->
   <!--body container starts-->
   <div id="body_container">
     <!--left container starts-->
     <div id="left_container">
       <div style="padding:20px 15px 30px 15px;">
-      <h1><span>This page is Under Construction, </span>please come back soon!</h1>
-      <div><strong> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin  sed odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, risus neque venenatis arcu, a semper massa mi eget ipsum. </strong> <br />
+      <h1><span>Advanced Search </span></h1>
+      <div>
+      <!--<strong> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin  sed odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, risus neque venenatis arcu, a semper massa mi eget ipsum. </strong> <br />
+        -->
         <br />
-        Lorem  ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed odio et  ante adipiscing lobortis. Quisque eleifend, arcu a dictum varius, risus  neque venenatis arcu, a semper massa mi eget ipsum. Proin sed odio et  ante adipiscing lobortis. Lorem ipsum dolor sit amet, consectetuer  adipiscing elit. Proin sed odio et ante adipiscing lobortis. Quisque  eleifend, arcu a dictum varius, risus neque venenatis arcu, a semper  massa mi eget ipsum. Proin sed odio et ante adipiscing lobortis.<br />
+        <?php
+		?>	
         <br />
-        Quisque  eleifend, arcu a dictum varius, risus neque venenatis arcu, a semper  massa mi eget ipsum. Proin sed odio et ante adipiscing lobortis. Proin  sed odio et ante adipiscing lobortis. Lorem ipsum dolor sit amet,  consectetuer adipiscing elit. Proin sed odio et ante adipiscing  lobortis. </div>
       <div class="clear"></div>
       <div class="clear"></div>
+      </div>
+      </div>
+      </div>
+      <!--
       <div class="servicecolumnzone">
         <div class="servicecolumn1">
           <div>
@@ -94,6 +101,7 @@
     </div>
       <div class="clear"></div>
     </div>
+    -->
     <!--left container ends-->
     <!--right container starts-->
     <div id="right_container">
@@ -215,7 +223,7 @@
                       </div>
                       <div class="row last">
                         <p class="left">Likes :</p>
-                        <p class="right">Watching anime, skyping pretty ladies</p>
+                        <p class="right">Watching anime, skyping with pretty ladies</p>
                       </div>
                     </div>
                   </div>
