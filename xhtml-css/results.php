@@ -76,7 +76,7 @@
 				$query.=" AND interested_in='$gender'";
 			}
 			
-			$result = mysqli_query($db, $query);
+			$result = mysqli_query($db, $query);	//sends a query to the currently active database
 			echo "<br>";
 			while($row = mysqli_fetch_array($result)){
 			
