@@ -14,7 +14,7 @@
   <div id="header">
     <!--menu starts-->
     <div id="menu"> <span class="logo"><a href="#"><img src="images/logo.gif" alt="" /></a></span>
-      <p>Fusce tristique, nisl vel gravida venenatis, risus magna eleifend pede, id bibendum mauris metus et erat.</p>
+      <p>Loneliness is a disease, we are the cure.</p>
       <ul>
         <li class="first"><a href="index.html">home</a></li>
         <li><a href="about_us.html">about us</a></li>
@@ -28,72 +28,9 @@
     <!--menu ends-->
     <div id="banner_inner">
       <div class="find_love">
-        <h2><img src="images/find_your_love.gif" alt="" /></h2>
+      
         <!--form container starts-->
-        <div class="form_container">
-          <form action="" method="get">
-            <fieldset>
-            <div class="search_row">
-              <div class="search_column_1">
-                <label>I am a</label>
-              </div>
-              <div class="search_column_2">
-                <select class="gender">
-                  <option>Male</option>
-                </select>
-                <label class="seeking">Seeking a</label>
-                <select class="gender">
-                  <option>Female</option>
-                </select>
-              </div>
-            </div>
-            <div class="search_row">
-              <div class="search_column_1">
-                <label>Looking for a</label>
-              </div>
-              <div class="search_column_2">
-                <select class="date">
-                  <option>Date</option>
-                </select>
-              </div>
-            </div>
-            <div class="search_row">
-              <div class="search_column_1">
-                <label>I was born</label>
-              </div>
-              <div class="search_column_2">
-                <select class="dob">
-                  <option>Month</option>
-                </select>
-                <select class="dob">
-                  <option>Date</option>
-                </select>
-                <select class="dob">
-                  <option>Year</option>
-                </select>
-              </div>
-            </div>
-            <div class="search_row">
-              <div class="search_column_1">
-                <label>By Profile ID</label>
-              </div>
-              <div class="search_column_2">
-                <input type="text" name="" value="" />
-                <label class="check">With Photo</label>
-                <input type="checkbox" name="" value="" class="checkbox"/>
-              </div>
-            </div>
-            <div class="search_row last">
-              <div class="search_column_1">&nbsp;</div>
-              <div class="search_column_2">
-                <input type="image" src="images/find_btn.gif" class="search_btn"/>
-              </div>
-            </div>
-            </fieldset>
-          </form>
-        </div>
-      </div>
-      <!--form container ends-->
+        
     </div>
   </div>
   <!--header ends-->
@@ -104,7 +41,7 @@
       <div style="padding:20px 15px 30px 15px;">
       <h1>Contact <span>Us</span></h1>
       <div> <strong> <br />
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, risus neque venenatis arcu, a semper massa mi eget ipsum. </strong><br />
+        Please send us your questions and comments! Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, risus neque venenatis arcu, a semper massa mi eget ipsum. </strong><br />
         <br />
         Lorem  ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed odio et  ante adipiscing lobortis. Quisque eleifend, arcu a dictum varius, risus  neque venenatis arcu, a semper massa mi eget ipsum. </div>
       <div> <br />
@@ -112,21 +49,10 @@
         <br />
         <form action="form.php" method="post">
           <table width="80%">
-            <tr>
-              <td width="145" align="left" valign="top" class="body" id="Company"><strong>Company:</strong></td>
-              <td width="280" align="left" valign="top"><input name="Company" type="text" size="40" /></td>
-            </tr>
+            
             <tr>
               <td align="left" valign="top" class="body" id="Contact"><strong>Full Name:</strong></td>
               <td align="left" valign="top"><input name="Name" type="text" size="40" /></td>
-            </tr>
-            <tr>
-              <td align="left" valign="top" class="body" id="Address"><strong>Address: </strong></td>
-              <td align="left" valign="top"><input name="Address" type="text" size="40" /></td>
-            </tr>
-            <tr>
-              <td align="left" valign="top" class="body" id="Phone"><strong> Phone: </strong></td>
-              <td align="left" valign="top"><input name="Phone" type="text" size="40" /></td>
             </tr>
             <tr>
               <td align="left" valign="top" class="body" id="Email"><strong> Email: </strong></td>
@@ -144,7 +70,7 @@
         </form>
       </div>
       <div> <br />
-        <h6 class="inner">Contact Information: </h6>
+       <!-- <h6 class="inner">Contact Information: </h6>
         <img src="images/photo-contact.jpg" alt="" width="152" height="100" class="project-img" /><br />
         <br />
         <br />
@@ -157,7 +83,7 @@
           <span><img src="images/ico-website.png" alt="WWW Link" width="20" height="16" hspace="2" /> Website:</span> <a href="#">www.mycompany.com</a><br />
           <span><img src="images/ico-email.png" alt="Email" width="20" height="16" hspace="2" /> Email:</span> <a href="mailto:info@mycompany.com">info@mycompany.com</a><br />
           <span><img src="images/ico-twitter.png" alt="Twitter Follow" width="20" height="16" hspace="3" /> <a href="#">Follow</a> on Twitter</span><br />
-        </p>
+        </p> --!>
       </div>
     </div>
       <div class="clear"></div>
