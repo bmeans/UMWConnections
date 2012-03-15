@@ -47,7 +47,7 @@ session_start()
         <li><a href="about_us.html" class="about_us.html">about us</a></li>
         <li><a href="register.php">create account</a></li>
         <li><a class="my_profile.php">my profile</a></li>
-        <li><a href="advanced_search.php">advanced_search</a></li>
+        <li><a href="advanced_search.php">advanced search</a></li>
         <li><a href="contact_us.php">contact Us</a></li>
         <li><a href="logout.php">logout</a></li>
       </ul>
@@ -62,9 +62,9 @@ session_start()
     <div id="left_container">
       <div style="padding:20px 15px 30px 15px;">
       
-      <h1><span><?php echo "Welcome ".$_SESSION['first_name']."!" ?></span></h1>
+      <h1 style="color:#2554C7;"><span><?php echo "Welcome ".$_SESSION['first_name']."!" ?></span></h1>
       <div class="ourprojectrow">
-        <h6 class="inner"> Your profile details: </h6>
+        <h6 class="inner" style="color:#2554C7;"> Your profile details: </h6>
         <div> <img src="images/projectimg1.jpg" alt="" width="210" height="139" class="project-img" /> <br />
           <br />
           <br />

@@ -23,10 +23,18 @@ CREATE TABLE IF NOT EXISTS Login (
 	PRIMARY KEY (email)
 );
 
+CREATE TABLE IF NOT EXISTS Comments (
+	name varchar(50) NOT NULL,
+	email varchar(30) NOT NULL,
+	comments blob NOT NULL
+);
+	
+	
+
 INSERT INTO Users (interested_in,year,email,last_name,first_name,gender,phone,interests,description,lookingFor,major) VALUES 
-('Male','Freshmen','semper@eu.ca','Gray','Todd','Male','4537638355','Lorem ipsum dolor sit amet,','Lorem ipsum dolor sit amet, consectetuer adipiscing','Date','egestas.'),
-('Female','Sophomore','amet.faucibus.ut@hendrerit.com','Horn','Russell','Male','3152505279','Lorem','Lorem','Date','metus vitae velit'),
-('Male','Junior','lorem.ut.aliquam@vulputateposuerevulputate.ca','Fisher','Yen','Female','8414639889','Lorem ipsum dolor','Lorem ipsum','Relationship','nisl. Nulla'),
+('Male','Freshmen','tgray@mail.umw.edu','Gray','Todd','Male','4537638355','Soccer, Singing, Football','Tall, dark and handsome','Date','Theater'),
+('Female','Sophomore','rhorn@mail.umw.edu','Horn','Russell','Male','3152505279','Hacking, Video Games, Magic','Constantly wears glasses and a red and white striped sweater with a matching hat and blue pants. ','Date','Computer Science'),
+('Male','Junior','yfisher@mail.umw.edu','Fisher','Yen','Female','8414639889','Ju-jitsu','Enjoys long walks on the beach, and candlelight dinners','Relationship','Biology'),
 ('Female','Senior','et.rutrum.non@gravidasit.com','Hahn','Germane','Female','2635477840','Lorem ipsum dolor sit','Lorem ipsum dolor sit amet,','Relationship','a,'),
 ('Male','Freshmen','tincidunt@orciluctuset.ca','Herrera','Dieter','Female','8662835372','Lorem','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur','Study Group','orci. Ut semper'),
 ('Female','Freshmen','facilisis@molestiedapibusligula.com','Tate','Colby','Female','7631496679','Lorem','Lorem ipsum','Relationship','iaculis nec,'),
@@ -38,4 +46,4 @@ INSERT INTO Users (interested_in,year,email,last_name,first_name,gender,phone,in
 ('Female','Senior','lectus.pede@felisadipiscing.com','Browning','Alan','Male','8484753990','Lorem ipsum','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer','','consequat'),
 ('Male','Professor','Fusce.aliquet@adipiscingligula.com','Sweet','Noel','Female','3838685961','Lorem ipsum','Lorem ipsum dolor sit amet, consectetuer adipiscing elit.','Relationship','lacinia vitae,');
 
-INSERT INTO login VALUES('semper@eu.ca','semper'),('amet.faucibus.ut@hendrerit.com','kittycat'),('lorem.ut.aliquam@vulputateposuerevulputate.ca','heythere');
+INSERT INTO login VALUES('tgray@mail.umw.edu','tgray'),('rhorn@mail.umw.edu','rhorn'),('yfisher@mail.umw.edu','yfisher'), ('acrowe@mail.umw.edu','acrowe');
