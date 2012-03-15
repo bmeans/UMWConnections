@@ -25,6 +25,14 @@ CREATE TABLE IF NOT EXISTS Login (
 	PRIMARY KEY (email)
 );
 
+CREATE TABLE IF NOT EXISTS Comments (
+	name varchar(50) NOT NULL,
+	email varchar(30) NOT NULL,
+	comments blob NOT NULL
+);
+	
+	
+
 INSERT INTO Users (interested_in,year,email,last_name,first_name,gender,phone,interests,description,lookingFor,major) VALUES 
 ('Male','Freshmen','tgray@mail.umw.edu','Gray','Todd','Male','4537638355','Soccer, Singing, Football','Tall, dark and handsome','Date','Theater'),
 ('Female','Sophomore','rhorn@mail.umw.edu','Horn','Russell','Male','3152505279','Hacking, Video Games, Magic','Constantly wears glasses and a red and white striped sweater with a matching hat and blue pants. ','Date','Computer Science'),

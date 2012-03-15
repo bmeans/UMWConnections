@@ -40,7 +40,7 @@
       <!--form container ends-->
     
   </div>
-  -->
+  
   <!--header ends-->
   <!--body container starts-->
   <div id="body_container">
@@ -57,11 +57,11 @@
 			$_SESSION['email'] = $_POST['email'];
 			$_SESSION['pw'] = $_POST['pw'];
 			$reg_query= "INSERT INTO Login(email, pw) Values(".$_SESSiON['email'].",".$_SESSION['$pw'].")";
-			$result= mysqli_query($db, $reg_query);
+			$result= mysqli_query($db, $reg_query);	//sends a query to the current active database
 	?>
 		
 	
-		<meta http-equiv="REFRESH" content="0;url=my_profile.html"></HEAD>
+		<meta http-equiv="REFRESH" content="0;url=my_profile.php"></HEAD>
 
 		
         <br />
