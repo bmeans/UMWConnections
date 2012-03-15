@@ -2,7 +2,7 @@ DROP DATABASE IF EXISTS umwconnections;
 CREATE DATABASE IF NOT EXISTS umwconnections;
 USE umwconnections;
 
-GRANT ALL PRIVILEGES ON 'umwconnections'.* TO 'admin'@'localhost' IDENTIFIED BY 'adminpw';
+GRANT ALL PRIVILEGES ON umwconnections.* TO 'admin'@'localhost' IDENTIFIED BY 'adminpw';
 
 CREATE TABLE IF NOT EXISTS Users (
 	email varchar(100) NOT NULL,
