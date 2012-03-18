@@ -17,12 +17,11 @@ CREATE TABLE IF NOT EXISTS Comments (
 );
 
 CREATE TABLE IF NOT EXISTS Images (
-    image_id int AUTO_INCREMENT NOT NULL,
+    image_id int AUTO_INCREMENT NOT NULL PRIMARY KEY,
     filename varchar(255) NOT NULL,
     mime_type varchar(255) NOT NULL,
     file_size int NOT NULL,
-    file_data blob NOT NULL,
-    PRIMARY KEY (image_id),
+    file_data longblob NOT NULL,
     INDEX (filename)
 );
 
@@ -62,10 +61,12 @@ CREATE TABLE IF NOT EXISTS Users (
   	interested_in_id int,
 	classification_id int,
   	looking_for_id int,
+  	image_id int,
   	CONSTRAINT login_email_fk FOREIGN KEY (email) REFERENCES Login (email),
   	CONSTRAINT classifications_classification_id_fk FOREIGN KEY (classification_id) REFERENCES Classifications (classification_id),
   	CONSTRAINT interestedIn_interested_in_id_fk FOREIGN KEY (interested_in_id) REFERENCES InterestedIn (interested_in_id),
-	CONSTRAINT looking_for_looking_for_id_fk FOREIGN KEY (looking_for_id) REFERENCES Looking_For (looking_for_id)
+	CONSTRAINT looking_for_looking_for_id_fk FOREIGN KEY (looking_for_id) REFERENCES Looking_For (looking_for_id),
+	CONSTRAINT images_image_id_fk FOREIGN KEY (image_id) REFERENCES Images (image_id)
 );
 
 CREATE TABLE IF NOT EXISTS Users_Interests (
