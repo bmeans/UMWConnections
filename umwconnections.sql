@@ -6,7 +6,7 @@ GRANT ALL PRIVILEGES ON umwconnections.* TO 'admin'@'localhost' IDENTIFIED BY 'a
 
 CREATE TABLE IF NOT EXISTS Login (
 	email varchar(100) NOT NULL,
-	pw varchar(20) NOT NULL,
+	pw varchar(40) NOT NULL,
 	PRIMARY KEY (email, pw)
 );
 
@@ -86,10 +86,10 @@ CREATE TABLE IF NOT EXISTS Users_Majors (
 );
 
 INSERT INTO Login (email,pw) VALUES 
-	('tgray@mail.umw.edu','tgray'),
-	('rhorn@mail.umw.edu','rhorn'),
-	('yfisher@mail.umw.edu','yfisher'), 
-	('acrowe@mail.umw.edu','acrowe');
+	('tgray@mail.umw.edu',SHA('tgray')),
+	('rhorn@mail.umw.edu',SHA('rhorn')),
+	('yfisher@mail.umw.edu',SHA('yfisher')), 
+	('acrowe@mail.umw.edu',SHA('acrowe'));
 
 INSERT INTO Users (email, last_name, first_name, gender, phone, description) VALUES
 	('tgray@mail.umw.edu','Gray','Todd','Male','4537638355','Tall, dark and handsome'),
