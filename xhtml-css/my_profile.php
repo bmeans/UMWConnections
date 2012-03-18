@@ -16,20 +16,53 @@ session_start()
 		?> <meta http-equiv = "REFRESH" content="0;url=index.html"> <?php
 	}
 	else{
-	$email = $_SESSION['email'];
-	$query = "SELECT * FROM Users WHERE email = '$email'";
-	$result = mysqli_query($db, $query);
-	if ($row = mysqli_fetch_array($result))
-		{
+		$email = $_SESSION['email'];
+		$query = "SELECT * FROM Users WHERE email = '$email'";
+		$result = mysqli_query($db, $query);
+		if ($row = mysqli_fetch_array($result)){
+			$_SESSION['user_id'] = $row['user_id'];
 			$_SESSION['first_name'] = $row['first_name'];
 			$_SESSION['last_name'] = $row['last_name'];
 			$_SESSION['gender'] = $row['gender'];
 			$_SESSION['phone'] = $row['phone'];
-			$_SESSION['interests'] = $row['interests'];
 			$_SESSION['description'] = $row['description'];
-			$_SESSION['lookingFor'] = $row['lookingFor'];
-			$_SESSION['major'] = $row['major'];
-			echo "<p>".$_SESSION['email']."</p>";
+			$interested_in_id = $row['interested_in_id'];
+			$looking_for_id= $row['looking_for_id'];
+			$classification_id= $row['classification_id'];
+			
+			$query = "SELECT interested_in_value FROM InterestedIn WHERE interested_in_id = '$interested_in_id'";
+			$result = mysqli_query($db, $query);
+			if ($row = mysqli_fetch_array($result)){
+				$_SESSION['interested_in'] = $row['interested_in_value'];
+			}
+			
+			$query = "SELECT looking_for_value FROM Looking_For WHERE looking_for_id = '$looking_for_id'";
+			$result = mysqli_query($db, $query);
+			if ($row = mysqli_fetch_array($result)){
+				$_SESSION['looking_for'] = $row['looking_for_value'];
+			}
+			
+			$query = "SELECT classification FROM Classifications WHERE classification_id = '$classification_id'";
+			$result = mysqli_query($db, $query);
+			if ($row = mysqli_fetch_array($result)){
+				$_SESSION['classification'] = $row['classification'];
+			}
+			
+			$query = "SELECT m.major from Users_Majors um NATURAL JOIN Majors m WHERE user_id =".$_SESSION['user_id'].";";
+			$result = mysqli_query($db, $query);
+			$_SESSION['major'] = "";
+			while ($row = mysqli_fetch_array($result)){
+				$_SESSION['major'] = $_SESSION['major'].$row['major'];
+			}
+			
+			$query = "SELECT i.interest from Users_Interests ui NATURAL JOIN Interests i WHERE user_id =".$_SESSION['user_id'].";";
+			$result = mysqli_query($db, $query);
+			$_SESSION['interests'] = "";
+			while ($row = mysqli_fetch_array($result)){
+				$_SESSION['interests'] = $_SESSION['interests'].$row['interest']." ";
+			}
+			
+			//echo "<p>".$_SESSION['email']."</p>";
 		}
 	}
 
@@ -78,7 +111,9 @@ session_start()
            <br />
            Description of yourself: <?php echo $_SESSION['description'] ?>
            <br />
-           What you're looking for: <?php echo $_SESSION['lookingFor']?>
+           What you're looking for: <?php echo $_SESSION['looking_for']?>
+           <br />
+           Who you're looking for: <?php echo $_SESSION['interested_in']?>
            <br />
            Your interests: <?php echo $_SESSION['interests'] ?>
           <div class="clear"></div>
