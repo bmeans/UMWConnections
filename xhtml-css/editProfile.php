@@ -109,7 +109,6 @@ session_start()
       <form>
        First Name: <input type="text" value="<?php echo $_SESSION['first_name'] ?>" name="first_name" /><br />
        Last Name: <input type="text" name = "last_name" /><br />
-       Gender: <input
        
 Templates">DreamTemplate</a></small> </div>
     </div>
