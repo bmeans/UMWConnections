@@ -8,13 +8,13 @@ CREATE TABLE IF NOT EXISTS Login (
 	email varchar(100) NOT NULL,
 	pw varchar(40) NOT NULL,
 	PRIMARY KEY (email, pw)
-);
+)ENGINE = MYISAM;
 
 CREATE TABLE IF NOT EXISTS Comments (
 	name varchar(50) NOT NULL,
 	email varchar(30) NOT NULL,
 	comments blob NOT NULL
-);
+)ENGINE = MYISAM;
 
 CREATE TABLE IF NOT EXISTS Images (
     image_id int AUTO_INCREMENT NOT NULL PRIMARY KEY,
@@ -23,32 +23,32 @@ CREATE TABLE IF NOT EXISTS Images (
     file_size int NOT NULL,
     file_data longblob NOT NULL,
     INDEX (filename)
-);
+)ENGINE = MYISAM;
 
 CREATE TABLE IF NOT EXISTS Interests (
 	interest_id int AUTO_INCREMENT NOT NULL PRIMARY KEY,
 	interest blob NOT NULL
-);
+)ENGINE = MYISAM;
 
 CREATE TABLE IF NOT EXISTS Classifications (
 	classification_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	classification ENUM('Freshman', 'Sophomore', 'Junior', 'Senior', 'Professor') NOT NULL
-);
+)ENGINE = MYISAM;
 
 CREATE TABLE IF NOT EXISTS InterestedIn (
 	interested_in_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	interested_in_value ENUM('Male','Female','No preference') NOT NULL
-);
+)ENGINE = MYISAM;
 
 CREATE TABLE IF NOT EXISTS Looking_For (
 	looking_for_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	looking_for_value ENUM('Date', 'Relationship', 'Friendship', 'Study Group', 'Sports') NOT NULL
-);
+)ENGINE = MYISAM;
 
 CREATE TABLE IF NOT EXISTS Majors (
 	major_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	major varchar(50) NOT NULL
-);
+)ENGINE = MYISAM;
 
 CREATE TABLE IF NOT EXISTS Users (
 	user_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS Users (
   	CONSTRAINT interestedIn_interested_in_id_fk FOREIGN KEY (interested_in_id) REFERENCES InterestedIn (interested_in_id),
 	CONSTRAINT looking_for_looking_for_id_fk FOREIGN KEY (looking_for_id) REFERENCES Looking_For (looking_for_id),
 	CONSTRAINT images_image_id_fk FOREIGN KEY (image_id) REFERENCES Images (image_id)
-);
+)ENGINE = MYISAM;
 
 CREATE TABLE IF NOT EXISTS Users_Interests(
 	user_id int NOT NULL,
@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS Users_Majors (
 	PRIMARY KEY(user_id, major_id),
 	CONSTRAINT users_user_id_fk FOREIGN KEY (user_id) REFERENCES Users (user_id),
 	CONSTRAINT majors_major_id_fk FOREIGN KEY (major_id) REFERENCES Majors (major_id)
-);
+)ENGINE = MYISAM;
 
 INSERT INTO Login (email,pw) VALUES 
 	('tgray@mail.umw.edu',SHA('tgray')),
