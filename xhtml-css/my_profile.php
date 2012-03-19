@@ -125,6 +125,9 @@ session_start()
            <br />
            Your interests: <?php echo $_SESSION['interests'] ?>
           <div class="clear"></div>
+		  <form action="edit_profile.php" method="post">
+		  <input type="submit" value="Edit Profile" />
+		  </form>
         </div>
        
  <br />

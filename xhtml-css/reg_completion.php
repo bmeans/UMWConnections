@@ -63,7 +63,6 @@
 			$last_name = $_POST['lname'];
 			$first_name = $_POST['fname'];
 			
-			echo $_SESSION['email'];
 			$reg_query= "INSERT INTO Login(email, pw) Values('$email',SHA('$pw'))";
 			$query = "INSERT INTO Users (email, last_name, first_name) Values('$email','$last_name','$first_name')";
 			$result= mysqli_query($db, $reg_query);	//sends a query to the current active database
@@ -71,7 +70,7 @@
 	?>
 		
 	
-	<!--	<meta http-equiv="REFRESH" content="0;url=my_profile.php"> -->
+	<meta http-equiv="REFRESH" content="0;url=my_profile.php"> 
 	</HEAD>
 
 		
