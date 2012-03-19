@@ -1,5 +1,5 @@
 <?php
-	session_start();
+session_start()
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -17,7 +17,7 @@
   <!--header starts-->
   <div id="header">
     <!--menu starts-->
-    <div id="menu"> <span class="logo"><a href="http://localhost/UMWconnections/UMWConnections/xhtml-css/index.html"><img src="images/logo.gif" alt="" /></a></span>
+    <div id="menu"> <span class="logo"><a href="#"><img src="images/logo.gif" alt="" /></a></span>
       <p>Fusce tristique, nisl vel gravida venenatis, risus magna eleifend pede, id bibendum mauris metus et erat.</p>
       <ul>
         <li class="first"><a href="index.html">home</a></li>
@@ -25,99 +25,95 @@
         <li><a href="register.php">create account</a></li>
         <li><a href="my_profile.php">my profile</a></li>
         <li><a href="advanced_search.php">advanced search</a></li>
-        <li><a href="support.html">support</a></li>
         <li><a href="contact_us.php">contact Us</a></li>
         <li><a href="logout.php">logout</a></li>
       </ul>
     </div>
     <!--menu ends-->
-    <!--<div id="banner_inner">
-      
+    <div id="banner_inner">
+      <div class="find_love">
+        <h2><img src="images/find_your_love.gif" alt="" /></h2>
         <!--form container starts-->
-        
-        
-     
+        <div class="form_container">
+          <form action="" method="get">
+            <fieldset>
+            <div class="search_row">
+              <div class="search_column_1">
+                <label>I am a</label>
+              </div>
+              <div class="search_column_2">
+                <select class="gender">
+                  <option>Male</option>
+                </select>
+                <label class="seeking">Seeking a</label>
+                <select class="gender">
+                  <option>Female</option>
+                </select>
+              </div>
+            </div>
+            <div class="search_row">
+              <div class="search_column_1">
+                <label>Looking for a</label>
+              </div>
+              <div class="search_column_2">
+                <select class="date">
+                  <option>Date</option>
+                </select>
+              </div>
+            </div>
+            <div class="search_row">
+              <div class="search_column_1">
+                <label>I was born</label>
+              </div>
+              <div class="search_column_2">
+                <select class="dob">
+                  <option>Month</option>
+                </select>
+                <select class="dob">
+                  <option>Date</option>
+                </select>
+                <select class="dob">
+                  <option>Year</option>
+                </select>
+              </div>
+            </div>
+            <div class="search_row">
+              <div class="search_column_1">
+                <label>By Profile ID</label>
+              </div>
+              <div class="search_column_2">
+                <input type="text" name="" value="" />
+                <label class="check">With Photo</label>
+                <input type="checkbox" name="" value="" class="checkbox"/>
+              </div>
+            </div>
+            <div class="search_row last">
+              <div class="search_column_1">&nbsp;</div>
+              <div class="search_column_2">
+                <input type="image" src="images/find_btn.gif" class="search_btn"/>
+              </div>
+            </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
       <!--form container ends-->
-    
+    </div>
   </div>
-  
   <!--header ends-->
   <!--body container starts-->
   <div id="body_container">
     <!--left container starts-->
     <div id="left_container">
-      <div style="padding:20px 15px 30px 15px;">
-      <h1><span>Search Results </span></h1>
-      <div>
-      <!--<strong> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin  sed odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, risus neque venenatis arcu, a semper massa mi eget ipsum. </strong> <br />
-        -->
-        <br />
-        <?php
-			include "db_connect.php";
-			$_SESSION['email'] = $_POST['email'];
-			$_SESSION['pw'] = $_POST['pw'];
-			$reg_query= "INSERT INTO Login(email, pw) Values(".$_SESSION['email'].",".$_SESSION['pw'].")";
-			$result= mysqli_query($db, $reg_query);	//sends a query to the current active database
-	?>
-		
-	
-		<meta http-equiv="REFRESH" content="0;url=my_profile.php"> 
-	</HEAD>
-
-		
-        <br />
-      <div class="clear"></div>
-      <div class="clear"></div>
-      </div>
-      </div>
-      </div>
-      <!--
-      <div class="servicecolumnzone">
-        <div class="servicecolumn1">
-          <div>
-            <h5 class="inner"> Service 1</h5>
-            <img src="images/ico1.png" alt="" class="abouticon" />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, </div>
-          <div class="clear"></div>
-        </div>
-        <div class="servicecolumn2">
-          <div>
-            <h5 class="inner">Service 2</h5>
-            <img src="images/ico2.png" alt="" width="65" height="65" class="abouticon" />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, </div>
-          <div class="clear"></div>
-        </div>
-        <div class="clear"></div>
-        <div class="servicecolumn1">
-          <div>
-            <h5 class="inner">Service 3 </h5>
-            <img src="images/ico3.png" alt="" width="65" height="65" class="abouticon" />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, </div>
-          <div class="clear"></div>
-        </div>
-        <div class="servicecolumn2">
-          <div>
-            <h5 class="inner">Service 4 </h5>
-            <img src="images/ico4.png" alt="" width="65" height="65" class="abouticon" />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, </div>
-          <div class="clear"></div>
-        </div>
-        <div class="clear"></div>
-        <div class="servicecolumn1">
-          <div>
-            <h5 class="inner">Service 5 </h5>
-            <img src="images/ico5.png" alt="" width="65" height="65" class="abouticon" />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, </div>
-          <div class="clear"></div>
-        </div>
-        <div class="servicecolumn2">
-          <div>
-            <h5 class="inner">Service 6 </h5>
-            <img src="images/ico6.png" alt="" width="65" height="65" class="abouticon" />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, </div>
-          <div class="clear"></div>
-        </div>
-        <div class="clear"></div>
-      </div>
-      <div style="padding-top:10px;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, risus neque venenatis arcu, a semper massa mi eget ipsum. Proin  sed odio et ante adipiscing lobortis. Lorem ipsum dolor sit amet,  consectetuer adipiscing elit. Proin sed odio et ante adipiscing  lobortis. Quisque eleifend, arcu a dictum varius, risus neque venenatis  arcu, a semper massa mi eget ipsum. Proin sed odio et ante adipiscing  lobortis.</div>
+     <div style="padding:20px 15px 30px 35px;">
+      <form>
+       First Name: <input type="text" value="<?php echo $_SESSION['first_name'] ?>" name="first_name" /><br />
+       Last Name: <input type="text" name = "last_name" /><br />
+       Gender: <input
+       
+Templates">DreamTemplate</a></small> </div>
     </div>
-      <div class="clear"></div>
     </div>
-    -->
     <!--left container ends-->
     <!--right container starts-->
     <div id="right_container">
@@ -127,26 +123,26 @@
         <div class="profile_box">
           <div class="top_curve">
             <div class="profile_content">
-              <div class="pro_photo"><a href="#"><img src="images/pic_1.png" alt="" /></a></div>
+              <div class="pro_photo"><a href="#"><img src="images/pic_1.gif" alt="" /></a></div>
               <div class="outer">
                 <div class="pro_detail_box">
                   <div class="pro_top_curve">
                     <div class="pro_detail_content">
                       <div class="row">
                         <p class="left">Name :</p>
-                        <p class="right">Nelly</p>
+                        <p class="right">Jenifer</p>
                       </div>
                       <div class="row">
                         <p class="left">Age :</p>
-                        <p class="right">20 Years</p>
+                        <p class="right">23 Years</p>
                       </div>
                       <div class="row">
                         <p class="left">Location :</p>
-                        <p class="right">Orange County</p>
+                        <p class="right">South Korea</p>
                       </div>
                       <div class="row last">
                         <p class="left">Likes :</p>
-                        <p class="right">sleeping</p>
+                        <p class="right">Duis cursus tortor elit</p>
                       </div>
                     </div>
                   </div>
@@ -165,19 +161,19 @@
                     <div class="pro_detail_content">
                       <div class="row">
                         <p class="left">Name :</p>
-                        <p class="right">Aaron</p>
+                        <p class="right">David Martin</p>
                       </div>
                       <div class="row">
                         <p class="left">Age :</p>
-                        <p class="right">21 Years</p>
+                        <p class="right">28 Years</p>
                       </div>
                       <div class="row">
                         <p class="left">Location :</p>
-                        <p class="right">Fredvegas</p>
+                        <p class="right">England</p>
                       </div>
                       <div class="row last">
                         <p class="left">Likes :</p>
-                        <p class="right">programming, costume parties</p>
+                        <p class="right">Duis cursus tortor elit</p>
                       </div>
                     </div>
                   </div>
@@ -208,7 +204,7 @@
                       </div>
                       <div class="row last">
                         <p class="left">Likes :</p>
-                        <p class="right">eating</p>
+                        <p class="right">Duis cursus tortor elit</p>
                       </div>
                     </div>
                   </div>
@@ -220,18 +216,18 @@
         <div class="profile_box last">
           <div class="top_curve">
             <div class="profile_content">
-              <div class="pro_photo"><a href="#"><img src="images/pic_4.png" alt="" /></a></div>
+              <div class="pro_photo"><a href="#"><img src="images/pic_4.gif" alt="" /></a></div>
               <div class="outer">
                 <div class="pro_detail_box">
                   <div class="pro_top_curve">
                     <div class="pro_detail_content">
                       <div class="row">
                         <p class="left">Name :</p>
-                        <p class="right">Keith</p>
+                        <p class="right">Jenifer</p>
                       </div>
                       <div class="row">
                         <p class="left">Age :</p>
-                        <p class="right">32 Years</p>
+                        <p class="right">23 Years</p>
                       </div>
                       <div class="row">
                         <p class="left">Location :</p>
@@ -239,7 +235,7 @@
                       </div>
                       <div class="row last">
                         <p class="left">Likes :</p>
-                        <p class="right">Watching anime, skyping with pretty ladies</p>
+                        <p class="right">Duis cursus tortor elit</p>
                       </div>
                     </div>
                   </div>
@@ -257,7 +253,7 @@
   <!--footer starts-->
   <div id="footer"> <span class="footer_logo"><a href="#"><img src="images/single_2_mingle.gif" alt="" /></a></span>
     <div class="footer_link">
-        <ul style="color:#FFF;">
+      <ul style="color:#FFF;">
         Copyright (c) Sitename.com. All rights reserved. Design by Stylish <a style="color:#FFF; text-decoration:underline;" href="http://www.stylishtemplate.com">Website Templates</a>.
       </ul>
     </div>
