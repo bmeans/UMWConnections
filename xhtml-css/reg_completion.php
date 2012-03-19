@@ -56,12 +56,13 @@
 			include "db_connect.php";
 			$_SESSION['email'] = $_POST['email'];
 			$_SESSION['pw'] = $_POST['pw'];
-			$reg_query= "INSERT INTO Login(email, pw) Values(".$_SESSiON['email'].",".$_SESSION['$pw'].")";
+			$reg_query= "INSERT INTO Login(email, pw) Values(".$_SESSION['email'].",".$_SESSION['pw'].")";
 			$result= mysqli_query($db, $reg_query);	//sends a query to the current active database
 	?>
 		
 	
-		<meta http-equiv="REFRESH" content="0;url=my_profile.php"></HEAD>
+		<meta http-equiv="REFRESH" content="0;url=my_profile.php"> 
+	</HEAD>
 
 		
         <br />
