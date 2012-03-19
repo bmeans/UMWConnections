@@ -69,13 +69,13 @@ CREATE TABLE IF NOT EXISTS Users (
 	CONSTRAINT images_image_id_fk FOREIGN KEY (image_id) REFERENCES Images (image_id)
 );
 
-CREATE TABLE IF NOT EXISTS Users_Interests (
+CREATE TABLE IF NOT EXISTS Users_Interests(
 	user_id int NOT NULL,
 	interest_id int NOT NULL,
 	PRIMARY KEY (user_id, interest_id),
 	CONSTRAINT users_user_id_fk FOREIGN KEY (user_id) REFERENCES Users (user_id),
 	CONSTRAINT interests_interest_id_fk FOREIGN KEY (interest_id) REFERENCES Interests (interest_id)
-);
+) ENGINE = MYISAM;
 
 CREATE TABLE IF NOT EXISTS Users_Majors (
 	user_id int NOT NULL,
