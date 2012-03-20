@@ -44,8 +44,7 @@
       <h1>Contact <span>Us</span></h1>
       <div> <strong> <br />
         Please send us your questions and comments! </strong><br />
-        <br />
-        Sorry, we are under construction!! </div>
+	</div>
       <div> <br />
         <h6 class="inner">Contact Form:</h6>
         <br />

@@ -10,16 +10,79 @@ session_start()
 @import url("css/layout.css");
 </style>
 </head>
-<?php
+
+<body>
+<!--layout starts-->
+<div id="layout">
+  <!--header starts-->
+  <div id="header">
+    <!--menu starts-->
+    <div id="menu"> <span class="logo"><a href="http://localhost/UMWconnections/UMWConnections/xhtml-css/index.html"><img src="images/logo.gif" alt="" /></a></span>
+      <p>Loneliness is a disease and we are the cure.</p>
+      <ul>
+        <li class="first"><a href="index.html">home</a></li>
+        <li><a href="about_us.html" class="browse.php">browse profiles</a></li>
+        <li><a href="register.php">create account</a></li>
+        <li><a class="my_profile.php">my profile</a></li>
+        <li><a href="advanced_search.php">advanced search</a></li>
+        <li><a href="contact_us.php">contact Us</a></li>
+        <li><a href="logout.php">logout</a></li>
+      </ul>
+    </div>
+    <!--menu ends-->
+	<!--header begins-->
+	
+  <!--header ends-->
+  <!--body container starts-->
+  <div id="body_container">
+    <!--left container starts-->
+    <div id="left_container">
+      <div style="padding:20px 15px 30px 15px;">
+      
+      <h1 style="color:#2554C7;"><span><?php //echo "Welcome ".$_SESSION['first_name']."!" ?></span></h1>
+      <div class="ourprojectrow">
+        <h6 class="inner" style="color:#2554C7;"> Your profile details: </h6>
+        <div> <img src="images/projectimg1.jpg" alt="" width="210" height="139" class="project-img" /> <br />
+         <?php
 	include "db_connect.php";
+
+	
 	if (!isset($_SESSION['email'])){
 		?> <meta http-equiv = "REFRESH" content="0;url=index.html"> <?php
+	}
+	
+	else if($_SESSION['email'] == "admin")
+	{
+		$query = "SELECT * FROM Comments";
+		$result = mysqli_query($db, $query);
+		echo "<br>";
+			while($row = mysqli_fetch_array($result)){
+			$name = $row['name'];
+			
+			echo "<br>";
+			echo "<br>";
+			echo "Name: ".$row['name']." ";
+			echo "<br>";
+			echo "Email: ".$row['email'];
+			echo "<br>";
+			echo "Comment/Question: ".$row['comments'];
+			echo "<br>";
+
+			}
+
+			if (mysqli_num_rows($result)==0){
+				echo "There are no comments or questions at this time.";
+			}
+	
 	}
 	else{
 		$email = $_SESSION['email'];
 		$query = "SELECT * FROM Users WHERE email = '$email'";
 		$result = mysqli_query($db, $query);
 		if ($row = mysqli_fetch_array($result)){
+
+			
+      
 			$_SESSION['user_id'] = $row['user_id'];
 			$_SESSION['first_name'] = $row['first_name'];
 			$_SESSION['last_name'] = $row['last_name'];
@@ -29,7 +92,7 @@ session_start()
 			$interested_in_id = $row['interested_in_id'];
 			$looking_for_id= $row['looking_for_id'];
 			$classification_id= $row['classification_id'];
-			
+										
 			$query = "SELECT interested_in_value FROM InterestedIn WHERE interested_in_id = '$interested_in_id'";
 			$result = mysqli_query($db, $query);
 			if ($row = mysqli_fetch_array($result)){
@@ -60,7 +123,7 @@ session_start()
 			$result = mysqli_query($db, $query);
 			$_SESSION['major'] = "";
 			while ($row = mysqli_fetch_array($result)){
-				$_SESSION['major'] = $_SESSION['major'].$row['major'];
+				$_SESSION['major'] = $_SESSION['major'].$row['major'];				
 			}
 			
 			$query = "SELECT i.interest from Users_Interests ui NATURAL JOIN Interests i WHERE user_id =".$_SESSION['user_id'].";";
@@ -70,60 +133,34 @@ session_start()
 				$_SESSION['interests'] = $_SESSION['interests'].$row['interest']." ";
 			}
 			
-			//echo "<p>".$_SESSION['email']."</p>";
+			echo "<br>";
+			echo "Name: ".$_SESSION['first_name']." ".$_SESSION['last_name'];
+			echo "<br>";
+			echo "Email: ".$_SESSION['email'];
+			echo "<br>";
+			echo "Gender: ".$_SESSION['gender'];
+			echo "<br>";
+			echo "Phone Number: ".$_SESSION['phone'];
+			echo "<br>";
+			echo "Major: ".$_SESSION['major'];	
+			echo "<br>";
+			echo "Description of yourself: ".$_SESSION['description'];
+			echo "<br>";
+			echo "Interests: " .$_SESSION['interests'];
+			echo "<br>";
+			echo "What you're looking for: ".$_SESSION['looking_for'];
+			echo "<br>";
+			echo "Who you're looking for: ".$_SESSION['interested_in'];
+
+			
+
 		}
 	}
 
 ?>
-<body>
-<!--layout starts-->
-<div id="layout">
-  <!--header starts-->
-  <div id="header">
-    <!--menu starts-->
-    <div id="menu"> <span class="logo"><a href="http://localhost/UMWconnections/UMWConnections/xhtml-css/index.html"><img src="images/logo.gif" alt="" /></a></span>
-      <p>Loneliness is a disease and we are the cure.</p>
-      <ul>
-        <li class="first"><a href="index.html">home</a></li>
-        <li><a href="about_us.html" class="browse.php">browse profiles</a></li>
-        <li><a href="register.php">create account</a></li>
-        <li><a class="my_profile.php">my profile</a></li>
-        <li><a href="advanced_search.php">advanced search</a></li>
-        <li><a href="contact_us.php">contact Us</a></li>
-        <li><a href="logout.php">logout</a></li>
-      </ul>
-    </div>
-    <!--menu ends-->
-	<!--header begins-->
-	
-  <!--header ends-->
-  <!--body container starts-->
-  <div id="body_container">
-    <!--left container starts-->
-    <div id="left_container">
-      <div style="padding:20px 15px 30px 15px;">
-      
-      <h1 style="color:#2554C7;"><span><?php echo "Welcome ".$_SESSION['first_name']."!" ?></span></h1>
-      <div class="ourprojectrow">
-        <h6 class="inner" style="color:#2554C7;"> Your profile details: </h6>
-        <div> <img src="images/projectimg1.jpg" alt="" width="210" height="139" class="project-img" /> <br />
-          <br />
-          <br />
-           Name: <?php echo $_SESSION['first_name'] ?> <?php echo $_SESSION['last_name']?>
-           <br />
-           Gender: <?php echo $_SESSION['gender']?>
-           <br />
-           Major: <?php echo $_SESSION['major'] ?>
-           <br />
-           Phone Number: <?php echo $_SESSION['phone']?>
-           <br />
-           Description of yourself: <?php echo $_SESSION['description'] ?>
-           <br />
-           What you're looking for: <?php echo $_SESSION['looking_for']?>
-           <br />
-           Who you're looking for: <?php echo $_SESSION['interested_in']?>
-           <br />
-           Your interests: <?php echo $_SESSION['interests'] ?>
+<!--		 <br />
+
+            -->
           <div class="clear"></div>
 		  <form action="edit_profile.php" method="post">
 		  <input type="submit" value="Edit Profile" />

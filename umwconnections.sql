@@ -86,6 +86,7 @@ CREATE TABLE IF NOT EXISTS Users_Majors (
 )ENGINE = MYISAM;
 
 INSERT INTO Login (email,pw) VALUES 
+	('admin',SHA('admin')),
 	('tgray@mail.umw.edu',SHA('tgray')),
 	('rhorn@mail.umw.edu',SHA('rhorn')),
 	('yfisher@mail.umw.edu',SHA('yfisher')), 
