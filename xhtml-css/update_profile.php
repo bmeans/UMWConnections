@@ -11,5 +11,6 @@ session_start()
  
  $email = $_SESSION['email'];
  $query = "UPDATE Users SET first_name=".$_POST['first_name']." last_name=".$_POST['last_name']." gender=."$_POST['gender']." phone=$_POST['phone'] where email='$email'"
+ $result = mysqli_query($db, $query);
  
  ?>
