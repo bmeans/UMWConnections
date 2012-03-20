@@ -27,12 +27,20 @@
     </div>
     <!--menu ends-->
     <div id="banner_inner">
+<<<<<<< HEAD
+=======
       <div class="find_love">
+>>>>>>> 1d603d546c3daa002bcdf8312ca65b508486944f
       
         <!--form container starts-->
+		
         
     </div>
   </div>
+<<<<<<< HEAD
+ 
+=======
+>>>>>>> 1d603d546c3daa002bcdf8312ca65b508486944f
   <!--header ends-->
   <!--body container starts-->
   <div id="body_container">
@@ -80,6 +88,83 @@
           <span><img src="images/ico-twitter.png" alt="Twitter Follow" width="20" height="16" hspace="3" /> <a href="#">Follow</a> on Twitter</span><br />
         </p> --!>
       </div>
+<<<<<<< HEAD
+	  <div class="servicecolumnzone">
+        <div class="servicecolumn1">
+          <div>
+		   <form method="post" action="adv_results.php">
+			<label class="seeking">Seeking a</label>
+                
+                  <input type = "radio" name = "sex" value = "Female"> Female
+				  <input type = "radio" name = "sex" value = "Male"> Male
+				  <input type = "radio" name = "sex" value = "No preference"> No Preference
+				  <select name="lookingFor2" class="studentYear">
+                  <option>Freshmen</option>
+				  <option>Sophomore</option>
+				  <option>Junior</option>
+				  <option>Senior</option>
+				  <option>Professor</option>
+				  <option>No Preference</option>
+                </select>
+				<br/>
+				<label>Looking for </label> <br/>
+				  <input type="checkbox" name="lookingfor" value="Date" /> Date <br/>
+					<input type="checkbox" name="lookingfor" value="Relationship" />Relationship <br/>
+					<input type="checkbox" name="vehicle" value="StudyGroup" /> Study Group <br/>
+					<input type="checkbox" name="vehicle" value="Sports" />Sports <br/>
+					<input type="checkbox" name="vehicle" value="Friendship" />Friendship <br/>
+					
+					<br/>
+										
+				
+                
+		   </form>
+      <!--
+      <div class="servicecolumnzone">
+        <div class="servicecolumn1">
+          <div>
+		  
+            <h5 class="inner"> Service 1</h5>
+            <img src="images/ico1.png" alt="" class="abouticon" />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, </div>
+          <div class="clear"></div>
+        </div>
+        <div class="servicecolumn2">
+          <div>
+            <h5 class="inner">Service 2</h5>
+            <img src="images/ico2.png" alt="" width="65" height="65" class="abouticon" />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, </div>
+          <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+        <div class="servicecolumn1">
+          <div>
+            <h5 class="inner">Service 3 </h5>
+            <img src="images/ico3.png" alt="" width="65" height="65" class="abouticon" />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, </div>
+          <div class="clear"></div>
+        </div>
+        <div class="servicecolumn2">
+          <div>
+            <h5 class="inner">Service 4 </h5>
+            <img src="images/ico4.png" alt="" width="65" height="65" class="abouticon" />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, </div>
+          <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+        <div class="servicecolumn1">
+          <div>
+            <h5 class="inner">Service 5 </h5>
+            <img src="images/ico5.png" alt="" width="65" height="65" class="abouticon" />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, </div>
+          <div class="clear"></div>
+        </div>
+        <div class="servicecolumn2">
+          <div>
+            <h5 class="inner">Service 6 </h5>
+            <img src="images/ico6.png" alt="" width="65" height="65" class="abouticon" />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, </div>
+          <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div style="padding-top:10px;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, risus neque venenatis arcu, a semper massa mi eget ipsum. Proin  sed odio et ante adipiscing lobortis. Lorem ipsum dolor sit amet,  consectetuer adipiscing elit. Proin sed odio et ante adipiscing  lobortis. Quisque eleifend, arcu a dictum varius, risus neque venenatis  arcu, a semper massa mi eget ipsum. Proin sed odio et ante adipiscing  lobortis.</div>
+=======
+>>>>>>> 1d603d546c3daa002bcdf8312ca65b508486944f
     </div>
       <div class="clear"></div>
     </div>
