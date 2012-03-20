@@ -80,6 +80,14 @@
 			$result = mysqli_query($db, $query);	//sends a query to the currently active database
 			echo "<br>";
 			while($row = mysqli_fetch_array($result)){
+			$userID = $row['user_id'];
+			$query1 = "SELECT m.major FROM Majors m NATURAL JOIN Users_Majors um WHERE um.user_id = '$userID';";
+			$result1 = mysqli_query($db, $query1);
+			$row1 = mysqli_fetch_array($result1);
+			
+			$query2 = "SELECT i.interest FROM Interests i NATURAL JOIN Users_Interests ui WHERE ui.user_id = '$userID'";
+			$result2 = mysqli_query($db, $query2);
+			//$row2 = mysqli_fetch_array($result2);
 			
 			echo "<br>";
 			echo "<br>";
@@ -93,13 +101,17 @@
 			echo "<br>";
 			echo "Phone number: ".$row['phone'];
 			echo "<br>";
-			//echo "Interests: ".$row['interests'];
-			//echo "<br>";
+			echo "Interests: ";
+			while ($row2 = mysqli_fetch_array($result2)){
+			echo $row2['interest'];
+			echo " ";
+			}
+			echo "<br>";
 			echo "Description: ".$row['description'];
 			echo "<br>";
 			echo "Looking for: ".$row['looking_for_value'];
 			echo "<br>";
-			//echo "Major: ".$row['major'];
+			echo "Major: ".$row1['major'];
 			}
 			if (mysqli_num_rows($result)==0){
 				echo "Your search did not return any results";
