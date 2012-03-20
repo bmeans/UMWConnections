@@ -16,4 +16,6 @@ session_start()
  
  ?>
  
+ <meta http-equiv="REFRESH" content="0;url=my_profile.php">
+ 
  </html>
