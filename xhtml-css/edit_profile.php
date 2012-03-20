@@ -106,7 +106,7 @@ session_start()
     <!--left container starts-->
     <div id="left_container">
      <div style="padding:20px 15px 30px 35px;">
-      <form name="input" action="editProfileUpdate.php" method="post">
+      <form name="input" action="update_profile.php" method="post">
        First Name: <input type="text" value="<?php echo $_SESSION['first_name'] ?>" name="first_name" /><br />
        Last Name: <input type="text" value="<?php echo $_SESSION['last_name'] ?>" name = "last_name" /><br />
        Gender: <input type="radio" name="gender" value="male" />Male    <input type="radio" name="gender" value"female" />Female<br />
