@@ -109,7 +109,7 @@ session_start()
       <form name="input" action="update_profile.php" method="post">
        First Name: <input type="text" value="<?php echo $_SESSION['first_name'] ?>" name="first_name" /><br />
        Last Name: <input type="text" value="<?php echo $_SESSION['last_name'] ?>" name = "last_name" /><br />
-       Gender: <input type="radio" name="gender" value="Male" />Male    <input type="radio" name="gender" value"Female" />Female<br />
+       Gender: <input type="radio" name="gender" value="Male" />Male    <input type="radio" name="gender" value="Female" />Female<br />
        Major: <input type="text" value="<?php echo $_SESSION['major'] ?>" name="major" /><br />
        Phone Number: <textarea rows="1" cols="10" name="phone"><?php echo $_SESSION['phone'] ?></textarea><small><I>Don't include dashes or spaces</I></small><br /><br />
        What are you looking for?<br />
