@@ -8,6 +8,8 @@
 </style>
 </head>
 <body>
+
+
 <!--layout starts-->
 <div id="layout">
   <!--header starts-->
@@ -17,7 +19,7 @@
       <p>Loneliness is a disease, we are the cure.</p>
       <ul>
         <li class="first"><a href="index.html">home</a></li>
-        <li><a href="about_us.html">about us</a></li>
+        <li><a href="about_us.html">browse profiles</a></li>
         <li><a href="register.php">create account</a></li>
         <li><a href="my_profile.php">my profile</a></li>
         <li><a href="advanced_search.php">advanced search</a></li>
@@ -47,16 +49,16 @@
       <div> <br />
         <h6 class="inner">Contact Form:</h6>
         <br />
-        <form action="form.php" method="post">
+        <form action="comment_complete.php" method="post">
           <table width="80%">
             
             <tr>
               <td align="left" valign="top" class="body" id="Contact"><strong>Full Name:</strong></td>
-              <td align="left" valign="top"><input name="Name" type="text" size="40" /></td>
+              <td align="left" valign="top"><input name="name" type="text" size="40" /></td>
             </tr>
             <tr>
               <td align="left" valign="top" class="body" id="Email"><strong> Email: </strong></td>
-              <td align="left" valign="top"><input name="Email" type="text" size="40" /></td>
+              <td align="left" valign="top"><input name="email" type="text" size="40" /></td>
             </tr>
             <tr>
               <td align="left" valign="top" class="body" id="Comments"><strong> Questions / Comments: </strong></td>

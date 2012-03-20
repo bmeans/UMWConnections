@@ -17,7 +17,7 @@
       <p>Loneliness is a disease, we are the cure.</p>
       <ul>
         <li class="first"><a href="index.html">home</a></li>
-        <li><a href="about_us.html">about us</a></li>
+        <li><a href="browse.php">browse profiles</a></li>
         <li><a href="register.php">create account</a></li>
         <li><a href="my_profile.php">my profile</a></li>
 		<li><a class="current">advanced search</a></li>
