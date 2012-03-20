@@ -26,16 +26,17 @@
       </ul>
     </div>
     <!--menu ends-->
-    <!--<div id="banner_inner">
+    <div id="banner_inner">
       
         <!--form container starts-->
+		
         
         
      
       <!--form container ends-->
     
   </div>
-  -->
+ 
   <!--header ends-->
   <!--body container starts-->
   <div id="body_container">
@@ -55,10 +56,41 @@
       </div>
       </div>
       </div>
+	  <div class="servicecolumnzone">
+        <div class="servicecolumn1">
+          <div>
+		   <form method="post" action="adv_results.php">
+			<label class="seeking">Seeking a</label>
+                
+                  <input type = "radio" name = "sex" value = "Female"> Female
+				  <input type = "radio" name = "sex" value = "Male"> Male
+				  <input type = "radio" name = "sex" value = "No preference"> No Preference
+				  <select name="lookingFor2" class="studentYear">
+                  <option>Freshmen</option>
+				  <option>Sophomore</option>
+				  <option>Junior</option>
+				  <option>Senior</option>
+				  <option>Professor</option>
+				  <option>No Preference</option>
+                </select>
+				<br/>
+				<label>Looking for </label> <br/>
+				  <input type="checkbox" name="lookingfor" value="Date" /> Date <br/>
+					<input type="checkbox" name="lookingfor" value="Relationship" />Relationship <br/>
+					<input type="checkbox" name="vehicle" value="StudyGroup" /> Study Group <br/>
+					<input type="checkbox" name="vehicle" value="Sports" />Sports <br/>
+					<input type="checkbox" name="vehicle" value="Friendship" />Friendship <br/>
+					
+					<br/>
+										
+				
+                
+		   </form>
       <!--
       <div class="servicecolumnzone">
         <div class="servicecolumn1">
           <div>
+		  
             <h5 class="inner"> Service 1</h5>
             <img src="images/ico1.png" alt="" class="abouticon" />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, </div>
           <div class="clear"></div>
