@@ -2,6 +2,7 @@
 session_start()
 ?>
 
+<html>
 <?php
  include "db_connect.php";
  
@@ -14,3 +15,5 @@ session_start()
  $result = mysqli_query($db, $query);
  
  ?>
+ 
+ </html>
