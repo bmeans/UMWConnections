@@ -96,6 +96,8 @@ INSERT INTO Users (email, last_name, first_name, gender, phone, description) VAL
 	('tgray@mail.umw.edu','Gray','Todd','Male','4537638355','Tall, dark and handsome'),
 	('rhorn@mail.umw.edu','Horn','Russell','Male','3152505279','Constantly wears glasses and a red and white striped sweater with a matching hat and blue pants.'),
 	('yfisher@mail.umw.edu','Fisher','Yen','Female','8414639889','Enjoys long walks on the beach and candlelight dinners');
+	
+INSERT INTO Comments VALUES('Sally Jo','sally@umw.edu','I LOVE THIS SITE!!!!!!! It helped me meet my soulmate!!'),('Peter','prabbit@umw.edu','How do you upload a picture?');
 
 INSERT INTO Majors (major) VALUES ('Theater'),('Computer Science'),('Biology');
 

@@ -3,4 +3,7 @@ Open git bash
 Move to your xampp/htdocs folder
 Run: "git init"
 Run: "git clone" followed by repository path
-In browser type in url: localhost/UMWConnections/xhtml-css 
+In browser type in url: localhost/UMWConnections/xhtml-css/index.html
+
+Login as email: admin password: admin
+view my_profile.php to see comments and questions people have left.

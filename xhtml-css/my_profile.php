@@ -39,16 +39,33 @@ session_start()
     <div id="left_container">
       <div style="padding:20px 15px 30px 15px;">
       
-      <h1 style="color:#2554C7;"><span><?php //echo "Welcome ".$_SESSION['first_name']."!" ?></span></h1>
+      <h1 style="color:#2554C7;"><span></span></h1>
       <div class="ourprojectrow">
-        <h6 class="inner" style="color:#2554C7;"> Your profile details: </h6>
+        
         <div> <img src="images/projectimg1.jpg" alt="" width="210" height="139" class="project-img" /> <br />
          <?php
 	include "db_connect.php";
 
 	
 	if (!isset($_SESSION['email'])){
-		?> <meta http-equiv = "REFRESH" content="0;url=index.html"> <?php
+		echo "Please login to see your profile or click create account to make one.";
+		echo "<br>";
+		?> 
+		<br>
+		<h3>Returning Members Login</h3>
+		<br>
+			<form method="post" action="login.php">
+		
+				<label for="email">Email address:</label>
+				<input type="text" id="email" name="email" /><br/>
+				<label for="pw">Password:</label>
+				<input type="password" id="pw" name="pw" /></br>
+				
+				<center><input type="submit" value="Login" name="submit" /></center>
+			</form>
+			</br>
+			<a href="register.php">Create Account</a>
+		<?php
 	}
 	
 	else if($_SESSION['email'] == "admin")
@@ -132,6 +149,9 @@ session_start()
 			while ($row = mysqli_fetch_array($result)){
 				$_SESSION['interests'] = $_SESSION['interests'].$row['interest']." ";
 			}
+			?>
+			<h6 class="inner" style="color:#2554C7;"> Your profile details: </h6>
+			<?php
 			
 			echo "<br>";
 			echo "Name: ".$_SESSION['first_name']." ".$_SESSION['last_name'];
@@ -151,20 +171,18 @@ session_start()
 			echo "What you're looking for: ".$_SESSION['looking_for'];
 			echo "<br>";
 			echo "Who you're looking for: ".$_SESSION['interested_in'];
-
+			?><form action="edit_profile.php" method="post">
+		  <input type="submit" value="Edit Profile" />
+		  </form><?php
 			
 
 		}
 	}
 
 ?>
-<!--		 <br />
 
-            -->
           <div class="clear"></div>
-		  <form action="edit_profile.php" method="post">
-		  <input type="submit" value="Edit Profile" />
-		  </form>
+		  
         </div>
        
  <br />
