@@ -35,11 +35,19 @@ session_start()
 			if ($row = mysqli_fetch_array($result)){
 				$_SESSION['interested_in'] = $row['interested_in_value'];
 			}
+			else
+			{
+				$_SESSION['interested_in'] = "N/A";
+			}
+				
 			
 			$query = "SELECT looking_for_value FROM Looking_For WHERE looking_for_id = '$looking_for_id'";
 			$result = mysqli_query($db, $query);
 			if ($row = mysqli_fetch_array($result)){
 				$_SESSION['looking_for'] = $row['looking_for_value'];
+			}
+			{
+				$_SESSION['looking_for'] = "N/A";
 			}
 			
 			$query = "SELECT classification FROM Classifications WHERE classification_id = '$classification_id'";
@@ -117,6 +125,9 @@ session_start()
            <br />
            Your interests: <?php echo $_SESSION['interests'] ?>
           <div class="clear"></div>
+		  <form action="edit_profile.php" method="post">
+		  <input type="submit" value="Edit Profile" />
+		  </form>
         </div>
        
  <br />
