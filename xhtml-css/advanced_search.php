@@ -41,7 +41,7 @@
       <div style="padding:20px 15px 30px 15px;">
       <h1>Advanced <span>Search</span></h1>
       <div> <strong> <br />
-        <!--Please send us your questions and comments! Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, risus neque venenatis arcu, a semper massa mi eget ipsum. </strong>-->
+        Sorry we are Under Construction!! </strong>
 		<br />
       </div>
       <div> <br />
