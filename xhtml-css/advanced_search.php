@@ -27,47 +27,61 @@
     </div>
     <!--menu ends-->
     <div id="banner_inner">
-<<<<<<< HEAD
-=======
       <div class="find_love">
->>>>>>> 1d603d546c3daa002bcdf8312ca65b508486944f
       
         <!--form container starts-->
-		
         
     </div>
   </div>
-<<<<<<< HEAD
- 
-=======
->>>>>>> 1d603d546c3daa002bcdf8312ca65b508486944f
   <!--header ends-->
   <!--body container starts-->
   <div id="body_container">
     <!--left container starts-->
     <div id="left_container">
       <div style="padding:20px 15px 30px 15px;">
-      <h1><span>Advanced Search</span></h1>
+      <h1>Advanced <span>Search</span></h1>
+      <div> <strong> <br />
+        <!--Please send us your questions and comments! Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, risus neque venenatis arcu, a semper massa mi eget ipsum. </strong>-->
+		<br />
+      </div>
       <div> <br />
         <h6 class="inner">Get more picky by using advanced search:</h6>
         <br />
-        <form>
-          <table width="80%">
+<!--Add STUFF HERE -->
+
+<form method="post" action="adv_results.php">
+<table width="80%">
             <tr>
               <td align="left" valign="top" class="body" id="ImA"><strong>I am a</strong></td>
               <td align="left" valign="top"><select name="gender" class = "gender"><option>Male</option><option>Female</option></select></td>
-            </tr>
-            <tr>
-              <td align="left" valign="top" class="body" id="Email"><strong> Email: </strong></td>
-              <td align="left" valign="top"><input name="Email" type="text" size="40" /></td>
-            </tr>
-            <tr>
-              <td align="left" valign="top" class="body" id="Comments"><strong> Questions / Comments: </strong></td>
-              <td align="left" valign="top"><textarea name="comments" cols="32" rows="6"></textarea></td>
-            </tr>
+            </tr><tr>
+			<td><label class="seeking">Seeking a</label></td>
+                
+                  <td><input type = "radio" name = "sex" value = "Female"> Female
+				  <input type = "radio" name = "sex" value = "Male"> Male
+				  <input type = "radio" name = "sex" value = "No preference"> No Preference
+				  </td></tr>
+				 <tr><td><label>Looking for </label></td>
+				 <td><select name="lookingFor2" class="studentYear">
+                  <option>Freshmen</option>
+				  <option>Sophomore</option>
+				  <option>Junior</option>
+				  <option>Senior</option>
+				  <option>Professor</option>
+				  <option>No Preference</option>
+                </select></td></tr>
+				<tr><td><label>Looking for </label> </td>
+				  <td><input type="checkbox" name="lookingfor" value="Date" /> Date
+					<input type="checkbox" name="lookingfor" value="Relationship" />Relationship</td></tr>
+					<tr><td></td><td>
+					<input type="checkbox" name="vehicle" value="StudyGroup" /> Study Group 
+					<input type="checkbox" name="vehicle" value="Sports" />Sports </td></tr>
+					<tr><td></td><td>
+					<input type="checkbox" name="vehicle" value="Friendship" />Friendship </td></tr>
+			
             <tr>
               <td></td>
-              <td><input type="submit" name="submit" class="button" value="Send Now" /></td>
+              <td><input type="submit" name="submit" class="button" value="Search Now" /></td>
             </tr>
           </table>
         </form>
@@ -77,7 +91,7 @@
         <img src="images/photo-contact.jpg" alt="" width="152" height="100" class="project-img" /><br />
         <br />
         <br />
-        100 Lorem Ipsum lor Sit<br />
+        100 Lorem Ipsum Dolor Sit<br />
         88-99 Sit Amet, Lorem<br />
         USA<br />
         <br />
@@ -88,83 +102,6 @@
           <span><img src="images/ico-twitter.png" alt="Twitter Follow" width="20" height="16" hspace="3" /> <a href="#">Follow</a> on Twitter</span><br />
         </p> --!>
       </div>
-<<<<<<< HEAD
-	  <div class="servicecolumnzone">
-        <div class="servicecolumn1">
-          <div>
-		   <form method="post" action="adv_results.php">
-			<label class="seeking">Seeking a</label>
-                
-                  <input type = "radio" name = "sex" value = "Female"> Female
-				  <input type = "radio" name = "sex" value = "Male"> Male
-				  <input type = "radio" name = "sex" value = "No preference"> No Preference
-				  <select name="lookingFor2" class="studentYear">
-                  <option>Freshmen</option>
-				  <option>Sophomore</option>
-				  <option>Junior</option>
-				  <option>Senior</option>
-				  <option>Professor</option>
-				  <option>No Preference</option>
-                </select>
-				<br/>
-				<label>Looking for </label> <br/>
-				  <input type="checkbox" name="lookingfor" value="Date" /> Date <br/>
-					<input type="checkbox" name="lookingfor" value="Relationship" />Relationship <br/>
-					<input type="checkbox" name="vehicle" value="StudyGroup" /> Study Group <br/>
-					<input type="checkbox" name="vehicle" value="Sports" />Sports <br/>
-					<input type="checkbox" name="vehicle" value="Friendship" />Friendship <br/>
-					
-					<br/>
-										
-				
-                
-		   </form>
-      <!--
-      <div class="servicecolumnzone">
-        <div class="servicecolumn1">
-          <div>
-		  
-            <h5 class="inner"> Service 1</h5>
-            <img src="images/ico1.png" alt="" class="abouticon" />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, </div>
-          <div class="clear"></div>
-        </div>
-        <div class="servicecolumn2">
-          <div>
-            <h5 class="inner">Service 2</h5>
-            <img src="images/ico2.png" alt="" width="65" height="65" class="abouticon" />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, </div>
-          <div class="clear"></div>
-        </div>
-        <div class="clear"></div>
-        <div class="servicecolumn1">
-          <div>
-            <h5 class="inner">Service 3 </h5>
-            <img src="images/ico3.png" alt="" width="65" height="65" class="abouticon" />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, </div>
-          <div class="clear"></div>
-        </div>
-        <div class="servicecolumn2">
-          <div>
-            <h5 class="inner">Service 4 </h5>
-            <img src="images/ico4.png" alt="" width="65" height="65" class="abouticon" />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, </div>
-          <div class="clear"></div>
-        </div>
-        <div class="clear"></div>
-        <div class="servicecolumn1">
-          <div>
-            <h5 class="inner">Service 5 </h5>
-            <img src="images/ico5.png" alt="" width="65" height="65" class="abouticon" />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, </div>
-          <div class="clear"></div>
-        </div>
-        <div class="servicecolumn2">
-          <div>
-            <h5 class="inner">Service 6 </h5>
-            <img src="images/ico6.png" alt="" width="65" height="65" class="abouticon" />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, </div>
-          <div class="clear"></div>
-        </div>
-        <div class="clear"></div>
-      </div>
-      <div style="padding-top:10px;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, risus neque venenatis arcu, a semper massa mi eget ipsum. Proin  sed odio et ante adipiscing lobortis. Lorem ipsum dolor sit amet,  consectetuer adipiscing elit. Proin sed odio et ante adipiscing  lobortis. Quisque eleifend, arcu a dictum varius, risus neque venenatis  arcu, a semper massa mi eget ipsum. Proin sed odio et ante adipiscing  lobortis.</div>
-=======
->>>>>>> 1d603d546c3daa002bcdf8312ca65b508486944f
     </div>
       <div class="clear"></div>
     </div>
