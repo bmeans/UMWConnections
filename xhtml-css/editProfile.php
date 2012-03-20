@@ -106,9 +106,28 @@ session_start()
     <!--left container starts-->
     <div id="left_container">
      <div style="padding:20px 15px 30px 35px;">
-      <form>
+      <form name="input" action="editProfileUpdate.php" method="post">
        First Name: <input type="text" value="<?php echo $_SESSION['first_name'] ?>" name="first_name" /><br />
-       Last Name: <input type="text" name = "last_name" /><br />
+       Last Name: <input type="text" value="<?php echo $_SESSION['last_name'] ?>" name = "last_name" /><br />
+       Gender: <input type="radio" name="gender" value="male" />Male    <input type="radio" name="gender" value"female" />Female<br />
+       Major: <input type="text" value="<?php echo $_SESSION['major'] ?>" name="major" /><br />
+       Phone Number: <textarea rows="1" cols="10"><?php echo $_SESSION['phone'] ?></textarea><small><I>Don't include dashes or spaces</I></small><br /><br />
+       What are you looking for?<br />
+       <input type="checkbox" name="looking_for" value="date" />Dates<br />
+       <input type="checkbox" name="looking_for" value="relationship" /> A Relationship<br />
+       <input type="checkbox" name="looking_for" value="friendship" />Friendship<br />
+       <input type="checkbox" name="looking_for" value="study_group" />Study Groups<br />
+       <input type="checkbox" name="looking_for" value="sports" />People to play sports with<br /><br />
+       Who are you looking for?<br />
+       <input type="radio" name="interested_in" value="male" />Men    <input type="radio" name="interested_in" value="female" />Women    <input type="radio" name="interested_in" value="no_preference" />No Preference<br /><br />
+       What do you have to say about yourself?<br />
+       <textarea rows="5" cols="40"><?php echo $_SESSION['description'] ?></textarea><br /><br />
+       What are your interests?<br />
+       <textarea rows="5" cols="40"><?php echo $_SESSION['interests'] ?></textarea><br />
+       <input type="submit" value="Submit" />
+       </form>
+       
+       
        
 Templates">DreamTemplate</a></small> </div>
     </div>
