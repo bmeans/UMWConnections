@@ -56,24 +56,25 @@
 			$firstName=$_POST['firstName'];
 			$lastName=$_POST['lastName'];
 			
-			$query = "SELECT * FROM Users WHERE lookingFor = '$lookingFor'";
+			$query = "SELECT u.user_id, u.first_name, u.last_name, u.gender, u.phone, u.description, i.interested_in_value, c.classification, l.looking_for_value FROM Users u NATURAL JOIN interestedin i NATURAL JOIN classifications c NATURAL JOIN looking_for l WHERE l.looking_for_value = '$lookingFor'";
+			
 			if($gender2!='No preference'){
-				$query.=" AND gender='$gender2'";
+				$query.=" AND u.gender='$gender2'";
 			}
 			if($year!='No Preference'){
-				$query.=" AND year='$year'";
+				$query.=" AND c.classification='$year'";
 			}
 			if($firstName!=''){
-				$query.=" AND first_name = '$firstName'";
+				$query.=" AND u.first_name = '$firstName'";
 			}
 			if($lastName!=''){
-				$query.=" AND last_name = '$lastName'";
+				$query.=" AND u.last_name = '$lastName'";
 			}
 			if ($lookingFor=='Date'){
-				$query.=" AND interested_in='$gender'";
+				$query.=" AND i.interested_in_value = '$gender'";
 			}
 			if ($lookingFor=='Relationship'){
-				$query.=" AND interested_in='$gender'";
+				$query.=" AND i.interested_in_value = '$gender'";
 			}
 			
 			$result = mysqli_query($db, $query);	//sends a query to the currently active database
@@ -86,19 +87,19 @@
 			echo "<br>";
 			echo "Gender: ".$row['gender'];
 			echo "<br>";
-			echo "Interested in: ".$row['interested_in'];
+			echo "Interested in: ".$row['interested_in_value'];
 			echo "<br>";
-			echo "Year: ".$row['year'];
+			echo "Year: ".$row['classification'];
 			echo "<br>";
 			echo "Phone number: ".$row['phone'];
 			echo "<br>";
-			echo "Interests: ".$row['interests'];
-			echo "<br>";
+			//echo "Interests: ".$row['interests'];
+			//echo "<br>";
 			echo "Description: ".$row['description'];
 			echo "<br>";
-			echo "Looking for: ".$row['lookingFor'];
+			echo "Looking for: ".$row['looking_for_value'];
 			echo "<br>";
-			echo "Major: ".$row['major'];
+			//echo "Major: ".$row['major'];
 			}
 			if (mysqli_num_rows($result)==0){
 				echo "Your search did not return any results";
