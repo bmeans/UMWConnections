@@ -30,6 +30,13 @@ session_start()
       </ul>
     </div>
     <!--menu ends-->
+	<div id="banner">
+      <div class="find_love">
+      
+        <!--form container starts-->
+        
+    </div>
+  </div>
 	<!--header begins-->
 	
   <!--header ends-->
