@@ -14,7 +14,7 @@
   <div id="header">
     <!--menu starts-->
     <div id="menu"> <span class="logo"><a href="#"><img src="images/logo.gif" alt="" /></a></span>
-      <p>Fusce tristique, nisl vel gravida venenatis, risus magna eleifend pede, id bibendum mauris metus et erat.</p>
+      <p>Loneliness is a disease and we are the cure.</p>
       <ul>
         <li class="first"><a href="index.html">home</a></li>
         <li><a class="current">browse profiles</a></li>
@@ -103,56 +103,79 @@
     <div id="left_container">
 	
      <div style="padding:20px 15px 30px 15px;">
-      <h1><span>Company</span> Information</h1>
-      <div><img src="images/photo-about.jpg" alt="" width="177" height="117" class="aboutus-img" />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin  sed odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, risus neque venenatis arcu, a semper massa mi eget ipsum.<br />
+	 <h1><span>Browse</span> Profiles</h1>
+	 <?php
+			include "db_connect.php";
+			
+			$query = "SELECT * FROM Users ORDER BY first_name";
+			
+			//edit this
+			$result = mysqli_query($db, $query);	//sends a query to the currently active database
+			echo "<br>";
+			while($row = mysqli_fetch_array($result)){
+			$userID = $row['user_id'];
+			$query1 = "SELECT m.major FROM Majors m NATURAL JOIN Users_Majors um WHERE um.user_id = '$userID';";
+			$result1 = mysqli_query($db, $query1);
+			$row1 = mysqli_fetch_array($result1);
+			
+			$query2 = "SELECT i.interest FROM Interests i NATURAL JOIN Users_Interests ui WHERE ui.user_id = '$userID'";
+			$result2 = mysqli_query($db, $query2);
+			//$row2 = mysqli_fetch_array($result2);
+			
+			echo "<br>";
+			echo "<br>";
+			echo "Name: ".$row['first_name']." ".$row['last_name'];
+			echo "<br>";
+			echo "Gender: ".$row['gender'];
+			echo "<br>";
+			//echo "Interested in: ".$row['interested_in_value'];
+			//echo "<br>";
+			//echo "Year: ".$row['classification'];
+		//	echo "<br>";
+			echo "Phone number: ".$row['phone'];
+			echo "<br>";
+			echo "Interests: ";
+			while ($row2 = mysqli_fetch_array($result2)){
+			echo $row2['interest'];
+			echo ", ";
+			}
+			echo "<br>";
+			echo "Description: ".$row['description'];
+			echo "<br>";
+			//echo "Looking for: ".$row['looking_for_value'];
+			echo "<br>";
+			//echo "Major: ".$row1['major'];
+			}
+			if (mysqli_num_rows($result)==0){
+				echo "Your search did not return any results";
+			}
+		?>	
+      
+      <div><!--<img src="images/photo-about.jpg" alt="" width="177" height="117" class="aboutus-img" /><br />-->
         <br />
-        Lorem  ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed odio et  ante adipiscing lobortis. Quisqueeleifend, arcu a dictum varius, risus  neque venenatis arcu, a semper massa mi eget ipsum. Proin sed odio et  ante adipiscing lobortis. Lorem ipsum dolor sit amet, consectetuer  adipiscing elit. Proin sed odio et ante adipiscing lobortis. Quisque  eleifend, arcu a dictum varius, risus neque venenatis arcu, a semper  massa mi eget ipsum. Proin sed odio et ante adipiscing lobortis. <br />
         <br />
         <br />
         <div class="clear"></div>
       </div>
       <div class="clear"></div>
-      <div>
-        <h6 class="inner">Our Values</h6>
-        <div>Quisque eleifend, arcu a dictum varius, risus neque venenatis arcu, a  semper massa mi eget ipsum. Proin sed odio et ante adipiscing lobortis.  Proin sed odio et ante adipiscing lobortis. Lorem ipsum dolor sit amet,  consectetuer adipiscing elit. Proin sed odio et ante adipiscing  lobortis.</div>
-      </div>
+
       <div class="clear"></div>
       <div class="aboutcolumnzone">
         <div class="aboutcolumn1">
-          <div>
-            <h5 class="inner">Customer Service</h5>
-            <img src="images/ico-med-1.png" alt="" class="abouticon" /> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius,
-            <div class="insidereadmore"><a href="#">Read More...</a></div>
-          </div>
+        
         </div>
         <div class="aboutcolumn2">
-          <div>
-            <h5 class="inner">Award Winning</h5>
-            <img src="images/ico-med-2.png" alt="" class="abouticon" /> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius,
-            <div class="insidereadmore"><a href="#">Read More...</a></div>
-          </div>
+          
         </div>
         <div class="clear"></div>
         <div class="aboutcolumn1">
-          <div>
-            <h5 class="inner">Global Reach</h5>
-            <img src="images/ico-med-3.png" alt="" class="abouticon" /> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius,
-            <div class="insidereadmore"><a href="#">Read More...</a></div>
-          </div>
         </div>
         <div class="aboutcolumn2">
-          <div>
-            <h5 class="inner">Availability</h5>
-            <img src="images/ico-med-4.png" alt="" class="abouticon" /> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed  odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius,
-            <div class="insidereadmore"><a href="#">Read More...</a></div>
-          </div>
+     
         </div>
         <div class="clear"></div>
       </div>
-      <div>
-        <h6 class="inner">Our Commitment</h6>
-        <div> Quisque eleifend, arcu a dictum varius, risus neque venenatis arcu, a semper massa mi eget ipsum. Proin sed odio et ante adipiscing lobortis. Proin sed odio et ante adipiscing lobortis. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed odio et ante adipiscing lobortis. </div>
-      </div>
+      
     </div>
 	  
 	  
@@ -297,7 +320,7 @@
   <div id="footer"> <span class="footer_logo"><a href="#"><img src="images/single_2_mingle.gif" alt="" /></a></span>
     <div class="footer_link">
        <ul style="color:#FFF;">
-        Copyright (c) Sitename.com. All rights reserved. Design by Stylish <a style="color:#FFF; text-decoration:underline;" href="http://www.stylishtemplate.com">Website Templates</a>.
+		Design by Stylish <a style="color:#FFF; text-decoration:underline;" href="http://www.stylishtemplate.com">Website Templates</a>.
       </ul>
     </div>
   </div>

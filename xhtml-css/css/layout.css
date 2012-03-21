@@ -106,7 +106,7 @@ body{font:9px/11px "Tahoma", Arial, Helvetica, sans-serif; background:#3d3d3d ur
 .pro_detail_content{float:left; width:180px; background:url(../images/bottom_curve_inner.gif) no-repeat 0 bottom; margin-top:8px}
 .pro_detail_content .row{float:left; width:180px; padding:0 0 5px 0; margin:0}
 .pro_detail_content .row.last{float:left; width:180px; padding:0 0 11px 0; margin:0}
-.pro_detail_content .row p.left{float:left; width:56px; padding:0; margin:0; font-weight:bold; color:#3e4035; text-align:right}
+.pro_detail_content .row p.left{float:left; width:56px; padding:0; margin:0; font-weight:bold; color:#2554C7; text-align:right}
 .pro_detail_content .row p.right{float:left; width:90px; padding:0 0 1px 10px; margin:0; color:#000}
 /***** profile container ends *****/
 /***** right container ends *****/

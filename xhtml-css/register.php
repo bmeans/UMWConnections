@@ -62,24 +62,8 @@
 			</form>
         <br />
        
-        <strong>Your Consent</strong><br />
-        By using our site, you consent to our <a href="#" target="_blank">websites privacy policy</a>.<br />
-        <br />
-        <strong>Changes to our Privacy Policy</strong><br />
-        If we decide to change our privacy policy, we will post those changes on this page. <br />
-        <br />
-        <strong>Contacting Us</strong> <br />
-        If there are any questions regarding this privacy policy you may contact us using the information below. <br />
-        <br />
-        MYCOMPANY.COM<br />
-        123 ADDRESS STREET<br />
-        MY CITY, MYSTATE 76543<br />
-        USA<br />
-            EMAIL@MYCOMPANY.COM<br /><hr noshade="noshade" size="1" color="#ccc" /><small>Privacy Policy 
-
-prepared by <a href="http://www.dreamtemplate.com" alt="Website 
-
-Templates">DreamTemplate</a></small> </div>
+        <br /><hr noshade="noshade" size="1" color="#ccc" /><small>
+		</small> </div>
     </div>
     </div>
     <!--left container ends-->
@@ -222,7 +206,7 @@ Templates">DreamTemplate</a></small> </div>
   <div id="footer"> <span class="footer_logo"><a href="#"><img src="images/single_2_mingle.gif" alt="" /></a></span>
     <div class="footer_link">
       <ul style="color:#FFF;">
-        Copyright (c) Sitename.com. All rights reserved. Design by Stylish <a style="color:#FFF; text-decoration:underline;" href="http://www.stylishtemplate.com">Website Templates</a>.
+       Design by Stylish <a style="color:#FFF; text-decoration:underline;" href="http://www.stylishtemplate.com">Website Templates</a>.
       </ul>
     </div>
   </div>
