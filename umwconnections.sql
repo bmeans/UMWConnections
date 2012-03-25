@@ -95,13 +95,17 @@ INSERT INTO Login (email,pw) VALUES
 INSERT INTO Users (email, last_name, first_name, gender, phone, description) VALUES
 	('tgray@mail.umw.edu','Gray','Todd','Male','4537638355','Tall, dark and handsome'),
 	('rhorn@mail.umw.edu','Horn','Russell','Male','3152505279','Constantly wears glasses and a red and white striped sweater with a matching hat and blue pants.'),
+	('jsmith@mail.umw.edu','Smith','John','Male','8953265471','Short, pale, and ugly'),
+	('sjohnson@mai.umw.edu','Johnson','Samantha','Female','6587981002','Very fair skin, long legs, dark black hair'),
+	('sramirez@mail.umw.edu','Ramirez','Santiago','Male','1472583698','Curly hair, medium height, nice smile'),
+	('fali@mail.umw.edu','Ali','Fatima','Female','9632587415','Green eyes, tall, slender'),
 	('yfisher@mail.umw.edu','Fisher','Yen','Female','8414639889','Enjoys long walks on the beach and candlelight dinners');
 	
 INSERT INTO Comments VALUES('Sally Jo','sally@umw.edu','I LOVE THIS SITE!!!!!!! It helped me meet my soulmate!!'),('Peter','prabbit@umw.edu','How do you upload a picture?');
 
-INSERT INTO Majors (major) VALUES ('Theater'),('Computer Science'),('Biology');
+INSERT INTO Majors (major) VALUES ('Theater'),('Computer Science'),('Biology'),('Chemistry'),('Mathematics'), ('English'), ('Spanish'),('Political Science'),('International Relations');
 
-INSERT INTO Interests (interest) VALUES ('Soccer'),('Singing'),('Football'),('Hacking'),('Video Games'),('Magic'),('Ju-jitsu');
+INSERT INTO Interests (interest) VALUES ('Basketball'),('Soccer'),('Singing'),('Football'),('Hacking'),('Video Games'),('Magic'),('Ju-jitsu');
 
 INSERT INTO InterestedIn (interested_in_value) VALUES ('Male'),('Female'),('No preference');
 
@@ -118,6 +122,18 @@ WHERE Users.last_name = 'Horn' AND (Interests.interest = 'Hacking' OR Interests.
 OR Interests.interest = 'Magic');
 
 INSERT INTO Users_Interests SELECT Users.user_id, Interests.interest_id FROM Users, Interests 
+WHERE Users.last_name = 'Smith' AND (Interests.interest = 'Ju-jitsu');
+
+INSERT INTO Users_Interests SELECT Users.user_id, Interests.interest_id FROM Users, Interests 
+WHERE Users.last_name = 'Johnson' AND (Interests.interest = 'Soccer');
+
+INSERT INTO Users_Interests SELECT Users.user_id, Interests.interest_id FROM Users, Interests 
+WHERE Users.last_name = 'Ramirez' AND (Interests.interest = 'Magic');
+
+INSERT INTO Users_Interests SELECT Users.user_id, Interests.interest_id FROM Users, Interests 
+WHERE Users.last_name = 'Ali' AND (Interests.interest = 'Basketball');
+
+INSERT INTO Users_Interests SELECT Users.user_id, Interests.interest_id FROM Users, Interests 
 WHERE Users.last_name = 'Fisher' AND (Interests.interest = 'Ju-jitsu');
 
 INSERT INTO Users_Majors SELECT Users.user_id, Majors.major_id FROM Users, Majors 
@@ -127,13 +143,25 @@ INSERT INTO Users_Majors SELECT Users.user_id, Majors.major_id FROM Users, Major
 WHERE Users.last_name = 'Horn' AND (Majors.major = 'Computer Science');
 
 INSERT INTO Users_Majors SELECT Users.user_id, Majors.major_id FROM Users, Majors 
+WHERE Users.last_name = 'Smith' AND (Majors.major = 'Spanish');
+
+INSERT INTO Users_Majors SELECT Users.user_id, Majors.major_id FROM Users, Majors 
+WHERE Users.last_name = 'Johnson' AND (Majors.major = 'International Relations');
+
+INSERT INTO Users_Majors SELECT Users.user_id, Majors.major_id FROM Users, Majors 
+WHERE Users.last_name = 'Ramirez' AND (Majors.major = 'Political Science');
+
+INSERT INTO Users_Majors SELECT Users.user_id, Majors.major_id FROM Users, Majors 
+WHERE Users.last_name = 'Ali' AND (Majors.major = 'Chemistry');
+
+INSERT INTO Users_Majors SELECT Users.user_id, Majors.major_id FROM Users, Majors 
 WHERE Users.last_name = 'Fisher' AND (Majors.major = 'Biology');
 
 UPDATE Users SET interested_in_id = (SELECT InterestedIn.interested_in_id FROM InterestedIn
-WHERE InterestedIn.interested_in_value = 'Male') WHERE (Users.last_name = 'Gray' OR Users.last_name = 'Fisher');
+WHERE InterestedIn.interested_in_value = 'Male') WHERE (Users.last_name = 'Gray' OR Users.last_name = 'Fisher' OR Users.last_name = 'Ali' OR Users.last_name = 'Johnson');
 
 UPDATE Users SET interested_in_id = (SELECT InterestedIn.interested_in_id FROM InterestedIn
-WHERE InterestedIn.interested_in_value = 'Female') WHERE Users.last_name = 'Horn';
+WHERE InterestedIn.interested_in_value = 'Female') WHERE (Users.last_name = 'Horn' OR Users.last_name = 'Smith' OR Users.last_name = 'Ramirez');
 
 UPDATE Users SET classification_id = (SELECT Classifications.classification_id FROM Classifications
 WHERE Classifications.classification = 'Freshman') WHERE Users.last_name = 'Gray';
@@ -142,10 +170,28 @@ UPDATE Users SET classification_id = (SELECT Classifications.classification_id F
 WHERE Classifications.classification = 'Sophomore') WHERE Users.last_name = 'Horn';
 
 UPDATE Users SET classification_id = (SELECT Classifications.classification_id FROM Classifications
-WHERE Classifications.classification = 'Junior') WHERE Users.last_name = 'Fisher';
+WHERE Classifications.classification = 'Junior') WHERE Users.last_name = 'Smith';
+
+UPDATE Users SET classification_id = (SELECT Classifications.classification_id FROM Classifications
+WHERE Classifications.classification = 'Senior') WHERE Users.last_name = 'Johnson';
+
+UPDATE Users SET classification_id = (SELECT Classifications.classification_id FROM Classifications
+WHERE Classifications.classification = 'Junior') WHERE Users.last_name = 'Ramirez';
+
+UPDATE Users SET classification_id = (SELECT Classifications.classification_id FROM Classifications
+WHERE Classifications.classification = 'Sophomore') WHERE Users.last_name = 'Ali';
+
+UPDATE Users SET classification_id = (SELECT Classifications.classification_id FROM Classifications
+WHERE Classifications.classification = 'Freshman') WHERE Users.last_name = 'Fisher';
 
 UPDATE Users SET looking_for_id = (SELECT Looking_For.looking_for_id FROM Looking_For
 WHERE Looking_For.looking_for_value = 'Date') WHERE (Users.last_name = 'Gray' OR Users.last_name = 'Horn');
 
 UPDATE Users SET looking_for_id =  (SELECT Looking_For.looking_for_id FROM Looking_For
-WHERE Looking_For.looking_for_value = 'Relationship') WHERE Users.last_name = 'Fisher';
+WHERE Looking_For.looking_for_value = 'Friendship') WHERE (Users.last_name = 'Smith');
+
+UPDATE Users SET looking_for_id =  (SELECT Looking_For.looking_for_id FROM Looking_For
+WHERE Looking_For.looking_for_value = 'Sports') WHERE (Users.last_name = 'Ali');
+
+UPDATE Users SET looking_for_id =  (SELECT Looking_For.looking_for_id FROM Looking_For
+WHERE Looking_For.looking_for_value = 'Relationship') WHERE (Users.last_name = 'Fisher' OR Users.last_name = 'Johnson' OR Users.last_name = 'Ramirez');
