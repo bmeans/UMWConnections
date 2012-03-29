@@ -112,18 +112,18 @@ session_start()
        Gender: <input type="radio" name="gender" value="Male" />Male    <input type="radio" name="gender" value="Female" />Female<br />
        Major: <input type="text" value="<?php echo $_SESSION['major'] ?>" name="major" /><br />
        Phone Number: <textarea rows="1" cols="10" name="phone"><?php echo $_SESSION['phone'] ?></textarea><small><I>Don't include dashes or spaces</I></small><br /><br />
-       <!--What are you looking for?<br />
-       <input type="radio" name="looking_for" value="date" />Dates<br />
-       <input type="radio" name="looking_for" value="relationship" /> A Relationship<br />
-       <input type="radio" name="looking_for" value="friendship" />Friendship<br />
-       <input type="radio" name="looking_for" value="study_group" />Study Groups<br />
-       <input type="radio" name="looking_for" value="sports" />People to play sports with<br /><br />
+       What are you looking for?<br />
+       <input type="radio" name="looking_for" value="Date" />Dates<br />
+       <input type="radio" name="looking_for" value="Relationship" /> A Relationship<br />
+       <input type="radio" name="looking_for" value="Friendship" />Friendship<br />
+       <input type="radio" name="looking_for" value="Study Group" />Study Groups<br />
+       <input type="radio" name="looking_for" value="Sports" />People to play sports with<br /><br />
        Who are you looking for?<br />
-       <input type="radio" name="interested_in" value="male" />Men    <input type="radio" name="interested_in" value="female" />Women    <input type="radio" name="interested_in" value="no_preference" />No Preference<br /><br />-->
+       <input type="radio" name="interested_in" value="Male" />Men    <input type="radio" name="interested_in" value="Female" />Women    <input type="radio" name="interested_in" value="No preference" />No Preference<br /><br />
        What do you have to say about yourself?<br />
        <textarea rows="5" cols="40" name="description"><?php echo $_SESSION['description'] ?></textarea><br /><br />
        What are your interests?<br />
-       <!--<textarea rows="5" cols="40" name="interests"><?php echo $_SESSION['interests'] ?></textarea><br />-->
+       <textarea rows="5" cols="40" name="interests"><?php echo $_SESSION['interests'] ?></textarea><br />
        <input type="submit" value="Submit" />
        </form>
        
