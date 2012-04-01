@@ -99,13 +99,22 @@ INSERT INTO Users (email, last_name, first_name, gender, phone, description) VAL
 	('sjohnson@mai.umw.edu','Johnson','Samantha','Female','6587981002','Very fair skin, long legs, dark black hair'),
 	('sramirez@mail.umw.edu','Ramirez','Santiago','Male','1472583698','Curly hair, medium height, nice smile'),
 	('fali@mail.umw.edu','Ali','Fatima','Female','9632587415','Green eyes, tall, slender'),
-	('yfisher@mail.umw.edu','Fisher','Yen','Female','8414639889','Enjoys long walks on the beach and candlelight dinners');
+	('yfisher@mail.umw.edu','Fisher','Yen','Female','8414639889','Enjoys long walks on the beach and candlelight dinners'),
+	('jjacobs@mail.umw.edu','Jacobs','John','Male','2356789410','I love wearing aeropostale and skinny jeans'),
+	('btyler@mail.umw.edu','Tyler','Ben','Male','0712345895','58 years old but still going strong'),
+	('yyurameshi@mail.umw.edu','Yurameshi','Yusuke','Male','7775559998','I am a spirit detective and protect the world from demons'),
+	('sgoku@mail.umw.edu','Goku','Son','Male','5821743906','Spiky hair! Sometimes black, sometimes blonde, sometimes red...'),
+	('nuzamaki@mail.umw.edu','Uzamaki','Naruto','Male','7531598462','I am gonna be the Hokage!'),
+	('zefron@mail.umw.edu','Efron','Zac','Male','7845123695','I like making chick-flicks and dating Vanessa Hudgens...or was it Miley Cyrus?'),
+	('jalba@mail.umw.edu','Alba','Jessica','Female','7598463451','This is not the famous Jessica Alba....'),
+	('hgranger@mail.umw.edu','Granger','Hermoine','Female','7530159846','I like magical walks under the night sky...literally');
+	
 	
 INSERT INTO Comments VALUES('Sally Jo','sally@umw.edu','I LOVE THIS SITE!!!!!!! It helped me meet my soulmate!!'),('Peter','prabbit@umw.edu','How do you upload a picture?');
 
-INSERT INTO Majors (major) VALUES ('Theater'),('Computer Science'),('Biology'),('Chemistry'),('Mathematics'), ('English'), ('Spanish'),('Political Science'),('International Relations');
+INSERT INTO Majors (major) VALUES ('Theater'),('Computer Science'),('Biology'),('Chemistry'),('Mathematics'), ('English'), ('Spanish'),('Political Science'),('International Relations'),('Magic');
 
-INSERT INTO Interests (interest) VALUES ('Basketball'),('Soccer'),('Singing'),('Football'),('Hacking'),('Video Games'),('Magic'),('Ju-jitsu');
+INSERT INTO Interests (interest) VALUES ('Marial Arts'),('Acting'),('Surfing'),('Fighting'),('Basketball'),('Soccer'),('Singing'),('Football'),('Hacking'),('Video Games'),('Magic'),('Ju-jitsu');
 
 INSERT INTO InterestedIn (interested_in_value) VALUES ('Male'),('Female'),('No preference');
 
@@ -135,6 +144,31 @@ WHERE Users.last_name = 'Ali' AND (Interests.interest = 'Basketball');
 
 INSERT INTO Users_Interests SELECT Users.user_id, Interests.interest_id FROM Users, Interests 
 WHERE Users.last_name = 'Fisher' AND (Interests.interest = 'Ju-jitsu');
+--
+INSERT INTO Users_Interests SELECT Users.user_id, Interests.interest_id FROM Users, Interests 
+WHERE Users.last_name = 'Jacobs' AND (Interests.interest = 'Basketball');
+
+INSERT INTO Users_Interests SELECT Users.user_id, Interests.interest_id FROM Users, Interests 
+WHERE Users.last_name = 'Tyler' AND (Interests.interest = 'Surfing');
+
+INSERT INTO Users_Interests SELECT Users.user_id, Interests.interest_id FROM Users, Interests 
+WHERE Users.last_name = 'Urameshi' AND (Interests.interest = 'Fighting');
+
+INSERT INTO Users_Interests SELECT Users.user_id, Interests.interest_id FROM Users, Interests 
+WHERE Users.last_name = 'Goku' AND (Interests.interest = 'Martial Arts');
+
+INSERT INTO Users_Interests SELECT Users.user_id, Interests.interest_id FROM Users, Interests 
+WHERE Users.last_name = 'Uzamaki' AND (Interests.interest = 'Fighting' OR Interests.interest = 'Martial Arts');
+
+INSERT INTO Users_Interests SELECT Users.user_id, Interests.interest_id FROM Users, Interests 
+WHERE Users.last_name = 'Efron' AND (Interests.interest = 'Acting');
+
+INSERT INTO Users_Interests SELECT Users.user_id, Interests.interest_id FROM Users, Interests 
+WHERE Users.last_name = 'Alba' AND (Interests.interest = 'Acting' OR Interests.interest = 'Surfing');
+
+INSERT INTO Users_Interests SELECT Users.user_id, Interests.interest_id FROM Users, Interests 
+WHERE Users.last_name = 'Granger' AND (Interests.interest = 'Magic');
+
 
 INSERT INTO Users_Majors SELECT Users.user_id, Majors.major_id FROM Users, Majors 
 WHERE Users.last_name = 'Gray' AND (Majors.major = 'Theater');
@@ -157,11 +191,59 @@ WHERE Users.last_name = 'Ali' AND (Majors.major = 'Chemistry');
 INSERT INTO Users_Majors SELECT Users.user_id, Majors.major_id FROM Users, Majors 
 WHERE Users.last_name = 'Fisher' AND (Majors.major = 'Biology');
 
-UPDATE Users SET interested_in_id = (SELECT InterestedIn.interested_in_id FROM InterestedIn
-WHERE InterestedIn.interested_in_value = 'Male') WHERE (Users.last_name = 'Gray' OR Users.last_name = 'Fisher' OR Users.last_name = 'Ali' OR Users.last_name = 'Johnson');
+INSERT INTO Users_Majors SELECT Users.user_id, Majors.major_id FROM Users, Majors 
+WHERE Users.last_name = 'Jacobs' AND (Majors.major = 'Political Science');
+
+INSERT INTO Users_Majors SELECT Users.user_id, Majors.major_id FROM Users, Majors 
+WHERE Users.last_name = 'Tyler' AND (Majors.major = 'Computer Science');
+
+INSERT INTO Users_Majors SELECT Users.user_id, Majors.major_id FROM Users, Majors 
+WHERE Users.last_name = 'Urameshi' AND (Majors.major = 'English');
+
+INSERT INTO Users_Majors SELECT Users.user_id, Majors.major_id FROM Users, Majors 
+WHERE Users.last_name = 'Goku' AND (Majors.major = 'Internatonal Relations');
+
+INSERT INTO Users_Majors SELECT Users.user_id, Majors.major_id FROM Users, Majors 
+WHERE Users.last_name = 'Uzamaki' AND (Majors.major = 'Chemistry');
+
+INSERT INTO Users_Majors SELECT Users.user_id, Majors.major_id FROM Users, Majors 
+WHERE Users.last_name = 'Efron' AND (Majors.major = 'Theater');
+
+INSERT INTO Users_Majors SELECT Users.user_id, Majors.major_id FROM Users, Majors 
+WHERE Users.last_name = 'Alba' AND (Majors.major = 'Theater');
+
+INSERT INTO Users_Majors SELECT Users.user_id, Majors.major_id FROM Users, Majors 
+WHERE Users.last_name = 'Granger' AND (Majors.major = 'Magic');
 
 UPDATE Users SET interested_in_id = (SELECT InterestedIn.interested_in_id FROM InterestedIn
-WHERE InterestedIn.interested_in_value = 'Female') WHERE (Users.last_name = 'Horn' OR Users.last_name = 'Smith' OR Users.last_name = 'Ramirez');
+WHERE InterestedIn.interested_in_value = 'Male') WHERE (Users.last_name = 'Gray' OR Users.last_name = 'Fisher' OR Users.last_name = 'Ali' OR Users.last_name = 'Johnson' OR Users.last_name = 'Alba' OR Users.last_name = 'Granger' OR Users.last_name = 'Efron');
+
+UPDATE Users SET interested_in_id = (SELECT InterestedIn.interested_in_id FROM InterestedIn
+WHERE InterestedIn.interested_in_value = 'Female') WHERE (Users.last_name = 'Horn' OR Users.last_name = 'Smith' OR Users.last_name = 'Ramirez' OR Users.last_name = 'Jacobs' OR Users.last_name = 'Tyler' OR Users.last_name = 'Urameshi' OR Users.last_name = 'Goku' OR Users.last_name = 'Uzamaki');
+
+UPDATE Users SET classification_id = (SELECT Classifications.classification_id FROM Classifications
+WHERE Classifications.classification = 'Freshman') WHERE Users.last_name = 'Jacobs';
+
+UPDATE Users SET classification_id = (SELECT Classifications.classification_id FROM Classifications
+WHERE Classifications.classification = 'Sophomore') WHERE Users.last_name = 'Tyler';
+
+UPDATE Users SET classification_id = (SELECT Classifications.classification_id FROM Classifications
+WHERE Classifications.classification = 'Junior') WHERE Users.last_name = 'Urameshi';
+
+UPDATE Users SET classification_id = (SELECT Classifications.classification_id FROM Classifications
+WHERE Classifications.classification = 'Senior') WHERE Users.last_name = 'Goku';
+
+UPDATE Users SET classification_id = (SELECT Classifications.classification_id FROM Classifications
+WHERE Classifications.classification = 'Freshman') WHERE Users.last_name = 'Uzamaki';
+
+UPDATE Users SET classification_id = (SELECT Classifications.classification_id FROM Classifications
+WHERE Classifications.classification = 'Freshman') WHERE Users.last_name = 'Efron';
+
+UPDATE Users SET classification_id = (SELECT Classifications.classification_id FROM Classifications
+WHERE Classifications.classification = 'Junior') WHERE Users.last_name = 'Alba';
+
+UPDATE Users SET classification_id = (SELECT Classifications.classification_id FROM Classifications
+WHERE Classifications.classification = 'Senior') WHERE Users.last_name = 'Granger';
 
 UPDATE Users SET classification_id = (SELECT Classifications.classification_id FROM Classifications
 WHERE Classifications.classification = 'Freshman') WHERE Users.last_name = 'Gray';
@@ -185,13 +267,13 @@ UPDATE Users SET classification_id = (SELECT Classifications.classification_id F
 WHERE Classifications.classification = 'Freshman') WHERE Users.last_name = 'Fisher';
 
 UPDATE Users SET looking_for_id = (SELECT Looking_For.looking_for_id FROM Looking_For
-WHERE Looking_For.looking_for_value = 'Date') WHERE (Users.last_name = 'Gray' OR Users.last_name = 'Horn');
+WHERE Looking_For.looking_for_value = 'Date') WHERE (Users.last_name = 'Gray' OR Users.last_name = 'Horn' OR Users.last_name = 'Alba' OR Users.last_name = 'Efron' OR Users.last_name = 'Jacobs');
 
 UPDATE Users SET looking_for_id =  (SELECT Looking_For.looking_for_id FROM Looking_For
-WHERE Looking_For.looking_for_value = 'Friendship') WHERE (Users.last_name = 'Smith');
+WHERE Looking_For.looking_for_value = 'Friendship') WHERE (Users.last_name = 'Smith' OR Users.last_name = 'Goku' OR Users.last_name = 'Urameshi');
 
 UPDATE Users SET looking_for_id =  (SELECT Looking_For.looking_for_id FROM Looking_For
-WHERE Looking_For.looking_for_value = 'Sports') WHERE (Users.last_name = 'Ali');
+WHERE Looking_For.looking_for_value = 'Sports') WHERE (Users.last_name = 'Ali' OR Users.last_name = 'Uzamaki');
 
 UPDATE Users SET looking_for_id =  (SELECT Looking_For.looking_for_id FROM Looking_For
-WHERE Looking_For.looking_for_value = 'Relationship') WHERE (Users.last_name = 'Fisher' OR Users.last_name = 'Johnson' OR Users.last_name = 'Ramirez');
+WHERE Looking_For.looking_for_value = 'Relationship') WHERE (Users.last_name = 'Fisher' OR Users.last_name = 'Johnson' OR Users.last_name = 'Ramirez' OR Users.last_name = 'Granger' OR Users.last_name = 'Tyler');
