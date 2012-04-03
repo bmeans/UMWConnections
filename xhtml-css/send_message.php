@@ -58,7 +58,7 @@ session_start()
 			if (!isset($_SESSION['email'])){
 		echo "Please login to send a message or click create account to make one.";
 		echo "<br>";
-		?> <a href="index.html">Login</a>" <?php
+		?> <a href="my_profile.php">Login</a>" <?php
 	}
 	
 	else	{

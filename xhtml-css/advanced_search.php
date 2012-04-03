@@ -86,7 +86,6 @@ session_start()
 					<option>Study Group</option>
 					<option>Sports</option>
 					</select></td></tr>
-			  <td></td></table>
 					<tr><td><b>Major: </b></td><td><select name="major" id ="major" class="major">
 					<?php
 							include "db_connect.php";
