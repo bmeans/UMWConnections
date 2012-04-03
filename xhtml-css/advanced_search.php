@@ -58,7 +58,7 @@
                 
                   <td><input type = "radio" name = "gender2" id = "gender2" value = "Female"> Female
 				  <input type = "radio" name = "gender2" id = "gender2" value = "Male"> Male
-				  <input type = "radio" name = "gender2" id = "gender2" value = "No preference"> No Preference
+				  <input type = "radio" name = "gender2" id = "gender2" value = "No preference"> No preference
 				  </td></tr>
 				 <tr><td><label>Looking for </label></td>
 				 <td><select name="year" id = "year" class="studentYear">
@@ -71,56 +71,15 @@
                 </select></td></tr>
 				<tr><td><label>Looking for </label> </td>
 				
-				  <td><select name="lookingfor" name ="lookingfor" id = "lookingfor" />
+				  <td><select name="lookingFor" id = "lookingFor" />
 					<option>Date</option>
 					<option>Relationship</option>
 					<option>Friendship</option>
 					<option>Study Group</option>
 					<option>Sports</option>
 					</select></td></tr>
-				
-					<!--Relationship</td></tr>
-					<tr><td></td><td>
-					<input type="checkbox" name="lookingfor" value="StudyGroup" /> Study Group 
-					<input type="checkbox" name="lookingfor" value="Sports" />Sports </td></tr>
-					<tr><td></td><td>
-					<input type="checkbox" name="lookingfor" value="Friendship" />Friendship </td></tr>
-<<<<<<< HEAD
-					-->
-					<!--<tr><td>Major: </td><td><select name="major" class = "studentYear">
-					<option>Theater</option>
-					<option>Computer Science</option>
-					<option>Biology</option>
-					<option>Chemistry</option>
-					<option>Mathematics</option>
-					<option>English</option>
-					<option>Spanish</option>
-					<option>Political Science</option>
-					<option>International Relations</option>
-					<option>Magic</option>
-					<option>No preference<option>
-					</select></td></tr>
-					<tr><td>
-					</table>-->
-					
-					<!--<table><td><b>Interests: </b></td></tr>
-					<tr><td><input type="checkbox" name="interests" value="MartialArts" /> Martial Arts</td>
-					<td><input type="checkbox" name="interests" value="Acting" /> Acting</td></tr>
-					<tr><td><input type="checkbox" name="interests" value="Surfing" />Surfing</td>
-					<td><input type="checkbox" name="interests" value="Fighting" /> Fighting</td></tr>
-					<tr><td><input type="checkbox" name="interests" value="Basketball" />Basketball</td>
-					<td><input type="checkbox" name="interests" value="Soccer" /> Soccer</td></tr>
-					<tr><td><input type="checkbox" name="interests" value="Singing" />Singing</td>
-					<td><input type="checkbox" name="interests" value="Football" /> Football</td></tr>
-					<tr><td><input type="checkbox" name="interests" value="Hacking" />Hacking</td>
-					<td><input type="checkbox" name="interests" value="Video Games" /> Video Games</td></tr>
-					<tr><td><input type="checkbox" name="interests" value="Magic" />Magic</td>
-					<td><input type="checkbox" name="interests" value="Ju-jitsu" /> Ju-jitsu</td></tr>
-					<tr><td>Other: </td><td><input type="text" name="interests" value="" /></td></tr>-->
 			  <td></td></table>
-=======
-					</table>
-					<table><tr><td></td><td><b>Major: </b><select name="major" class="major">
+					<tr><td><b>Major: </b></td><td><select name="major" id ="major" class="major">
 					<?php
 							include "db_connect.php";
 							$query = ("SELECT major FROM majors");
@@ -129,11 +88,12 @@
 							?> <option> <?php echo $row['major']; ?> </option> <?php
 							}
 					?>
+					<option>No preference</option>
 					</select></td></tr>
 					</table>
 					<table><tr><td><b>Pick up to 3 Interests: </b><td></td></tr>
 					<tr><td></td><td>
-					<select name="interests1" class="interest1">
+					<select name="interest1" id = "interest1" class="interest1">
 					<?php
 							include "db_connect.php";
 							$query = ("SELECT interest FROM interests");
@@ -142,9 +102,10 @@
 							?> <option> <?php echo $row['interest']; ?> </option> <?php
 							}
 					?>
+					<option></option>
 					</select></td></tr>
 					
-					<tr><td></td><td><b> </b><select name="interest2" class="interest2">
+					<tr><td></td><td><b> </b><select name="interest2" id = "interest2" class="interest2">
 					<?php
 							include "db_connect.php";
 							$query = ("SELECT interest FROM interests");
@@ -153,9 +114,10 @@
 							?> <option> <?php echo $row['interest']; ?> </option> <?php
 							}
 					?>
+					<option></option>
 					</select></td></tr>
 					
-					<tr><td></td><td><select name="interest3" class="interest3">
+					<tr><td></td><td><select name="interest3" id = "interest3" class="interest3">
 					<?php
 							include "db_connect.php";
 							$query = ("SELECT interest FROM interests");
@@ -164,17 +126,16 @@
 							?> <option> <?php echo $row['interest']; ?> </option> <?php
 							}
 					?>
+					<option></option>
 					</select></td></tr>
 					</table>
-					
-					
->>>>>>> c23a5d107194ac978aee856be50a862c88dbd3f1
+
 			  <table>
 			  <br>
 			  <tr><td><h2>OR search by name</h2></td><td></td></tr>
 			  <tr></td><td><label><b>First Name</b></label></td><td>
-                <input type="text" name="firstName" value="" /></td>
-                <tr><td><label><b>Last Name</b></label></td><td><input type="text" name="lastName" value="" /></td></tr>
+                <input type="text" name="firstName" id = "firstName" value="" /></td>
+                <tr><td><label><b>Last Name</b></label></td><td><input type="text" name="lastName" id = "lastName" value="" /></td></tr>
               <tr><td><input type="submit" name="submit" class="button" value="Search Now" /></td>
             </tr>
           </table>

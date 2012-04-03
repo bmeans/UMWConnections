@@ -274,7 +274,7 @@ UPDATE Users SET classification_id = (SELECT Classifications.classification_id F
 WHERE Classifications.classification = 'Freshman') WHERE Users.last_name = 'Fisher';
 
 UPDATE Users SET looking_for_id = (SELECT Looking_For.looking_for_id FROM Looking_For
-WHERE Looking_For.looking_for_value = 'Date') WHERE (Users.last_name = 'Gray' OR Users.last_name = 'Horn' OR Users.last_name = 'Alba' OR Users.last_name = 'Efron' OR Users.last_name = 'Jacobs');
+WHERE Looking_For.looking_for_value = 'Date') WHERE (Users.last_name = 'Gray' OR Users.last_Name = 'Ramirez' OR Users.last_name = 'Horn' OR Users.last_name = 'Alba' OR Users.last_name = 'Efron' OR Users.last_name = 'Jacobs');
 
 UPDATE Users SET looking_for_id =  (SELECT Looking_For.looking_for_id FROM Looking_For
 WHERE Looking_For.looking_for_value = 'Friendship') WHERE (Users.last_name = 'Smith' OR Users.last_name = 'Goku' OR Users.last_name = 'Yurameshi');
@@ -283,4 +283,4 @@ UPDATE Users SET looking_for_id =  (SELECT Looking_For.looking_for_id FROM Looki
 WHERE Looking_For.looking_for_value = 'Sports') WHERE (Users.last_name = 'Ali' OR Users.last_name = 'Uzamaki');
 
 UPDATE Users SET looking_for_id =  (SELECT Looking_For.looking_for_id FROM Looking_For
-WHERE Looking_For.looking_for_value = 'Relationship') WHERE (Users.last_name = 'Fisher' OR Users.last_name = 'Johnson' OR Users.last_name = 'Ramirez' OR Users.last_name = 'Granger' OR Users.last_name = 'Tyler');
+WHERE Looking_For.looking_for_value = 'Relationship') WHERE (Users.last_name = 'Fisher' OR Users.last_name = 'Johnson' OR Users.last_name = 'Granger' OR Users.last_name = 'Tyler');
