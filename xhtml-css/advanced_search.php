@@ -77,8 +77,17 @@
 					<input type="checkbox" name="lookingfor" value="Sports" />Sports </td></tr>
 					<tr><td></td><td>
 					<input type="checkbox" name="lookingfor" value="Friendship" />Friendship </td></tr>
-					<tr><td>Major: </td><td><input type="text" name="major" /></td></tr>
-					<tr><td>
+					</table>
+					<table><tr><td><b>Major: </b><select name="major" class="major">
+					<?php
+							include "db_connect.php";
+							$query = ("SELECT major FROM majors");
+							$result = mysqli_query($db, $query);	//sends a query to the currently active database
+							while($row = mysqli_fetch_array($result)){
+							?> <option> <?php echo $row['major']; ?> </option> <?php
+							}
+					?>
+					</select></td></tr>
 					</table>
 					<table><td><b>Interests: </b></td></tr>
 					<tr><td><input type="checkbox" name="interests" value="MartialArts" /> Martial Arts</td>
