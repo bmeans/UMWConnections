@@ -57,9 +57,9 @@
             </tr><tr>
 			<td><label class="seeking">Seeking a</label></td>
                 
-                  <td><input type = "radio" name = "gender2" value = "Female"> Female
-				  <input type = "radio" name = "gender2" value = "Male"> Male
-				  <input type = "radio" name = "gender2" value = "No preference"> No Preference
+                  <td><input type = "radio" name = "sex" value = "Female"> Female
+				  <input type = "radio" name = "sex" value = "Male"> Male
+				  <input type = "radio" name = "sex" value = "No preference"> No Preference
 				  </td></tr>
 				 <tr><td><label>Looking for </label></td>
 				 <td><select name="lookingFor2" class="studentYear">
@@ -74,10 +74,10 @@
 				  <td><input type="checkbox" name="lookingfor" value="Date" /> Date
 					<input type="checkbox" name="lookingfor" value="Relationship" />Relationship</td></tr>
 					<tr><td></td><td>
-					<input type="checkbox" name="lookingfor" value="StudyGroup" /> Study Group 
-					<input type="checkbox" name="lookingfor" value="Sports" />Sports </td></tr>
+					<input type="checkbox" name="vehicle" value="StudyGroup" /> Study Group 
+					<input type="checkbox" name="vehicle" value="Sports" />Sports </td></tr>
 					<tr><td></td><td>
-					<input type="checkbox" name="lookingfor" value="Friendship" />Friendship </td></tr>
+					<input type="checkbox" name="vehicle" value="Friendship" />Friendship </td></tr>
 					<tr><td>Major: </td><td><input type="text" name="major" /></td></tr>
 					<tr><td>
 					</table>
@@ -94,18 +94,11 @@
 			echo $row['interest']; ?><td><input type="checkbox" name="interests" /></td> </tr><?php
 			
 			}
-
 			?>
 			
             <tr>
-              <td></td></table>
-			  <table>
-			  <br>
-			  <tr><td><h2>OR search by name</h2></td><td></td></tr>
-			  <tr></td><td><label><b>First Name</b></label></td><td>
-                <input type="text" name="firstName" value="" /></td>
-                <tr><td><label><b>Last Name</b></label></td><td><input type="text" name="lastName" value="" /></td></tr>
-              <tr><td><input type="submit" name="submit" class="button" value="Search Now" /></td>
+              <td></td>
+              <td><input type="submit" name="submit" class="button" value="Search Now" /></td>
             </tr>
           </table>
         </form>

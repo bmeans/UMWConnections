@@ -40,8 +40,7 @@
     <div id="left_container">
       <div style="padding:20px 15px 30px 15px;">
       <h1>Advanced <span>Search</span></h1>
-      <div> <strong> <br />
-        Sorry we are Under Construction!! </strong>
+      <div> <strong> <br /> </strong>
 		<br />
       </div>
       <div> <br />
@@ -49,63 +48,83 @@
         <br />
 <!--Add STUFF HERE -->
 
-<form method="post" action="adv_results.php">
-<table width="80%">
-            <tr>
-              <td align="left" valign="top" class="body" id="ImA"><strong>I am a</strong></td>
-              <td align="left" valign="top"><select name="gender" class = "gender"><option>Male</option><option>Female</option></select></td>
-            </tr><tr>
-			<td><label class="seeking">Seeking a</label></td>
-                
-                  <td><input type = "radio" name = "gender2" value = "Female"> Female
-				  <input type = "radio" name = "gender2" value = "Male"> Male
-				  <input type = "radio" name = "gender2" value = "No preference"> No Preference
-				  </td></tr>
-				 <tr><td><label>Looking for </label></td>
-				 <td><select name="lookingFor2" class="studentYear">
-                  <option>Freshmen</option>
-				  <option>Sophomore</option>
-				  <option>Junior</option>
-				  <option>Senior</option>
-				  <option>Professor</option>
-				  <option>No Preference</option>
-                </select></td></tr>
-				<tr><td><label>Looking for </label> </td>
-				  <td><input type="checkbox" name="lookingfor" value="Date" /> Date
-					<input type="checkbox" name="lookingfor" value="Relationship" />Relationship</td></tr>
-					<tr><td></td><td>
-					<input type="checkbox" name="lookingfor" value="StudyGroup" /> Study Group 
-					<input type="checkbox" name="lookingfor" value="Sports" />Sports </td></tr>
-					<tr><td></td><td>
-					<input type="checkbox" name="lookingfor" value="Friendship" />Friendship </td></tr>
-					<tr><td>Major: </td><td><input type="text" name="major" /></td></tr>
-					<tr><td>
-					</table>
-					<table><td><b>Interests: </b></td></tr>
-					<?php
-					include "db_connect.php";
-					//list interests and add checkbox for each interest
-					$query = "Select interest FROM interests";
-					$result = mysqli_query($db, $query);	//sends a query to the currently active database
+			<?php
+			include "db_connect.php";
+			$gender=$_POST['gender'];
+			$gender2=$_POST['gender2'];
+			$lookingFor=$_POST['lookingfor'];
+			$year=$_POST['lookingFor2'];
+			$major=$_POST['major'];
+			$firstName=$_POST['firstName'];
+			$lastName=$_POST['lastName'];
+				
+			$query = "SELECT u.user_id, u.first_name, u.last_name, u.gender, u.phone, u.description, i.interested_in_value, c.classification, l.looking_for_value FROM Users u NATURAL JOIN interestedin i NATURAL JOIN classifications c NATURAL JOIN looking_for l WHERE l.looking_for_value = '$lookingFor'";
+			
+			if($gender2!='No preference'){
+				$query.=" AND u.gender='$gender2'";
+			}
+			if($year!='No Preference'){
+				$query.=" AND c.classification='$year'";
+			}
+			if($firstName!=''){
+				$query.=" AND u.first_name = '$firstName'";
+			}
+			if($lastName!=''){
+				$query.=" AND u.last_name = '$lastName'";
+			}
+			if ($lookingFor=='Date'){
+				$query.=" AND i.interested_in_value = '$gender'";
+			}
+			if ($lookingFor=='Relationship'){
+				$query.=" AND i.interested_in_value = '$gender'";
+			}
+			
+			$result = mysqli_query($db, $query);	//sends a query to the currently active database
 			echo "<br>";
 			while($row = mysqli_fetch_array($result)){
-			?><tr><td>
-			<?php
-			echo $row['interest']; ?><td><input type="checkbox" name="interests" /></td> </tr><?php
+			$userID = $row['user_id'];
+			$query1 = "SELECT m.major FROM Majors m NATURAL JOIN Users_Majors um WHERE um.user_id = '$userID';";
+			$result1 = mysqli_query($db, $query1);
+			$row1 = mysqli_fetch_array($result1);
 			
+			$query2 = "SELECT i.interest FROM Interests i NATURAL JOIN Users_Interests ui WHERE ui.user_id = '$userID'";
+			$result2 = mysqli_query($db, $query2);
+			//$row2 = mysqli_fetch_array($result2);
+			
+			echo "<br>";
+			echo "<br>";
+			echo "Name: ".$row['first_name']." ".$row['last_name'];
+			echo "<br>";
+			echo "Gender: ".$row['gender'];
+			echo "<br>";
+			echo "Interested in: ".$row['interested_in_value'];
+			echo "<br>";
+			echo "Year: ".$row['classification'];
+			echo "<br>";
+			echo "Phone number: ".$row['phone'];
+			echo "<br>";
+			echo "Interests: ";
+			while ($row2 = mysqli_fetch_array($result2)){
+			echo $row2['interest'];
+			echo " ";
 			}
-
+			echo "<br>";
+			echo "Description: ".$row['description'];
+			echo "<br>";
+			echo "Looking for: ".$row['looking_for_value'];
+			echo "<br>";
+			echo "Major: ".$row1['major'];
+			}
+			if (mysqli_num_rows($result)==0){
+				echo "Your search did not return any results";
+			}
+					
+					
 			?>
 			
             <tr>
-              <td></td></table>
-			  <table>
-			  <br>
-			  <tr><td><h2>OR search by name</h2></td><td></td></tr>
-			  <tr></td><td><label><b>First Name</b></label></td><td>
-                <input type="text" name="firstName" value="" /></td>
-                <tr><td><label><b>Last Name</b></label></td><td><input type="text" name="lastName" value="" /></td></tr>
-              <tr><td><input type="submit" name="submit" class="button" value="Search Now" /></td>
+              <td></td>
+              <td><input type="submit" name="submit" class="button" value="Search Now" /></td>
             </tr>
           </table>
         </form>
