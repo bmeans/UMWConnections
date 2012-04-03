@@ -23,7 +23,7 @@ session_start()
  $query = "UPDATE Users SET first_name='$first_name', last_name='$last_name', gender='$gender', phone='$phone', description='$description' where email='$email'";
  $interestIDSearch = mysqli_query($db, "SELECT interest_id from Interests where interest='$interests'");
  $interestRow = mysqli_fetch_array($interestIDSearch);
- if ($interestRow['interest_id'] == NULL){
+ if ($interestRow == NULL){
      mysqli_query($db, "INSERT INTO Users_Interests (interest) VALUES ('$interests')");
      $interestIDSearch = mysqli_query($db, "SELECT interest_id from Interests where interest='$interests'");
      $interestRow = mysqli_fetch_array($interestIDSearch);
