@@ -24,6 +24,7 @@ session_start()
         <li><a href="register.php">create account</a></li>
         <li><a href="my_profile.php">my profile</a></li>
 		<li><a class="advanced_search.php">advanced search</a></li>
+		<li><a href="messages.php">messages</a></li>
         <li><a href="contact_us.php">contact us</a></li>
         <li><a href="logout.php">logout</a></li>
       </ul>

@@ -25,6 +25,7 @@ session_start()
         <li><a href="my_profile.php">my profile</a></li>
         <li><a href="advanced_search.php">advanced search</a></li>
         <li><a href="contact_us.php">contact Us</a></li>
+		<li><a href="messages.php">messages</a></li>
 		<li><?php if (!isset($_SESSION['email'])){
         ?><a href="my_profile.php">login</a> <?php 
 		} 
@@ -125,7 +126,7 @@ session_start()
     <div id="left_container">
       <h1>Welcome to <span>UMW Connections</span></h1>
      <div class="detail_containt">
-        <h3>Get Connected Now!</h3>
+        <h2>Get Connected Now!</h2>
         <p>Are you tired of dating the guy who lives 4 hours away?  Tired of sitting in your room every Thursday night while all the upperclassmen are barhopping?  Are you a new freshmen looking to meet some students in your major?  Or are you just looking for some new friends? We're here to help you get connected!  Our site features search results with students who have the same interests and expectations as you! Free to all UMW students! </p>
         <p class="last">UMW Connections allows you to post your profile online so you may find what you're looking for.  Find other students and staff who are looking for dates, relationships, study groups, hang outs, or those looking to play a sports game!
 		<br>

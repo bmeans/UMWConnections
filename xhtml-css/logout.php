@@ -3,5 +3,5 @@
 	session_destroy();
 	?>
 <html>
-<meta http-equiv = "REFRESH" content="0;url=index.html">
+<meta http-equiv = "REFRESH" content="0;url=index.php">
 </html>

@@ -24,6 +24,7 @@ session_start()
         <li><a href="register.php">create account</a></li>
         <li><a href="my_profile.php">my profile</a></li>
         <li><a href="advanced_search.php">advanced search</a></li>
+		<li><a href="messages.php">messages</a></li>
         <li><a href="contact_us.php">contact Us</a></li>
         <li><?php if (!isset($_SESSION['email'])){
         ?><a href="my_profile.php">login</a> <?php 
@@ -55,6 +56,7 @@ session_start()
       <!--<strong> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin  sed odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum  varius, risus neque venenatis arcu, a semper massa mi eget ipsum. </strong> <br />
         -->
         <br />
+		
         <?php
 			include "db_connect.php";
 			$gender=$_POST['gender'];
@@ -99,27 +101,28 @@ session_start()
 			
 			echo "<br>";
 			echo "<br>";
-			echo "Name: ".$row['first_name']." ".$row['last_name'];
+			echo "<font size='3' color=\"blue\">Name: </font>".$row['first_name']." ".$row['last_name'];
 			echo "<br>";
-			echo "Gender: ".$row['gender'];
+			echo "<font size='3' color=\"blue\">Gender: </font>".$row['gender'];
 			echo "<br>";
-			echo "Interested in: ".$row['interested_in_value'];
+			echo "<font size='3' color=\"blue\">Interested in: </font>".$row['interested_in_value'];
 			echo "<br>";
-			echo "Year: ".$row['classification'];
+			echo "<font size='3' color=\"blue\">Year: </font>".$row['classification'];
 			echo "<br>";
-			echo "Phone number: ".$row['phone'];
+			echo "<font  size='3' color=\"blue\">Phone number: </font>".$row['phone'];
 			echo "<br>";
-			echo "Interests: ";
+			echo "<font  size='3' color=\"blue\">Interests: </font>";
 			while ($row2 = mysqli_fetch_array($result2)){
 			echo $row2['interest'];
 			echo " ";
 			}
 			echo "<br>";
-			echo "Description: ".$row['description'];
+			echo "<font size='3' color=\"blue\">Description: </font>".$row['description'];
 			echo "<br>";
-			echo "Looking for: ".$row['looking_for_value'];
+			echo "<font size='3' color=\"blue\">Looking for: </font>".$row['looking_for_value'];
 			echo "<br>";
-			echo "Major: ".$row1['major'];
+			echo "<font size='3' color=\"blue\">Major: </font>".$row1['major'];
+			echo "<br>";
 			}
 			if (mysqli_num_rows($result)==0){
 				echo "Your search did not return any results";

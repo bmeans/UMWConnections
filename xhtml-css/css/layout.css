@@ -16,11 +16,11 @@ body{font:9px/11px "Tahoma", Arial, Helvetica, sans-serif; background:#3d3d3d ur
 #menu .logo{float:left; width:298px; padding:0 0 0 21px}
 #menu .logo img{float:left; width:auto;}
 #menu p{float:left; width:595px; text-align:right; font-size:11px; line-height:13px; color:#dedcbc; padding:20px 20px 0 0}
-#menu ul{float:right; width:481px; list-style:none; margin:0; padding:20px 0 0 0}
+#menu ul{float:right; width:600px; list-style:none; margin:0; padding:20px 0 0 0}
 #menu li{float:left; width:auto; font-size:11px; line-height:13px; color:#e1e1e1; padding:0 8px; background:url(../images/menu_border.gif) no-repeat 0 2px}
 #menu li a{color:#e1e1e1; text-decoration:none;}
-#menu li a:hover{color:#d7d4a8; text-decoration:none;}
-#menu li a.current{color:#d7d4a8; text-decoration:none}
+#menu li a:hover{color:#0033FF; text-decoration:none;}
+#menu li a.current{color:#0033FF; text-decoration:none}
 #menu li.first{background:none; padding:0 8px 0 0}
 /***** menu ends *****/
 
@@ -60,9 +60,9 @@ body{font:9px/11px "Tahoma", Arial, Helvetica, sans-serif; background:#3d3d3d ur
 #left_container h1 span{font:24px/26px "Times New Roman", Times, serif; color:#494831;}
 #left_container .detail_containt{float:left; width:616px; background:url(../images/border_horizontal.gif) no-repeat 13px bottom; margin-bottom:25px; position:relative}
 #left_container .detail_containt img{float:left; width:auto; position:absolute; left:500px; top:170px}
-#left_container .detail_containt h3{float:left; width:554px; font-size:10px; line-height:12px; font-weight:bold; color:#740808; padding:20px 0 17px 30px}
-#left_container .detail_containt p{float:left; width:554px; color:#33352c; padding:0 0 13px 30px}
-#left_container .detail_containt p.last{float:left; width:554px; color:#33352c; padding:0 0 29px 30px; background:none}
+#left_container .detail_containt h2{float:left; width:554px; font-size:14px; line-height:12px; font-weight:bold; color:#0033FF; padding:20px 0 17px 30px}
+#left_container .detail_containt p{float:left; width:554px; font-size:12px; color:#000000; padding:0 0 13px 30px}
+#left_container .detail_containt p.last{float:left; width:554px; color:#000000; padding:0 0 29px 30px; background:none}
 #left_container .bottom_container{float:left; width:588px; background:url(../images/botom_container_border.gif) no-repeat 0 0; margin-left:11px; display:inline}
 
 /***** login starts *****/
