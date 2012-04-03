@@ -58,7 +58,7 @@
 			$firstName=$_POST['firstName'];
 			$lastName=$_POST['lastName'];
 				
-			$query = "SELECT u.user_id, u.first_name, u.last_name, u.gender, u.phone, u.description, i.interested_in_value, c.classification, l.looking_for_value FROM Users u NATURAL JOIN interestedin i NATURAL JOIN classifications c NATURAL JOIN looking_for l WHERE l.looking_for_value = '$lookingFor'";
+			$query = "SELECT u.user_id, u.first_name, u.last_name, u.gender, u.phone, u.description, i.interested_in_value, c.classification, l.looking_for_value FROM Users u NATURAL JOIN interestedin i NATURAL JOIN classifications c NATURAL JOIN looking_for l NATURAL JOIN majors m WHERE m.major = '$major' AND l.looking_for_value = '$lookingFor'";
 			
 			if($gender2!='No preference'){
 				$query.=" AND u.gender='$gender2'";
