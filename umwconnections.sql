@@ -305,6 +305,21 @@ INSERT INTO Messages (from_user_id, to_user_id, sent_date, sent_time, message) V
 	(SELECT user_id FROM Users WHERE email = 'tgray@mail.umw.edu'),
 	(SELECT CURRENT_DATE),
 	(SELECT CURRENT_TIME),
-	('This is a test message')
+	('Want to play some football this Saturday?')
 );
 
+INSERT INTO Messages (from_user_id, to_user_id, sent_date, sent_time, message) VALUES (
+	(SELECT user_id FROM Users WHERE email = 'hgranger@mail.umw.edu'), 
+	(SELECT user_id FROM Users WHERE email = 'tgray@mail.umw.edu'),
+	(SELECT CURRENT_DATE),
+	(SELECT CURRENT_TIME),
+	('Wanna get together and practice some spells?')
+);
+
+INSERT INTO Messages (from_user_id, to_user_id, sent_date, sent_time, message) VALUES (
+	(SELECT user_id FROM Users WHERE email = 'zefron@mail.umw.edu'), 
+	(SELECT user_id FROM Users WHERE email = 'tgray@mail.umw.edu'),
+	(SELECT CURRENT_DATE),
+	(SELECT CURRENT_TIME),
+	('Todd, We\'re all in this together.')
+);

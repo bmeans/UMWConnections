@@ -81,6 +81,26 @@ session_start()
 			<a href="register.php">Create Account</a>
 		<?php
 	}
+	else if($_SESSION['email'] == "admin")
+{
+$query = "SELECT * FROM Comments";
+$result = mysqli_query($db, $query);
+echo "<br>";
+while($row = mysqli_fetch_array($result)){
+$name = $row['name'];
+
+echo "<br>";
+echo "<br>";
+echo "Name: ".$row['name']." ";
+echo "<br>";
+echo "Email: ".$row['email'];
+echo "<br>";
+echo "Comment/Question: ".$row['comments'];
+echo "<br>";
+
+}
+}
+	
 		
 	else{
 		$user_id = $_SESSION['user_id'];

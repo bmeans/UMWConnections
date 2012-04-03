@@ -69,10 +69,10 @@
 			
 			$reg_query= "INSERT INTO Login(email, pw) Values('$email',SHA('$pw'))";
 			$query = "INSERT INTO Users (email, last_name, first_name) Values('$email','$last_name','$first_name')";
-			$queryy = "INSERT INTO Images(file_data) Values ('$image')";
+			//$queryy = "INSERT INTO Images(file_data) Values ('$image')";
 			$result= mysqli_query($db, $reg_query);	//sends a query to the current active database
 			$result2 = mysqli_query($db, $query);
-			$result3 = mysqli_query($db, $queryy);
+			//$result3 = mysqli_query($db, $queryy);
 	?>
 		
 	

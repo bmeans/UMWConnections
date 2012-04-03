@@ -37,69 +37,9 @@ session_start()
     <!--menu ends-->
     <div id="banner_inner">
       <div class="find_love">
-        <h2><img src="images/find_your_love.gif" alt="" /></h2>
         <!--form container starts-->
         <div class="form_container">
-          <form action="" method="get">
-            <fieldset>
-            <div class="search_row">
-              <div class="search_column_1">
-                <label>I am a</label>
-              </div>
-              <div class="search_column_2">
-                <select class="gender">
-                  <option>Male</option>
-                </select>
-                <label class="seeking">Seeking a</label>
-                <select class="gender">
-                  <option>Female</option>
-                </select>
-              </div>
-            </div>
-            <div class="search_row">
-              <div class="search_column_1">
-                <label>Looking for a</label>
-              </div>
-              <div class="search_column_2">
-                <select class="date">
-                  <option>Date</option>
-                </select>
-              </div>
-            </div>
-            <div class="search_row">
-              <div class="search_column_1">
-                <label>I was born</label>
-              </div>
-              <div class="search_column_2">
-                <select class="dob">
-                  <option>Month</option>
-                </select>
-                <select class="dob">
-                  <option>Date</option>
-                </select>
-                <select class="dob">
-                  <option>Year</option>
-                </select>
-              </div>
-            </div>
-            <div class="search_row">
-              <div class="search_column_1">
-                <label>By Profile ID</label>
-              </div>
-              <div class="search_column_2">
-                <input type="text" name="" value="" />
-                <label class="check">With Photo</label>
-                <input type="checkbox" name="" value="" class="checkbox"/>
-              </div>
-            </div>
-            <div class="search_row last">
-              <div class="search_column_1">&nbsp;</div>
-              <div class="search_column_2">
-                <input type="image" src="images/find_btn.gif" class="search_btn"/>
-              </div>
-            </div>
-            </fieldset>
-          </form>
+          
         </div>
       </div>
       <!--form container ends-->
@@ -131,11 +71,9 @@ session_start()
        <textarea rows="5" cols="40" name="interests"><?php echo $_SESSION['interests'] ?></textarea><br />
        <input type="submit" value="Submit" />
        </form>
-       
-       
-       
-Templates">DreamTemplate</a></small> </div>
-    </div>
+              
+</small> </div>
+    
     </div>
     <!--left container ends-->
     <!--right container starts-->
@@ -277,7 +215,7 @@ Templates">DreamTemplate</a></small> </div>
   <div id="footer"> <span class="footer_logo"><a href="#"><img src="images/single_2_mingle.gif" alt="" /></a></span>
     <div class="footer_link">
       <ul style="color:#FFF;">
-        Copyright (c) Sitename.com. All rights reserved. Design by Stylish <a style="color:#FFF; text-decoration:underline;" href="http://www.stylishtemplate.com">Website Templates</a>.
+         Design by Stylish <a style="color:#FFF; text-decoration:underline;" href="http://www.stylishtemplate.com">Website Templates</a>.
       </ul>
     </div>
   </div>

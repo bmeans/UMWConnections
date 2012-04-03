@@ -102,7 +102,7 @@ session_start()
 			
 			echo "<br>";
 			echo "<br>";
-			echo "<font size='3' color=\"blue\">Name: </font>".$row['first_name']." ".$row['last_name'];
+			echo "<font size='3' color=\"blue\">Name: </font><font size='2'>".$row['first_name']." ".$row['last_name'];
 			echo "<br>";
 			echo "<font size='3' color=\"blue\">Gender: </font>".$row['gender'];
 			echo "<br>";
@@ -123,7 +123,7 @@ session_start()
 			echo "<font size='3' color=\"blue\">Looking for: </font>".$row['looking_for_value'];
 			echo "<br>";
 			echo "<font size='3' color=\"blue\">Major: </font>".$row1['major'];
-			echo "<br>";
+			echo "<br></font>";
 			}
 			if (mysqli_num_rows($result)==0){
 				echo "Your search did not return any results";
