@@ -173,6 +173,8 @@ if ($row = mysqli_fetch_array($result)){
 			echo "What you're looking for: ".$_SESSION['looking_for'];
 			echo "<br>";
 			echo "Who you're looking for: ".$_SESSION['interested_in'];
+			echo "<br>";
+			echo "Your class standing: ".$_SESSION['classification'];
 			?><form action="edit_profile.php" method="post">
 		  <input type="submit" value="Edit Profile" />
 		  </form><?php
