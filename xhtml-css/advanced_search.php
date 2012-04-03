@@ -103,6 +103,7 @@ session_start()
 					<table><tr><td><b>Pick up to 3 Interests: </b><td></td></tr>
 					<tr><td></td><td>
 					<select name="interest1" id = "interest1" class="interest1">
+					<option></option>
 					<?php
 							include "db_connect.php";
 							$query = ("SELECT interest FROM interests");
@@ -111,10 +112,10 @@ session_start()
 							?> <option> <?php echo $row['interest']; ?> </option> <?php
 							}
 					?>
-					<option></option>
 					</select></td></tr>
 					
 					<tr><td></td><td><b> </b><select name="interest2" id = "interest2" class="interest2">
+					<option></option>
 					<?php
 							include "db_connect.php";
 							$query = ("SELECT interest FROM interests");
@@ -123,10 +124,10 @@ session_start()
 							?> <option> <?php echo $row['interest']; ?> </option> <?php
 							}
 					?>
-					<option></option>
 					</select></td></tr>
 					
 					<tr><td></td><td><select name="interest3" id = "interest3" class="interest3">
+					<option></option>
 					<?php
 							include "db_connect.php";
 							$query = ("SELECT interest FROM interests");
