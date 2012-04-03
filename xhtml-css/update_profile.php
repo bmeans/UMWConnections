@@ -21,9 +21,15 @@ session_start()
  $interestedIn = $_POST['interested_in'];
  $interests = $_POST['interests'];
  $query = "UPDATE Users SET first_name='$first_name', last_name='$last_name', gender='$gender', phone='$phone', description='$description' where email='$email'";
- #$interestsQuery = "UPDATE Interests, Users, Users_Interests SET interest='$interests' where "
+ $interestIDSearch = mysqli_query($db, "SELECT interest_id from Interests where interest='$interests'";
+ if ($interestIDSearch == NULL){
+     mysqli_query($db, "INSERT INTO Users_Interests (interest) VALUES ('$interests')");
+     $interestIDSearch = mysqli_query($db, "SELECT interest_id from Interests where interest='$interests'"; 
+ }
+ $interestsQuery = "UPDATE Users, Users_Interests SET Users_Interests='$interestIDSearch' where Users.email='$email' and Users.user_id=Users_Interests.user_id";
  #$majorQuery
  mysqli_query($db, $query);
+ mysqli_query($db, $interestsQuery);
  
  ?>
  
