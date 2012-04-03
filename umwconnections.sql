@@ -295,9 +295,9 @@ UPDATE Users SET looking_for_id =  (SELECT Looking_For.looking_for_id FROM Looki
 WHERE Looking_For.looking_for_value = 'Sports') WHERE (Users.last_name = 'Ali' OR Users.last_name = 'Uzamaki');
 
 UPDATE Users SET looking_for_id =  (SELECT Looking_For.looking_for_id FROM Looking_For
-<<<<<<< HEAD
 WHERE Looking_For.looking_for_value = 'Relationship') WHERE (Users.last_name = 'Fisher' OR Users.last_name = 'Johnson' OR Users.last_name = 'Granger' OR Users.last_name = 'Tyler');
-=======
+
+UPDATE Users SET looking_for_id =  (SELECT Looking_For.looking_for_id FROM Looking_For
 WHERE Looking_For.looking_for_value = 'Relationship') WHERE (Users.last_name = 'Fisher' OR Users.last_name = 'Johnson' OR Users.last_name = 'Ramirez' OR Users.last_name = 'Granger' OR Users.last_name = 'Tyler');
 
 INSERT INTO Messages (from_user_id, to_user_id, sent_date, sent_time, message) VALUES (
@@ -307,4 +307,4 @@ INSERT INTO Messages (from_user_id, to_user_id, sent_date, sent_time, message) V
 	(SELECT CURRENT_TIME),
 	('This is a test message')
 );
->>>>>>> 838942a9cdc78f07983f1a91dfa2f7702218442b
+
