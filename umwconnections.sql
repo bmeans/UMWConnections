@@ -86,10 +86,14 @@ CREATE TABLE IF NOT EXISTS Users_Majors (
 )ENGINE = MYISAM;
 
 CREATE TABLE IF NOT EXISTS Messages (
-	user_id int NOT NULL,
+	from_user_id int NOT NULL,
+	to_user_id int NOT NULL,
+	sent_date DATE NOT NULL,
+	sent_time TIME NOT NULL,
 	message blob NOT NULL,
-	PRIMARY KEY(user_id, message),
-	CONSTRAINT messages_user_id_fk FOREIGN KEY (user_id) REFERENCES Users (user_id)
+	PRIMARY KEY(to_user_id, from_user_id, sent_date, sent_time),
+	CONSTRAINT messages_from_user_id_fk FOREIGN KEY (from_user_id) REFERENCES Users (user_id),
+	CONSTRAINT messages_to_user_id_fk FOREIGN KEY (to_user_id) REFERENCES Users (user_id)
 ) ENGINE = MYISAM;
 	
 
@@ -296,3 +300,11 @@ WHERE Looking_For.looking_for_value = 'Sports') WHERE (Users.last_name = 'Ali' O
 
 UPDATE Users SET looking_for_id =  (SELECT Looking_For.looking_for_id FROM Looking_For
 WHERE Looking_For.looking_for_value = 'Relationship') WHERE (Users.last_name = 'Fisher' OR Users.last_name = 'Johnson' OR Users.last_name = 'Ramirez' OR Users.last_name = 'Granger' OR Users.last_name = 'Tyler');
+
+INSERT INTO Messages (from_user_id, to_user_id, sent_date, sent_time, message) VALUES (
+	(SELECT user_id FROM Users WHERE email = 'rhorn@mail.umw.edu'), 
+	(SELECT user_id FROM Users WHERE email = 'tgray@mail.umw.edu'),
+	(SELECT CURRENT_DATE),
+	(SELECT CURRENT_TIME),
+	('This is a test message')
+);
