@@ -39,12 +39,12 @@
     <!--left container starts-->
     <div id="left_container">
       <div style="padding:20px 15px 30px 15px;">
-      <h1>Advanced <span>Search</span></h1>
+      <h1>Search <span>Results</span></h1>
       <div> <strong> <br /> </strong>
 		<br />
       </div>
       <div> <br />
-        <h6 class="inner">Get more picky by using advanced search:</h6>
+        <h6 class="inner"></h6>
         <br />
 <!--Add STUFF HERE -->
 
@@ -122,11 +122,9 @@
 					
 			?>
 			
-            <tr>
-              <td></td>
-              <td><input type="submit" name="submit" class="button" value="Search Now" /></td>
-            </tr>
-          </table>
+           
+            <form method="post" action="advanced_search.php">
+			<input type="submit" name="submit" class="button" value="Search Again" />
         </form>
       </div>
       <div> <br />

@@ -40,8 +40,7 @@
     <div id="left_container">
       <div style="padding:20px 15px 30px 15px;">
       <h1>Advanced <span>Search</span></h1>
-      <div> <strong> <br />
-        Sorry we are Under Construction!! </strong>
+      <div> 
 		<br />
       </div>
       <div> <br />
@@ -82,23 +81,20 @@
 					<tr><td>
 					</table>
 					<table><td><b>Interests: </b></td></tr>
-					<?php
-					include "db_connect.php";
-					//list interests and add checkbox for each interest
-					$query = "Select interest FROM interests";
-					$result = mysqli_query($db, $query);	//sends a query to the currently active database
-			echo "<br>";
-			while($row = mysqli_fetch_array($result)){
-			?><tr><td>
-			<?php
-			echo $row['interest']; ?><td><input type="checkbox" name="interests" /></td> </tr><?php
-			
-			}
-
-			?>
-			
-            <tr>
-              <td></td></table>
+					<tr><td><input type="checkbox" name="interests" value="MartialArts" /> Martial Arts</td>
+					<td><input type="checkbox" name="interests" value="Acting" /> Acting</td></tr>
+					<tr><td><input type="checkbox" name="interests" value="Surfing" />Surfing</td>
+					<td><input type="checkbox" name="interests" value="Fighting" /> Fighting</td></tr>
+					<tr><td><input type="checkbox" name="interests" value="Basketball" />Basketball</td>
+					<td><input type="checkbox" name="interests" value="Soccer" /> Soccer</td></tr>
+					<tr><td><input type="checkbox" name="interests" value="Singing" />Singing</td>
+					<td><input type="checkbox" name="interests" value="Football" /> Football</td></tr>
+					<tr><td><input type="checkbox" name="interests" value="Hacking" />Hacking</td>
+					<td><input type="checkbox" name="interests" value="Video Games" /> Video Games</td></tr>
+					<tr><td><input type="checkbox" name="interests" value="Magic" />Magic</td>
+					<td><input type="checkbox" name="interests" value="Ju-jitsu" /> Ju-jitsu</td></tr>
+					<tr><td>Other: </td><td><input type="text" name="interests" value="" /></td></tr>
+			  <td></td></table>
 			  <table>
 			  <br>
 			  <tr><td><h2>OR search by name</h2></td><td></td></tr>

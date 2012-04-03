@@ -109,7 +109,6 @@
 			
 			$query = "SELECT * FROM Users ORDER BY first_name";
 			
-			//edit this
 			$result = mysqli_query($db, $query);	//sends a query to the currently active database
 			echo "<br>";
 			while($row = mysqli_fetch_array($result)){
