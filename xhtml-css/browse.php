@@ -119,9 +119,18 @@
 			
 			$query2 = "SELECT i.interest FROM Interests i NATURAL JOIN Users_Interests ui WHERE ui.user_id = '$userID'";
 			$result2 = mysqli_query($db, $query2);
-			$interested_in_value= $row['interested_in_value'];
+			$interested_in_id= $row['interested_in_id'];
 			$classification_id = $row['classification_id'];
-			$looking_for_value = $row['looking_for_value'];
+			$looking_for_id = $row['looking_for_id'];
+			$query3 = "SELECT i.interested_in_value FROM InterestedIn i WHERE i.interested_in_id = '$interested_in_id'";
+			$result3 = mysqli_query($db, $query3);
+			$row3 = mysqli_fetch_array($result3);
+			$query4 = "SELECT c.classification FROM Classifications c WHERE c.classification_id = '$classification_id'";
+			$result4 = mysqli_query($db, $query4);
+			$row4 = mysqli_fetch_array($result4);
+			$query5 = "SELECT lf.looking_for_value FROM Looking_For lf WHERE lf.looking_for_id = '$looking_for_id'";
+			$result5 = mysqli_query($db, $query5);
+			$row5 = mysqli_fetch_array($result5);
 			//$row2 = mysqli_fetch_array($result2);
 			
 			echo "<br>";
@@ -130,10 +139,10 @@
 			echo "<br>";
 			echo "Gender: ".$row['gender'];
 			echo "<br>";
-			//echo "Interested in: ".$row['interested_in_value'];
-			//echo "<br>";
-			//echo "Year: ".$row['classification'];
-		//	echo "<br>";
+			echo "Interested in: ".$row3['interested_in_value'];
+			echo "<br>";
+			echo "Year: ".$row4['classification'];
+			echo "<br>";
 			echo "Phone number: ".$row['phone'];
 			echo "<br>";
 			echo "Interests: ";
@@ -144,8 +153,8 @@
 			echo "<br>";
 			echo "Description: ".$row['description'];
 			echo "<br>";
-			//echo "Looking for: ".$row['looking_for_value'];
-			//echo "<br>";
+			echo "Looking for: ".$row5['looking_for_value'];
+			echo "<br>";
 			echo "Major: ".$row1['major'];
 			}
 			if (mysqli_num_rows($result)==0){
