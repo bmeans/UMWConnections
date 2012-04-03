@@ -85,6 +85,14 @@ CREATE TABLE IF NOT EXISTS Users_Majors (
 	CONSTRAINT majors_major_id_fk FOREIGN KEY (major_id) REFERENCES Majors (major_id)
 )ENGINE = MYISAM;
 
+CREATE TABLE IF NOT EXISTS Messages (
+	user_id int NOT NULL,
+	message blob NOT NULL,
+	PRIMARY KEY(user_id, message),
+	CONSTRAINT messages_user_id_fk FOREIGN KEY (user_id) REFERENCES Users (user_id)
+) ENGINE = MYISAM;
+	
+
 INSERT INTO Login (email,pw) VALUES 
 	('admin',SHA('admin')),
 	('tgray@mail.umw.edu',SHA('tgray')),
