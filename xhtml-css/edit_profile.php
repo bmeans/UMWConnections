@@ -54,23 +54,23 @@ session_start()
       <form name="input" action="update_profile.php" method="post">
        First Name: <input type="text" value="<?php echo $_SESSION['first_name'] ?>" name="first_name" /><br />
        Last Name: <input type="text" value="<?php echo $_SESSION['last_name'] ?>" name = "last_name" /><br />
-       Gender: <input type="radio" name="gender" value="Male" />Male    <input type="radio" name="gender" value="Female" />Female<br />
+       Gender: <input type="radio" name="gender" value="Male" <?php if($_SESSION['gender'] == "Male") { echo "checked"; } ?>  />Male    <input type="radio" name="gender" value="Female" <?php if($_SESSION['gender'] == "Female") { echo "checked"; } ?>/>Female<br />
        Major: <input type="text" value="<?php echo $_SESSION['major'] ?>" name="major" /><br />
        Year: 
-       	<input type="radio" name="classification" value="Freshman" />Freshman  
-       	<input type="radio" name="classification" value="Sophomore" />Sophomore  
-       	<input type="radio" name="classification" value="Junior" />Junior  
-       	<input type="radio" name="classification" value="Senior" />Senior  
-       	<input type="radio" name="classification" value="Professor" />Professor<br />
+       	<input type="radio" name="classification" value="Freshman" <?php if($_SESSION['classification'] == "Freshman") { echo "checked"; } ?> />Freshman  
+       	<input type="radio" name="classification" value="Sophomore" <?php if($_SESSION['classification'] == "Sophomore") { echo "checked"; } ?>/>Sophomore  
+       	<input type="radio" name="classification" value="Junior" <?php if($_SESSION['classification'] == "Junior") { echo "checked"; } ?>/>Junior  
+       	<input type="radio" name="classification" value="Senior" <?php if($_SESSION['classification'] == "Senior") { echo "checked"; } ?>/>Senior  
+       	<input type="radio" name="classification" value="Professor" <?php if($_SESSION['classification'] == "Professor") { echo "checked"; } ?>/>Professor<br />
        Phone Number: <input type="text" name="phone" value="<?php echo $_SESSION['phone'] ?>" maxlength="10"><small><I>Don't include dashes or spaces</I></small><br /><br />
        What are you looking for?<br />
-       <input type="radio" name="looking_for" value="Date" />Dates<br />
-       <input type="radio" name="looking_for" value="Relationship" /> A Relationship<br />
+       <input type="radio" name="looking_for" value="Date" <?php if($_SESSION['looking_for'] == "Date") { echo "checked"; } ?> />Dates<br />
+       <input type="radio" name="looking_for" value="Relationship" <?php if($_SESSION['looking_for'] == "Relationship") { echo "checked"; } ?>/> A Relationship<br />
        <input type="radio" name="looking_for" value="Friendship" />Friendship<br />
        <input type="radio" name="looking_for" value="Study Group" />Study Groups<br />
        <input type="radio" name="looking_for" value="Sports" />People to play sports with<br /><br />
        Who are you looking for?<br />
-       <input type="radio" name="interested_in" value="Male" />Men    <input type="radio" name="interested_in" value="Female" />Women    <input type="radio" name="interested_in" value="No preference" />No Preference<br /><br />
+       <input type="radio" name="interested_in" value="Male" <?php if($_SESSION['interested_in'] == "Male") { echo "checked"; } ?> />Men    <input type="radio" name="interested_in" value="Female" <?php if($_SESSION['interested_in'] == "Female") { echo "checked"; } ?>/>Women    <input type="radio" name="interested_in" value="No preference" <?php if($_SESSION['interested_in'] == "No preference") { echo "checked"; } ?>/>No Preference<br /><br />
        What do you have to say about yourself?<br />
        <textarea rows="5" cols="40" name="description"><?php echo $_SESSION['description'] ?></textarea><br /><br />
        What are your interests?<br />
