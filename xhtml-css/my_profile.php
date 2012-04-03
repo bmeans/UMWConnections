@@ -103,9 +103,6 @@ $query = "SELECT * FROM Users WHERE email = '$email'";
 $result = mysqli_query($db, $query);
 if ($row = mysqli_fetch_array($result)){
 
-
-      
-<<<<<<< HEAD
 			$_SESSION['user_id'] = $row['user_id'];
 			$_SESSION['first_name'] = $row['first_name'];
 			$_SESSION['last_name'] = $row['last_name'];
@@ -181,8 +178,7 @@ if ($row = mysqli_fetch_array($result)){
 			?><form action="edit_profile.php" method="post">
 		  <input type="submit" value="Edit Profile" />
 		  </form><?php
-			
-=======
+
 $_SESSION['user_id'] = $row['user_id'];
 $_SESSION['first_name'] = $row['first_name'];
 $_SESSION['last_name'] = $row['last_name'];
@@ -235,7 +231,6 @@ $_SESSION['interests'] = $_SESSION['interests'].$row['interest']." ";
 ?>
 <h6 class="inner" style="color:#2554C7;"> Your profile details: </h6>
 <?php
->>>>>>> 838942a9cdc78f07983f1a91dfa2f7702218442b
 
 echo "<br>";
 echo "Name: ".$_SESSION['first_name']." ".$_SESSION['last_name'];
