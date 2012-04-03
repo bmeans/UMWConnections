@@ -77,8 +77,7 @@
 					<input type="checkbox" name="lookingfor" value="Sports" />Sports </td></tr>
 					<tr><td></td><td>
 					<input type="checkbox" name="lookingfor" value="Friendship" />Friendship </td></tr>
-					</table>
-					<table><tr><td></td><td><b>Major: </b><select name="major" class="major">
+					<tr><td><b>Major: </b></td><td><select name="major" class="major">
 					<?php
 							include "db_connect.php";
 							$query = ("SELECT major FROM majors");
