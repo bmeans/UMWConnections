@@ -58,6 +58,8 @@
 				<input type="password" id="pw" name="pw" /><br />
 				<label for ="confirmPW">Confirm Password:</label>
 				<input type = "password" id="confirmPW" name = "confirmPW"/><br/>
+				<label for="picture">Upload a picture of yourself:</label>
+				<input name = "userfile" type="file" id ="pic" name="pic"/></div>
 				<input type="submit" value="Create" name="submit" />
 			</form>
         <br />

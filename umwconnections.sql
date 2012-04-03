@@ -89,8 +89,20 @@ INSERT INTO Login (email,pw) VALUES
 	('admin',SHA('admin')),
 	('tgray@mail.umw.edu',SHA('tgray')),
 	('rhorn@mail.umw.edu',SHA('rhorn')),
-	('yfisher@mail.umw.edu',SHA('yfisher')), 
-	('acrowe@mail.umw.edu',SHA('acrowe'));
+	('jsmith@mail.umw.edu',SHA('jsmith')),
+	('yfisher@mail.umw.edu',SHA('yfisher')),
+	('sjohnson@mai.umw.edu', SHA('sjohnson')),
+	('sramirez@mail.umw.edu', SHA ('sramirez')),
+	('fali@mail.umw.edu', SHA('fali')),
+	('yfisher@mail.umw.edu', SHA('yfisher')),
+	('jjacobs@mail.umw.edu' SHA('jjacobs')),
+	('btyler@mail.umw.edu', SHA ('btyler')),
+	('yyurameshi@mail.umw.edu' SHA('yyurameshi')),
+	('sgoku@mail.umw.edu', SHA('sgoku')),
+	('nuzamaki@mail.umw.edu', SHA('nuzamaki')),
+	('zefron@mail.umw.edu', SHA('zefron')),
+	('jalba@mail.umw.edu', SHA('jalba')),
+	('hgranger@mail.umw.edu', SHA('hgranger'));
 
 INSERT INTO Users (email, last_name, first_name, gender, phone, description) VALUES
 	('tgray@mail.umw.edu','Gray','Todd','Male','4537638355','Tall, dark and handsome'),
