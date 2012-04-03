@@ -78,7 +78,7 @@
 					<tr><td></td><td>
 					<input type="checkbox" name="lookingfor" value="Friendship" />Friendship </td></tr>
 					</table>
-					<table><tr><td><b>Major: </b><select name="major" class="major">
+					<table><tr><td></td><td><b>Major: </b><select name="major" class="major">
 					<?php
 							include "db_connect.php";
 							$query = ("SELECT major FROM majors");
@@ -89,21 +89,43 @@
 					?>
 					</select></td></tr>
 					</table>
-					<table><td><b>Interests: </b></td></tr>
-					<tr><td><input type="checkbox" name="interests" value="MartialArts" /> Martial Arts</td>
-					<td><input type="checkbox" name="interests" value="Acting" /> Acting</td></tr>
-					<tr><td><input type="checkbox" name="interests" value="Surfing" />Surfing</td>
-					<td><input type="checkbox" name="interests" value="Fighting" /> Fighting</td></tr>
-					<tr><td><input type="checkbox" name="interests" value="Basketball" />Basketball</td>
-					<td><input type="checkbox" name="interests" value="Soccer" /> Soccer</td></tr>
-					<tr><td><input type="checkbox" name="interests" value="Singing" />Singing</td>
-					<td><input type="checkbox" name="interests" value="Football" /> Football</td></tr>
-					<tr><td><input type="checkbox" name="interests" value="Hacking" />Hacking</td>
-					<td><input type="checkbox" name="interests" value="Video Games" /> Video Games</td></tr>
-					<tr><td><input type="checkbox" name="interests" value="Magic" />Magic</td>
-					<td><input type="checkbox" name="interests" value="Ju-jitsu" /> Ju-jitsu</td></tr>
-					<tr><td>Other: </td><td><input type="text" name="interests" value="" /></td></tr>
-			  <td></td></table>
+					<table><tr><td><b>Pick up to 3 Interests: </b><td></td></tr>
+					<tr><td></td><td>
+					<select name="interests1" class="interest1">
+					<?php
+							include "db_connect.php";
+							$query = ("SELECT interest FROM interests");
+							$result = mysqli_query($db, $query);	//sends a query to the currently active database
+							while($row = mysqli_fetch_array($result)){
+							?> <option> <?php echo $row['interest']; ?> </option> <?php
+							}
+					?>
+					</select></td></tr>
+					
+					<tr><td></td><td><b> </b><select name="interest2" class="interest2">
+					<?php
+							include "db_connect.php";
+							$query = ("SELECT interest FROM interests");
+							$result = mysqli_query($db, $query);	//sends a query to the currently active database
+							while($row = mysqli_fetch_array($result)){
+							?> <option> <?php echo $row['interest']; ?> </option> <?php
+							}
+					?>
+					</select></td></tr>
+					
+					<tr><td></td><td><select name="interest3" class="interest3">
+					<?php
+							include "db_connect.php";
+							$query = ("SELECT interest FROM interests");
+							$result = mysqli_query($db, $query);	//sends a query to the currently active database
+							while($row = mysqli_fetch_array($result)){
+							?> <option> <?php echo $row['interest']; ?> </option> <?php
+							}
+					?>
+					</select></td></tr>
+					</table>
+					
+					
 			  <table>
 			  <br>
 			  <tr><td><h2>OR search by name</h2></td><td></td></tr>
