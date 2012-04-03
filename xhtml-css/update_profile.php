@@ -33,7 +33,7 @@ session_start()
  $interestID = $interestRow['interest_id'];
  $userId = $userIdFetch['user_id'];
  $interestsQuery = "UPDATE Users_Interests SET interest_id='$interestID' where user_id='$userId'";
- #$majorQuery
+ mysqli_query($db, "Update Users NATURAL JOIN InterestedIn SET interested_in_value='$interestedIn'");
  mysqli_query($db, $query);
  mysqli_query($db, $interestsQuery);
  
