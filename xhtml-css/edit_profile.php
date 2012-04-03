@@ -56,6 +56,12 @@ session_start()
        Last Name: <input type="text" value="<?php echo $_SESSION['last_name'] ?>" name = "last_name" /><br />
        Gender: <input type="radio" name="gender" value="Male" />Male    <input type="radio" name="gender" value="Female" />Female<br />
        Major: <input type="text" value="<?php echo $_SESSION['major'] ?>" name="major" /><br />
+       Year: 
+       	<input type="radio" name="classification" value="Freshman" />Freshman  
+       	<input type="radio" name="classification" value="Sophomore" />Sophomore  
+       	<input type="radio" name="classification" value="Junior" />Junior  
+       	<input type="radio" name="classification" value="Senior" />Senior  
+       	<input type="radio" name="classification" value="Professor" />Professor<br />
        Phone Number: <input type="text" name="phone" value="<?php echo $_SESSION['phone'] ?>" maxlength="10"><small><I>Don't include dashes or spaces</I></small><br /><br />
        What are you looking for?<br />
        <input type="radio" name="looking_for" value="Date" />Dates<br />
