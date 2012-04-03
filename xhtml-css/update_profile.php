@@ -34,9 +34,9 @@ session_start()
  $interestID = $interestRow['interest_id'];
  $userId = $userIdFetch['user_id'];
  $interestsQuery = "UPDATE Users_Interests SET interest_id='$interestID' where user_id='$userId'";
- mysqli_query($db, "UPDATE Users NATURAL JOIN InterestedIn SET interested_in_value='$interestedIn'");
- mysqli_query($db, "UPDATE Users NATURAL JOIN Looking_For SET looking_for_value='$looking'");
- mysqli_query($db, "UPDATE Users NATURAL JOIN Classifications SET classification='$classification'");
+ mysqli_query($db, "UPDATE Users NATURAL JOIN InterestedIn SET interested_in_value='$interestedIn' where Users.email='$email'");
+ mysqli_query($db, "UPDATE Users NATURAL JOIN Looking_For SET looking_for_value='$looking' where Users.email='$email'");
+ mysqli_query($db, "UPDATE Users NATURAL JOIN Classifications SET classification='$classification' where Users.email='$email'");
  mysqli_query($db, $query);
  mysqli_query($db, $interestsQuery);
  
