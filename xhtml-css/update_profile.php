@@ -32,7 +32,7 @@ session_start()
  $userIdFetch = mysqli_fetch_array($userIdQuery);
  $interestID = $interestRow['interest_id'];
  $userId = $userIdFetch['user_id'];
- $interestsQuery = "UPDATE Users_Interests SET Users_Interests='$interestID' where user_id='$userId'";
+ $interestsQuery = "UPDATE Users_Interests SET interest_id='$interestID' where user_id='$userId'";
  #$majorQuery
  mysqli_query($db, $query);
  mysqli_query($db, $interestsQuery);
