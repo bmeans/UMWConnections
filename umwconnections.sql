@@ -13,7 +13,8 @@ CREATE TABLE IF NOT EXISTS Login (
 CREATE TABLE IF NOT EXISTS Comments (
 	name varchar(50) NOT NULL,
 	email varchar(30) NOT NULL,
-	comments blob NOT NULL
+	comments blob NOT NULL,
+	PRIMARY KEY(email)
 )ENGINE = MYISAM;
 
 CREATE TABLE IF NOT EXISTS Images (
