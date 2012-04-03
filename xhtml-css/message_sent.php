@@ -58,9 +58,12 @@ session_start()
 			$toName = $_POST['toUserID'];
 			$fromName = $_SESSION['user_id'];
 			$message = $_POST['message'];
+			$sent_date = date("m/d/y",time());
+			$sent_time = date("H:i:s", time());
+	
 			
 			
-			$query = "INSERT INTO Messages (from_user_id, to_user_id, message) Values('$fromName','$toName','$message')";
+			$query = "INSERT INTO Messages ( sent_date, sent_time, from_user_id, to_user_id, message) Values('$sent_date', '$sent_time','$fromName','$toName','$message')";
 			$result= mysqli_query($db, $query);	//sends a query to the current active database
 			echo "Your message has been sent!";
 			echo "You will be directed back to the home page momentarily.";
