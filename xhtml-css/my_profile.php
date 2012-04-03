@@ -133,7 +133,7 @@ if ($row = mysqli_fetch_array($result)){
 			{
 				$_SESSION['looking_for'] = "N/A";
 			}
-			
+			$_SESSION['classification'] = "";
 			$query = "SELECT classification FROM Classifications WHERE classification_id = '$classification_id'";
 			$result = mysqli_query($db, $query);
 			if ($row = mysqli_fetch_array($result)){
@@ -176,7 +176,7 @@ if ($row = mysqli_fetch_array($result)){
 			echo "<br>";
 			echo "Who you're looking for: ".$_SESSION['interested_in'];
 			echo "<br>";
-			echo "Your class standing: ".$_SESSION['classification'];
+			echo "Your Class Standing: ".$_SESSION['classification'];
 			?><form action="edit_profile.php" method="post">
 		  <input type="submit" value="Edit Profile" />
 		  </form>

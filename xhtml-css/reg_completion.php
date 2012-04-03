@@ -76,7 +76,7 @@
 	?>
 		
 	
-	<meta http-equiv="REFRESH" content="5;url=my_profile.php"> 
+	<meta http-equiv="REFRESH" content="0;url=my_profile.php"> 
 	</HEAD>
 
 		
