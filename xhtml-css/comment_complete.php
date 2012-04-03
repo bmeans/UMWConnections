@@ -21,7 +21,7 @@ session_start()
   <!--header starts-->
   <div id="header">
     <!--menu starts-->
-    <div id="menu"> <span class="logo"><a href="http://localhost/UMWConnections/xhtml-css/index.php"><img src="images/logo.gif" alt="" /></a></span>
+    <div id="menu"> <span class="logo"><a href="index.php"><img src="images/logo.gif" alt="" /></a></span>
       <p>Loneliness is a disease and we are the cure.</p>
       <ul>
         <li class="first"><a href="index.php">home</a></li>

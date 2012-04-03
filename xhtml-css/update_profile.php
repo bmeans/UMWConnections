@@ -7,7 +7,7 @@ session_start()
  include "db_connect.php";
  
  if (!isset($_SESSION['email'])){
-  ?> <meta http-equiv = "REFRESH" content="0;url=index.html"> <?php
+  ?> <meta http-equiv = "REFRESH" content="0;url=index.php"> <?php
  }
  
  $email = $_SESSION['email'];

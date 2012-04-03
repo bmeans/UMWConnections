@@ -13,10 +13,10 @@
   <!--header starts-->
   <div id="header">
     <!--menu starts-->
-    <div id="menu"> <span class="logo"><a href="http://localhost/UMWConnections/xhtml-css/index.php"><img src="images/logo.gif" alt="" /></a></span>
+    <div id="menu"> <span class="logo"><a href="index.php"><img src="images/logo.gif" alt="" /></a></span>
       <p>Loneliness is a disease, we are the cure.</p>
       <ul>
-        <li class="first"><a href="index.html">home</a></li>
+        <li class="first"><a href="index.php">home</a></li>
         <li><a href="browse.php">browse profiles</a></li>
         <li><a href="register.php">create account</a></li>
         <li><a href="my_profile.php">my profile</a></li>

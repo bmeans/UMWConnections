@@ -17,7 +17,7 @@ session_start()
   <!--header starts-->
   <div id="header">
     <!--menu starts-->
-    <div id="menu"> <span class="logo"><a href="http://localhost/UMWConnections/xhtml-css/index.html"><img src="images/logo.gif" alt="" /></a></span>
+    <div id="menu"> <span class="logo"><a href="index.php"><img src="images/logo.gif" alt="" /></a></span>
       <p>Loneliness is a disease and we are the cure.</p>
       <ul>
         <li class="first"><a href="index.html">home</a></li>
@@ -25,8 +25,14 @@ session_start()
         <li><a href="register.php">create account</a></li>
         <li><a class="my_profile.php">my profile</a></li>
         <li><a href="advanced_search.php">advanced search</a></li>
+		<li><a href="messages.php">messages</a></li>
         <li><a href="contact_us.php">contact Us</a></li>
-        <li><a href="logout.php">logout</a></li>
+         <li><?php if (!isset($_SESSION['email'])){
+        ?><a href="my_profile.php">login</a> <?php 
+		} 
+		else { 
+		?><a href="logout.php">logout</a> <?php
+		 } ?> </li>
       </ul>
     </div>
     <!--menu ends-->
