@@ -20,6 +20,7 @@ session_start()
  $looking = $_POST['looking_for'];
  $interestedIn = $_POST['interested_in'];
  $interests = $_POST['interests'];
+ $classification = $_POST['classification'];
  $query = "UPDATE Users SET first_name='$first_name', last_name='$last_name', gender='$gender', phone='$phone', description='$description' where email='$email'";
  $interestIDSearch = mysqli_query($db, "SELECT interest_id from Interests where interest='$interests'");
  $interestRow = mysqli_fetch_array($interestIDSearch);
@@ -33,7 +34,9 @@ session_start()
  $interestID = $interestRow['interest_id'];
  $userId = $userIdFetch['user_id'];
  $interestsQuery = "UPDATE Users_Interests SET interest_id='$interestID' where user_id='$userId'";
- mysqli_query($db, "Update Users NATURAL JOIN InterestedIn SET interested_in_value='$interestedIn'");
+ mysqli_query($db, "UPDATE Users NATURAL JOIN InterestedIn SET interested_in_value='$interestedIn'");
+ mysqli_query($db, "UPDATE Users NATURAL JOIN Looking_For SET looking_for_value='$looking'");
+ mysqli_query($db, "UPDATE Users NATURAL JOIN Classifications SET classification='$classification'");
  mysqli_query($db, $query);
  mysqli_query($db, $interestsQuery);
  
