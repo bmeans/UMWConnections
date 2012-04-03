@@ -52,35 +52,57 @@
 <table width="80%">
             <tr>
               <td align="left" valign="top" class="body" id="ImA"><strong>I am a</strong></td>
-              <td align="left" valign="top"><select name="gender" class = "gender"><option>Male</option><option>Female</option></select></td>
+              <td align="left" valign="top"><select name="gender" id = "gender" class = "gender"><option>Male</option><option>Female</option></select></td>
             </tr><tr>
 			<td><label class="seeking">Seeking a</label></td>
                 
-                  <td><input type = "radio" name = "gender2" value = "Female"> Female
-				  <input type = "radio" name = "gender2" value = "Male"> Male
-				  <input type = "radio" name = "gender2" value = "No preference"> No Preference
+                  <td><input type = "radio" name = "gender2" id = "gender2" value = "Female"> Female
+				  <input type = "radio" name = "gender2" id = "gender2" value = "Male"> Male
+				  <input type = "radio" name = "gender2" id = "gender2" value = "No preference"> No Preference
 				  </td></tr>
 				 <tr><td><label>Looking for </label></td>
-				 <td><select name="lookingFor2" class="studentYear">
-                  <option>Freshmen</option>
+				 <td><select name="year" id = "year" class="studentYear">
+                  <option>Freshman</option>
 				  <option>Sophomore</option>
 				  <option>Junior</option>
 				  <option>Senior</option>
 				  <option>Professor</option>
-				  <option>No Preference</option>
+				  <option>No preference</option>
                 </select></td></tr>
 				<tr><td><label>Looking for </label> </td>
-				  <td><input type="checkbox" name="lookingfor" value="Date" /> Date
-					<input type="checkbox" name="lookingfor" value="Relationship" />Relationship</td></tr>
+				
+				  <td><select name="lookingfor" name ="lookingfor" id = "lookingfor" />
+					<option>Date</option>
+					<option>Relationship</option>
+					<option>Friendship</option>
+					<option>Study Group</option>
+					<option>Sports</option>
+					</select></td></tr>
+				
+					<!--Relationship</td></tr>
 					<tr><td></td><td>
 					<input type="checkbox" name="lookingfor" value="StudyGroup" /> Study Group 
 					<input type="checkbox" name="lookingfor" value="Sports" />Sports </td></tr>
 					<tr><td></td><td>
 					<input type="checkbox" name="lookingfor" value="Friendship" />Friendship </td></tr>
-					<tr><td>Major: </td><td><input type="text" name="major" /></td></tr>
+					-->
+					<!--<tr><td>Major: </td><td><select name="major" class = "studentYear">
+					<option>Theater</option>
+					<option>Computer Science</option>
+					<option>Biology</option>
+					<option>Chemistry</option>
+					<option>Mathematics</option>
+					<option>English</option>
+					<option>Spanish</option>
+					<option>Political Science</option>
+					<option>International Relations</option>
+					<option>Magic</option>
+					<option>No preference<option>
+					</select></td></tr>
 					<tr><td>
-					</table>
-					<table><td><b>Interests: </b></td></tr>
+					</table>-->
+					
+					<!--<table><td><b>Interests: </b></td></tr>
 					<tr><td><input type="checkbox" name="interests" value="MartialArts" /> Martial Arts</td>
 					<td><input type="checkbox" name="interests" value="Acting" /> Acting</td></tr>
 					<tr><td><input type="checkbox" name="interests" value="Surfing" />Surfing</td>
@@ -93,7 +115,7 @@
 					<td><input type="checkbox" name="interests" value="Video Games" /> Video Games</td></tr>
 					<tr><td><input type="checkbox" name="interests" value="Magic" />Magic</td>
 					<td><input type="checkbox" name="interests" value="Ju-jitsu" /> Ju-jitsu</td></tr>
-					<tr><td>Other: </td><td><input type="text" name="interests" value="" /></td></tr>
+					<tr><td>Other: </td><td><input type="text" name="interests" value="" /></td></tr>-->
 			  <td></td></table>
 			  <table>
 			  <br>

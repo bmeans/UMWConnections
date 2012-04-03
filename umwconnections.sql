@@ -18,11 +18,7 @@ CREATE TABLE IF NOT EXISTS Comments (
 
 CREATE TABLE IF NOT EXISTS Images (
     image_id int AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    filename varchar(255) NOT NULL,
-    mime_type varchar(255) NOT NULL,
-    file_size int NOT NULL,
-    file_data longblob NOT NULL,
-    INDEX (filename)
+    file_data longblob NOT NULL
 )ENGINE = MYISAM;
 
 CREATE TABLE IF NOT EXISTS Interests (

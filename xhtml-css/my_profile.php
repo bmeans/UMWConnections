@@ -126,7 +126,6 @@ session_start()
 			{
 				$_SESSION['interested_in'] = "N/A";
 			}
-				
 			
 			$query = "SELECT looking_for_value FROM Looking_For WHERE looking_for_id = '$looking_for_id'";
 			$result = mysqli_query($db, $query);

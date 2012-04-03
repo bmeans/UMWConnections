@@ -53,7 +53,7 @@
 			$gender=$_POST['gender'];
 			$gender2=$_POST['gender2'];
 			$lookingFor=$_POST['lookingfor'];
-			$year=$_POST['lookingFor2'];
+			$year=$_POST['year'];
 			$major=$_POST['major'];
 			$firstName=$_POST['firstName'];
 			$lastName=$_POST['lastName'];
