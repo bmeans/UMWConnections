@@ -29,7 +29,7 @@ session_start()
      $interestRow = mysqli_fetch_array($interestIDSearch);
  }
  $userIdQuery = mysqli_query($db, "SELECT user_id from Users where email='$email'");
- $userIdFetch = mysqli_fetch_array()$userIdQuery);
+ $userIdFetch = mysqli_fetch_array($userIdQuery);
  $interestID = $interestRow['interest_id'];
  $userId = $userIdFetch['user_id'];
  $interestsQuery = "UPDATE Users_Interests SET Users_Interests='$interestID' where user_id='$userId'";
