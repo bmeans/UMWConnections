@@ -60,32 +60,34 @@ session_start()
 <table width="80%">
             <tr>
               <td align="left" valign="top" class="body" id="ImA"><strong>I am a</strong></td>
-              <td align="left" valign="top"><select name="gender" class = "gender"><option>Male</option><option>Female</option></select></td>
+              <td align="left" valign="top"><select name="gender" id = "gender" class = "gender"><option>Male</option><option>Female</option></select></td>
             </tr><tr>
 			<td><label class="seeking">Seeking a</label></td>
                 
-                  <td><input type = "radio" name = "gender2" value = "Female"> Female
-				  <input type = "radio" name = "gender2" value = "Male"> Male
-				  <input type = "radio" name = "gender2" value = "No preference"> No Preference
+                  <td><input type = "radio" name = "gender2" id = "gender2" value = "Female"> Female
+				  <input type = "radio" name = "gender2" id = "gender2" value = "Male"> Male
+				  <input type = "radio" name = "gender2" id = "gender2" value = "No preference"> No preference
 				  </td></tr>
 				 <tr><td><label>Looking for </label></td>
-				 <td><select name="lookingFor2" class="studentYear">
-                  <option>Freshmen</option>
+				 <td><select name="year" id = "year" class="studentYear">
+                  <option>Freshman</option>
 				  <option>Sophomore</option>
 				  <option>Junior</option>
 				  <option>Senior</option>
 				  <option>Professor</option>
-				  <option>No Preference</option>
+				  <option>No preference</option>
                 </select></td></tr>
 				<tr><td><label>Looking for </label> </td>
-				  <td><input type="checkbox" name="lookingfor" value="Date" /> Date
-					<input type="checkbox" name="lookingfor" value="Relationship" />Relationship</td></tr>
-					<tr><td></td><td>
-					<input type="checkbox" name="lookingfor" value="StudyGroup" /> Study Group 
-					<input type="checkbox" name="lookingfor" value="Sports" />Sports </td></tr>
-					<tr><td></td><td>
-					<input type="checkbox" name="lookingfor" value="Friendship" />Friendship </td></tr>
-					<tr><td><b>Major: </b></td><td><select name="major" class="major">
+				
+				  <td><select name="lookingFor" id = "lookingFor" />
+					<option>Date</option>
+					<option>Relationship</option>
+					<option>Friendship</option>
+					<option>Study Group</option>
+					<option>Sports</option>
+					</select></td></tr>
+			  <td></td></table>
+					<tr><td><b>Major: </b></td><td><select name="major" id ="major" class="major">
 					<?php
 							include "db_connect.php";
 							$query = ("SELECT major FROM majors");
@@ -94,11 +96,12 @@ session_start()
 							?> <option> <?php echo $row['major']; ?> </option> <?php
 							}
 					?>
+					<option>No preference</option>
 					</select></td></tr>
 					</table>
 					<table><tr><td><b>Pick up to 3 Interests: </b><td></td></tr>
 					<tr><td></td><td>
-					<select name="interests1" class="interest1">
+					<select name="interest1" id = "interest1" class="interest1">
 					<?php
 							include "db_connect.php";
 							$query = ("SELECT interest FROM interests");
@@ -107,9 +110,10 @@ session_start()
 							?> <option> <?php echo $row['interest']; ?> </option> <?php
 							}
 					?>
+					<option></option>
 					</select></td></tr>
 					
-					<tr><td></td><td><b> </b><select name="interest2" class="interest2">
+					<tr><td></td><td><b> </b><select name="interest2" id = "interest2" class="interest2">
 					<?php
 							include "db_connect.php";
 							$query = ("SELECT interest FROM interests");
@@ -118,9 +122,10 @@ session_start()
 							?> <option> <?php echo $row['interest']; ?> </option> <?php
 							}
 					?>
+					<option></option>
 					</select></td></tr>
 					
-					<tr><td></td><td><select name="interest3" class="interest3">
+					<tr><td></td><td><select name="interest3" id = "interest3" class="interest3">
 					<?php
 							include "db_connect.php";
 							$query = ("SELECT interest FROM interests");
@@ -129,16 +134,16 @@ session_start()
 							?> <option> <?php echo $row['interest']; ?> </option> <?php
 							}
 					?>
+					<option></option>
 					</select></td></tr>
 					</table>
-					
-					
+
 			  <table>
 			  <br>
 			  <tr><td><h2>OR search by name</h2></td><td></td></tr>
 			  <tr></td><td><label><b>First Name</b></label></td><td>
-                <input type="text" name="firstName" value="" /></td>
-                <tr><td><label><b>Last Name</b></label></td><td><input type="text" name="lastName" value="" /></td></tr>
+                <input type="text" name="firstName" id = "firstName" value="" /></td>
+                <tr><td><label><b>Last Name</b></label></td><td><input type="text" name="lastName" id = "lastName" value="" /></td></tr>
               <tr><td><input type="submit" name="submit" class="button" value="Search Now" /></td>
             </tr>
           </table>
