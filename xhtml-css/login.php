@@ -28,7 +28,7 @@
 		}
 		else{
 			echo "<p> Account not found </p>";
-			?><html><meta http-equiv = "REFRESH" content="5;url=index.html"></html><?php
+			?><html><meta http-equiv = "REFRESH" content="5;url=index.php"></html><?php
 		}
 	
 	?>

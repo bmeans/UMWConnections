@@ -1,3 +1,6 @@
+<?php
+session_start()
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -13,84 +16,32 @@
   <!--header starts-->
   <div id="header">
     <!--menu starts-->
-    <div id="menu"> <span class="logo"><a href="#"><img src="images/logo.gif" alt="" /></a></span>
+    <div id="menu"> <span class="logo"><a href="http://localhost/UMWconnections/UMWConnections/xhtml-css/index.php"><img src="images/logo.gif" alt="" /></a></span>
       <p>Loneliness is a disease and we are the cure.</p>
       <ul>
-        <li class="first"><a href="index.html">home</a></li>
+        <li class="first"><a href="index.php">home</a></li>
         <li><a class="current">browse profiles</a></li>
         <li><a href="register.php">create account</a></li>
         <li><a href="my_profile.php">my profile</a></li>
         <li><a href="advanced_search.php">advanced search</a></li>
         <li><a href="contact_us.php">contact Us</a></li>
-        <li><a href="logout.php">logout</a></li>
+		<li><?php if (!isset($_SESSION['email'])){
+        ?><a href="my_profile.php">login</a> <?php 
+		} 
+		else { 
+		?><a href="logout.php">logout</a> <?php
+		 } ?> </li>
+        
       </ul>
     </div>
     <!--menu ends-->
     <div id="banner_inner">
       <div class="find_love">
-        <h2><img src="images/find_your_love.gif" alt="" /></h2>
+        
+		
         <!--form container starts-->
         <div class="form_container">
-          <form action="" method="get">
-            <fieldset>
-            <div class="search_row">
-              <div class="search_column_1">
-                <label>I am a</label>
-              </div>
-              <div class="search_column_2">
-                <select class="gender">
-                  <option>Male</option>
-                </select>
-                <label class="seeking">Seeking a</label>
-                <select class="gender">
-                  <option>Female</option>
-                </select>
-              </div>
-            </div>
-            <div class="search_row">
-              <div class="search_column_1">
-                <label>Looking for a</label>
-              </div>
-              <div class="search_column_2">
-                <select class="date">
-                  <option>Date</option>
-                </select>
-              </div>
-            </div>
-            <div class="search_row">
-              <div class="search_column_1">
-                <label>I was born</label>
-              </div>
-              <div class="search_column_2">
-                <select class="dob">
-                  <option>Month</option>
-                </select>
-                <select class="dob">
-                  <option>Date</option>
-                </select>
-                <select class="dob">
-                  <option>Year</option>
-                </select>
-              </div>
-            </div>
-            <div class="search_row">
-              <div class="search_column_1">
-                <label>By Profile ID</label>
-              </div>
-              <div class="search_column_2">
-                <input type="text" name="" value="" />
-                <label class="check">With Photo</label>
-                <input type="checkbox" name="" value="" class="checkbox"/>
-              </div>
-            </div>
-            <div class="search_row last">
-              <div class="search_column_1">&nbsp;</div>
-              <div class="search_column_2">
-                <input type="image" src="images/find_btn.gif" class="search_btn"/>
-              </div>
-            </div>
-            </fieldset>
-          </form>
+          
         </div>
       </div>
       <!--form container ends-->
@@ -112,6 +63,7 @@
 			$result = mysqli_query($db, $query);	//sends a query to the currently active database
 			echo "<br>";
 			while($row = mysqli_fetch_array($result)){
+			?><form method="post" action="send_message.php"><?php
 			$userID = $row['user_id'];
 			$query1 = "SELECT m.major FROM Majors m NATURAL JOIN Users_Majors um WHERE um.user_id = '$userID';";
 			$result1 = mysqli_query($db, $query1);
@@ -136,6 +88,7 @@
 			echo "<br>";
 			echo "<br>";
 			echo "Name: ".$row['first_name']." ".$row['last_name'];
+			$toMessage = $row['first_name'];
 			echo "<br>";
 			echo "Gender: ".$row['gender'];
 			echo "<br>";
@@ -156,6 +109,11 @@
 			echo "Looking for: ".$row5['looking_for_value'];
 			echo "<br>";
 			echo "Major: ".$row1['major'];
+			
+			?> <br><input type="hidden" Name="toMessage" Value="<?php echo $toMessage;?>" >
+			<input type="submit" name="submit" class="button" value="Send them a Message!" /></form>
+			
+			<?php
 			}
 			if (mysqli_num_rows($result)==0){
 				echo "Your search did not return any results";

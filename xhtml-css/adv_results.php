@@ -52,18 +52,37 @@
 			include "db_connect.php";
 			$gender=$_POST['gender'];
 			$gender2=$_POST['gender2'];
-			$lookingFor=$_POST['lookingfor'];
-			$year=$_POST['lookingFor2'];
-			$major=$_POST['major'];
+			$lookingFor=$_POST['lookingFor'];
+			$year=$_POST['year'];
 			$firstName=$_POST['firstName'];
 			$lastName=$_POST['lastName'];
-				
-			$query = "SELECT u.user_id, u.first_name, u.last_name, u.gender, u.phone, u.description, i.interested_in_value, c.classification, l.looking_for_value FROM Users u NATURAL JOIN interestedin i NATURAL JOIN classifications c NATURAL JOIN looking_for l NATURAL JOIN majors m WHERE m.major = '$major' AND l.looking_for_value = '$lookingFor'";
+			$interest1=$_POST['interest1'];
+			$interest2=$_POST['interest2'];
+			$interest3=$_POST['interest3'];
+			$major = $_POST['major'];
+			
+			$subquery = "(SELECT user_id from Users_interests NATURAL JOIN interests WHERE interest =";
+			if (($interest1!='') || ($interest2!='') || ($interest3!='')){
+					if ($interest1!=''){
+						$subquery.=" '$interest1'";
+					}
+					if ($interest2!=''){
+						$subquery.=" OR interest = '$interest2'";
+					}
+					if ($interest3!=''){
+						$subquery.=" OR interest = '$interest3'";
+					}
+			}
+			
+			$query = "SELECT u.user_id, u.first_name, u.last_name, u.gender, u.phone, u.description, 
+			i.interested_in_value, c.classification, l.looking_for_value, m.major FROM Users u 
+			NATURAL JOIN Users_Majors NATURAL JOIN majors m NATURAL JOIN InterestedIn i 
+			NATURAL JOIN classifications c NATURAL JOIN looking_for l WHERE l.looking_for_value = '$lookingFor'";
 			
 			if($gender2!='No preference'){
 				$query.=" AND u.gender='$gender2'";
 			}
-			if($year!='No Preference'){
+			if($year!='No preference'){
 				$query.=" AND c.classification='$year'";
 			}
 			if($firstName!=''){
@@ -78,6 +97,11 @@
 			if ($lookingFor=='Relationship'){
 				$query.=" AND i.interested_in_value = '$gender'";
 			}
+			if ($major!='No preference'){
+				$query.=" AND m.major = '$major'";
+			}
+			
+			$query.=" AND u.user_id IN ".$subquery.")";
 			
 			$result = mysqli_query($db, $query);	//sends a query to the currently active database
 			echo "<br>";
@@ -89,7 +113,6 @@
 			
 			$query2 = "SELECT i.interest FROM Interests i NATURAL JOIN Users_Interests ui WHERE ui.user_id = '$userID'";
 			$result2 = mysqli_query($db, $query2);
-			//$row2 = mysqli_fetch_array($result2);
 			
 			echo "<br>";
 			echo "<br>";
@@ -118,9 +141,7 @@
 			if (mysqli_num_rows($result)==0){
 				echo "Your search did not return any results";
 			}
-					
-					
-			?>
+		?>
 			
            
             <form method="post" action="advanced_search.php">

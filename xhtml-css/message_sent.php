@@ -11,8 +11,6 @@ session_start()
 </style>
 </head>
 <body>
-
-
 <!--layout starts-->
 <div id="layout">
   <!--header starts-->
@@ -25,14 +23,9 @@ session_start()
         <li><a href="browse.php">browse profiles</a></li>
         <li><a href="register.php">create account</a></li>
         <li><a href="my_profile.php">my profile</a></li>
-        <li><a href="advanced_search.php">advanced search</a></li>
-        <li><a class="current">contact us</a></li>
-        <li><?php if (!isset($_SESSION['email'])){
-        ?><a href="my_profile.php">login</a> <?php 
-		} 
-		else { 
-		?><a href="logout.php">logout</a> <?php
-		 } ?> </li>
+		<li><a class="advanced_search.php">advanced search</a></li>
+        <li><a href="contact_us.php">contact us</a></li>
+        <li><a href="logout.php">logout</a></li>
       </ul>
     </div>
     <!--menu ends-->
@@ -49,34 +42,30 @@ session_start()
     <!--left container starts-->
     <div id="left_container">
       <div style="padding:20px 15px 30px 15px;">
-      <h1>Contact <span>Us</span></h1>
-      <div> <strong> <br />
-        Please send us your questions and comments! </strong><br />
-	</div>
+      <h1>Send <span>Message</span></h1>
+      <div> 
+		<br />
+      </div>
       <div> <br />
-        <h6 class="inner">Contact Form:</h6>
-        <br />
-        <form action="comment_complete.php" method="post">
-          <table width="80%">
-            
-            <tr>
-              <td align="left" valign="top" class="body" id="Contact"><strong>Full Name:</strong></td>
-              <td align="left" valign="top"><input name="name" type="text" size="40" /></td>
-            </tr>
-            <tr>
-              <td align="left" valign="top" class="body" id="Email"><strong> Email: </strong></td>
-              <td align="left" valign="top"><input name="email" type="text" size="40" /></td>
-            </tr>
-            <tr>
-              <td align="left" valign="top" class="body" id="Comments"><strong> Questions / Comments: </strong></td>
-              <td align="left" valign="top"><textarea name="comments" cols="32" rows="6"></textarea></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><input type="submit" name="submit" class="button" value="Send Now" /></td>
-            </tr>
-          </table>
-        </form>
+        <h6 class="inner"></h6>
+        
+<!--Add STUFF HERE -->
+		<br>
+		 <?php
+			include "db_connect.php";
+			
+			$email = $_POST['email'];
+			$name = $_POST['name'];
+			$comments = $_POST['comments'];
+			
+			$query = "INSERT INTO Comments (email, name, comments) Values('$email','$name','$comments')";
+			$result= mysqli_query($db, $query);	//sends a query to the current active database
+			echo "Thank you for your comment or question!  We appreciate your feedback and will get back to you as soon as possible!";
+			echo "You will be directed back to the home page momentarily.";
+	?>
+		
+	
+	<meta http-equiv="REFRESH" content="15;url=index.html"> 
       </div>
       <div> <br />
        <!-- <h6 class="inner">Contact Information: </h6>
@@ -237,7 +226,7 @@ session_start()
   <div id="footer"> <span class="footer_logo"><a href="#"><img src="images/single_2_mingle.gif" alt="" /></a></span>
     <div class="footer_link">
       <ul style="color:#FFF;">
-        Design by Stylish <a style="color:#FFF; text-decoration:underline;" href="http://www.stylishtemplate.com">Website Templates</a>.
+       Design by Stylish <a style="color:#FFF; text-decoration:underline;" href="http://www.stylishtemplate.com">Website Templates</a>.
       </ul>
     </div>
   </div>
