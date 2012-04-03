@@ -55,18 +55,19 @@ session_start()
 		 <?php
 			include "db_connect.php";
 			
-			$email = $_POST['email'];
-			$name = $_POST['name'];
-			$comments = $_POST['comments'];
+			$toName = $_POST['toUserID'];
+			$fromName = $_SESSION['user_id'];
+			$message = $_POST['message'];
 			
-			$query = "INSERT INTO Comments (email, name, comments) Values('$email','$name','$comments')";
+			
+			$query = "INSERT INTO Messages (from_user_id, to_user_id, message) Values('$fromName','$toName','$message')";
 			$result= mysqli_query($db, $query);	//sends a query to the current active database
-			echo "Thank you for your comment or question!  We appreciate your feedback and will get back to you as soon as possible!";
+			echo "Your message has been sent!";
 			echo "You will be directed back to the home page momentarily.";
 	?>
 		
 	
-	<meta http-equiv="REFRESH" content="15;url=index.html"> 
+	<meta http-equiv="REFRESH" content="15;url=index.php"> 
       </div>
       <div> <br />
        <!-- <h6 class="inner">Contact Information: </h6>

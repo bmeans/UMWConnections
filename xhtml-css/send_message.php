@@ -65,12 +65,13 @@ session_start()
 	else	{
 		
 			$toName = $_POST['toMessage'];
-			$fromName = $_SESSION['user_id']
+			$fromName = $_SESSION['user_id'];
+			$toUserID = $_POST['toUserID'];
 		?>
 		 <b>To: </td><td><?php  echo $toName; ?> </td></tr></b>
 		 <tr><td></td><td>
 		<textarea name="message" cols="32" rows="6"></textarea></td></tr>
-		<input type="hidden" Name="toMessage" Value="<?php echo $toName;?>">
+		<input type="hidden" Name="toUserID" Value="<?php echo $toUserID;?>">
 		<input type="hidden" Name="fromUser_id" Value="<?php echo $fromName;?>">
 		<tr><td></td><td><input type="submit" name="submit" class="button" value="Send" /></td>
 		<?php } ?>

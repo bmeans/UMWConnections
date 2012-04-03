@@ -20,8 +20,8 @@ session_start()
     <div id="menu"> <span class="logo"><a href="index.php"><img src="images/logo.gif" alt="" /></a></span>
       <p>Loneliness is a disease and we are the cure.</p>
       <ul>
-        <li class="first"><a href="index.html">home</a></li>
-        <li><a href="about_us.html" class="browse.php">browse profiles</a></li>
+        <li class="first"><a href="index.php">home</a></li>
+        <li><a href="browse.php" class="browse.php">browse profiles</a></li>
         <li><a href="register.php">create account</a></li>
         <li><a class="my_profile.php">my profile</a></li>
         <li><a href="advanced_search.php">advanced search</a></li>
@@ -60,7 +60,7 @@ session_start()
 	include "db_connect.php";
 
 	
-	if (!isset($_SESSION['user_id'])){
+	if (!isset($_SESSION['email'])){
 		echo "Please login to see your profile or click create account to make one.";
 		echo "<br>";
 		?> 
@@ -80,31 +80,7 @@ session_start()
 			<a href="register.php">Create Account</a>
 		<?php
 	}
-	
-	// else if($_SESSION['email'] == "admin")
-// 	{
-// 		$query = "SELECT * FROM Comments";
-// 		$result = mysqli_query($db, $query);
-// 		echo "<br>";
-// 			while($row = mysqli_fetch_array($result)){
-// 			$name = $row['name'];
-// 			
-// 			echo "<br>";
-// 			echo "<br>";
-// 			echo "Name: ".$row['name']." ";
-// 			echo "<br>";
-// 			echo "Email: ".$row['email'];
-// 			echo "<br>";
-// 			echo "Comment/Question: ".$row['comments'];
-// 			echo "<br>";
-// 
-// 			}
-// 
-// 			if (mysqli_num_rows($result)==0){
-// 				echo "There are no comments or questions at this time.";
-// 			}
-	
-	
+		
 	else{
 		$user_id = $_SESSION['user_id'];
 		$query = "SELECT * FROM Messages WHERE to_user_id = '$user_id'";

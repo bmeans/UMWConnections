@@ -112,6 +112,7 @@ session_start()
 			echo "Major: ".$row1['major'];
 			
 			?> <br><input type="hidden" Name="toMessage" Value="<?php echo $toMessage;?>" >
+			<input type="hidden" Name="toUserID" Value="<?php echo $userID;?>" >
 			<input type="submit" name="submit" class="button" value="Send them a Message!" /></form>
 			
 			<?php

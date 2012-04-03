@@ -178,84 +178,9 @@ if ($row = mysqli_fetch_array($result)){
 			echo "Your class standing: ".$_SESSION['classification'];
 			?><form action="edit_profile.php" method="post">
 		  <input type="submit" value="Edit Profile" />
-		  </form><?php
+		  </form>
 
-$_SESSION['user_id'] = $row['user_id'];
-$_SESSION['first_name'] = $row['first_name'];
-$_SESSION['last_name'] = $row['last_name'];
-$_SESSION['gender'] = $row['gender'];
-$_SESSION['phone'] = $row['phone'];
-$_SESSION['description'] = $row['description'];
-$interested_in_id = $row['interested_in_id'];
-$looking_for_id= $row['looking_for_id'];
-$classification_id= $row['classification_id'];
-
-$query = "SELECT interested_in_value FROM InterestedIn WHERE interested_in_id = '$interested_in_id'";
-$result = mysqli_query($db, $query);
-if ($row = mysqli_fetch_array($result)){
-$_SESSION['interested_in'] = $row['interested_in_value'];
-}
-else
-{
-$_SESSION['interested_in'] = "N/A";
-}
-
-
-$query = "SELECT looking_for_value FROM Looking_For WHERE looking_for_id = '$looking_for_id'";
-$result = mysqli_query($db, $query);
-if ($row = mysqli_fetch_array($result)){
-$_SESSION['looking_for'] = $row['looking_for_value'];
-}
-{
-$_SESSION['looking_for'] = "N/A";
-}
-
-$query = "SELECT classification FROM Classifications WHERE classification_id = '$classification_id'";
-$result = mysqli_query($db, $query);
-if ($row = mysqli_fetch_array($result)){
-$_SESSION['classification'] = $row['classification'];
-}
-
-$query = "SELECT m.major from Users_Majors um NATURAL JOIN Majors m WHERE user_id =".$_SESSION['user_id'].";";
-$result = mysqli_query($db, $query);
-$_SESSION['major'] = "";
-while ($row = mysqli_fetch_array($result)){
-$_SESSION['major'] = $_SESSION['major'].$row['major'];
-}
-
-$query = "SELECT i.interest from Users_Interests ui NATURAL JOIN Interests i WHERE user_id =".$_SESSION['user_id'].";";
-$result = mysqli_query($db, $query);
-$_SESSION['interests'] = "";
-while ($row = mysqli_fetch_array($result)){
-$_SESSION['interests'] = $_SESSION['interests'].$row['interest']." ";
-}
-?>
-<h6 class="inner" style="color:#2554C7;"> Your profile details: </h6>
 <?php
-
-echo "<br>";
-echo "Name: ".$_SESSION['first_name']." ".$_SESSION['last_name'];
-echo "<br>";
-echo "Email: ".$_SESSION['email'];
-echo "<br>";
-echo "Gender: ".$_SESSION['gender'];
-echo "<br>";
-echo "Phone Number: ".$_SESSION['phone'];
-echo "<br>";
-echo "Major: ".$_SESSION['major'];
-echo "<br>";
-echo "Description of yourself: ".$_SESSION['description'];
-echo "<br>";
-echo "Interests: " .$_SESSION['interests'];
-echo "<br>";
-echo "What you're looking for: ".$_SESSION['looking_for'];
-echo "<br>";
-echo "Who you're looking for: ".$_SESSION['interested_in'];
-?><form action="edit_profile.php" method="post">
-<input type="submit" value="Edit Profile" />
-</form><?php
-
-
 }
 }
 
@@ -440,7 +365,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed odio et ante
 <div id="footer"> <span class="footer_logo"><a href="#"><img src="images/single_2_mingle.gif" alt="" /></a></span>
 <div class="footer_link">
 <ul style="color:#FFF;">
-Copyright (c) Sitename.com. All rights reserved. Design by Stylish <a style="color:#FFF; text-decoration:underline;" href="http://www.stylishtemplate.com">Website Templates</a>.
+ Design by Stylish <a style="color:#FFF; text-decoration:underline;" href="http://www.stylishtemplate.com">Website Templates</a>.
 </ul>
 </div>
 </div>
