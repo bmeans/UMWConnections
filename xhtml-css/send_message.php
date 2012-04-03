@@ -21,12 +21,18 @@ session_start()
       <ul>
         <li class="first"><a href="index.php">home</a></li>
         <li><a href="browse.php">browse profiles</a></li>
-        <li><a href="register.php">create account</a></li>
+		<?php if(!isset($_SESSION['email'])) { ?>
+		<li><a href="register.php">create account</a></li> <?php } ?>
         <li><a href="my_profile.php">my profile</a></li>
 		<li><a class="advanced_search.php">advanced search</a></li>
 		<li><a href="messages.php">messages</a></li>
         <li><a href="contact_us.php">contact us</a></li>
-        <li><a href="logout.php">logout</a></li>
+        <li><?php if (!isset($_SESSION['email'])){
+        ?><a href="my_profile.php">login</a> <?php 
+		} 
+		else { 
+		?><a href="logout.php">logout</a> <?php
+		 } ?> </li>
       </ul>
     </div>
     <!--menu ends-->

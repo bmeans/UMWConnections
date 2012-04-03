@@ -22,7 +22,6 @@ session_start()
       <ul>
         <li class="first"><a href="index.html">home</a></li>
         <li><a href="browse.php">browse profiles</a></li>
-        <li><a href="register.php">create account</a></li>
         <li><a href="my_profile.php">my profile</a></li>
         <li><a href="advanced_search.php">advanced search</a></li>
 		<li><a href="messages.php">messages</a></li>
