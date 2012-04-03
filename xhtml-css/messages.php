@@ -112,12 +112,12 @@ echo "<br>";
 			$result2 = mysqli_query($db, $query2);
 			$row2 = mysqli_fetch_array($result2);
 			echo "<br>";
-			echo "From: ".$row2['first_name']." ".$row2['last_name'];
+			echo "<font  size='2'>From: ".$row2['first_name']." ".$row2['last_name'];
 			echo "<br>";
 			echo "Received ".$row['sent_date']." at ".$row['sent_time'];
 			echo "<br>";
 			echo "Message: ".$row['message'];
-			echo "<br>";
+			echo "<br></font>";
 			}
 			}
 

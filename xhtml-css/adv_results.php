@@ -126,7 +126,7 @@ session_start()
 			
 			echo "<br>";
 			echo "<br>";
-			echo "Name: ".$row['first_name']." ".$row['last_name'];
+			echo "<font  size='2'>Name: ".$row['first_name']." ".$row['last_name'];
 			echo "<br>";
 			echo "Gender: ".$row['gender'];
 			echo "<br>";
@@ -147,6 +147,7 @@ session_start()
 			echo "Looking for: ".$row['looking_for_value'];
 			echo "<br>";
 			echo "Major: ".$row1['major'];
+			echo "<br></font>";
 			}
 			if (mysqli_num_rows($result)==0){
 				echo "Your search did not return any results";
