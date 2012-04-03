@@ -219,7 +219,7 @@ UPDATE Users SET interested_in_id = (SELECT InterestedIn.interested_in_id FROM I
 WHERE InterestedIn.interested_in_value = 'Male') WHERE (Users.last_name = 'Gray' OR Users.last_name = 'Fisher' OR Users.last_name = 'Ali' OR Users.last_name = 'Johnson' OR Users.last_name = 'Alba' OR Users.last_name = 'Granger' OR Users.last_name = 'Efron');
 
 UPDATE Users SET interested_in_id = (SELECT InterestedIn.interested_in_id FROM InterestedIn
-WHERE InterestedIn.interested_in_value = 'Female') WHERE (Users.last_name = 'Horn' OR Users.last_name = 'Smith' OR Users.last_name = 'Ramirez' OR Users.last_name = 'Jacobs' OR Users.last_name = 'Tyler' OR Users.last_name = 'Urameshi' OR Users.last_name = 'Goku' OR Users.last_name = 'Uzamaki');
+WHERE InterestedIn.interested_in_value = 'Female') WHERE (Users.last_name = 'Horn' OR Users.last_name = 'Smith' OR Users.last_name = 'Ramirez' OR Users.last_name = 'Jacobs' OR Users.last_name = 'Tyler' OR Users.last_name = 'Urameshi' OR Users.last_name = 'Goku' OR Users.last_name = 'Uzamaki' OR Users.last_name = 'Yurameshi');
 
 UPDATE Users SET classification_id = (SELECT Classifications.classification_id FROM Classifications
 WHERE Classifications.classification = 'Freshman') WHERE Users.last_name = 'Jacobs';
@@ -228,7 +228,7 @@ UPDATE Users SET classification_id = (SELECT Classifications.classification_id F
 WHERE Classifications.classification = 'Sophomore') WHERE Users.last_name = 'Tyler';
 
 UPDATE Users SET classification_id = (SELECT Classifications.classification_id FROM Classifications
-WHERE Classifications.classification = 'Junior') WHERE Users.last_name = 'Urameshi';
+WHERE Classifications.classification = 'Junior') WHERE Users.last_name = 'Yurameshi';
 
 UPDATE Users SET classification_id = (SELECT Classifications.classification_id FROM Classifications
 WHERE Classifications.classification = 'Senior') WHERE Users.last_name = 'Goku';
@@ -270,7 +270,7 @@ UPDATE Users SET looking_for_id = (SELECT Looking_For.looking_for_id FROM Lookin
 WHERE Looking_For.looking_for_value = 'Date') WHERE (Users.last_name = 'Gray' OR Users.last_name = 'Horn' OR Users.last_name = 'Alba' OR Users.last_name = 'Efron' OR Users.last_name = 'Jacobs');
 
 UPDATE Users SET looking_for_id =  (SELECT Looking_For.looking_for_id FROM Looking_For
-WHERE Looking_For.looking_for_value = 'Friendship') WHERE (Users.last_name = 'Smith' OR Users.last_name = 'Goku' OR Users.last_name = 'Urameshi');
+WHERE Looking_For.looking_for_value = 'Friendship') WHERE (Users.last_name = 'Smith' OR Users.last_name = 'Goku' OR Users.last_name = 'Yurameshi');
 
 UPDATE Users SET looking_for_id =  (SELECT Looking_For.looking_for_id FROM Looking_For
 WHERE Looking_For.looking_for_value = 'Sports') WHERE (Users.last_name = 'Ali' OR Users.last_name = 'Uzamaki');

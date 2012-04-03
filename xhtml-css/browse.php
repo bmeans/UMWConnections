@@ -120,6 +120,9 @@
 			
 			$query2 = "SELECT i.interest FROM Interests i NATURAL JOIN Users_Interests ui WHERE ui.user_id = '$userID'";
 			$result2 = mysqli_query($db, $query2);
+			$interested_in_value= $row['interested_in_value'];
+			$classification_id = $row['classification_id'];
+			$looking_for_value = $row['looking_for_value'];
 			//$row2 = mysqli_fetch_array($result2);
 			
 			echo "<br>";
@@ -143,8 +146,8 @@
 			echo "Description: ".$row['description'];
 			echo "<br>";
 			//echo "Looking for: ".$row['looking_for_value'];
-			echo "<br>";
-			//echo "Major: ".$row1['major'];
+			//echo "<br>";
+			echo "Major: ".$row1['major'];
 			}
 			if (mysqli_num_rows($result)==0){
 				echo "Your search did not return any results";
