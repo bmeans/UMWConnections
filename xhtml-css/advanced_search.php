@@ -68,7 +68,7 @@ session_start()
                 
                   <td><input type = "radio" name = "gender2" id = "gender2" value = "Female"> Female
 				  <input type = "radio" name = "gender2" id = "gender2" value = "Male"> Male
-				  <input type = "radio" name = "gender2" id = "gender2" value = "No preference"> No preference
+				  <input type = "radio" name = "gender2" id = "gender2" value = "No preference" checked> No preference
 				  </td></tr>
 				 <tr><td><label>Looking for </label></td>
 				 <td><select name="year" id = "year" class="studentYear">
@@ -141,10 +141,10 @@ session_start()
 
 			  <table>
 			  <br>
-			  <tr><td><h2>OR search by name</h2></td><td></td></tr>
+			  <!--<tr><td><h2>OR search by name</h2></td><td></td></tr>
 			  <tr></td><td><label><b>First Name</b></label></td><td>
                 <input type="text" name="firstName" id = "firstName" value="" /></td>
-                <tr><td><label><b>Last Name</b></label></td><td><input type="text" name="lastName" id = "lastName" value="" /></td></tr>
+                <tr><td><label><b>Last Name</b></label></td><td><input type="text" name="lastName" id = "lastName" value="" /></td></tr>-->
               <tr><td><input type="submit" name="submit" class="button" value="Search Now" /></td>
             </tr>
           </table>

@@ -89,7 +89,7 @@ session_start()
 			
 			echo "<br>";
 			echo "<br>";
-			echo "Name: ".$row['first_name']." ".$row['last_name'];
+			echo "<font  size='2'>Name: ".$row['first_name']." ".$row['last_name'];
 			$toMessage = $row['first_name'];
 			echo "<br>";
 			echo "Gender: ".$row['gender'];
@@ -111,6 +111,7 @@ session_start()
 			echo "Looking for: ".$row5['looking_for_value'];
 			echo "<br>";
 			echo "Major: ".$row1['major'];
+			echo "<br></font>";
 			
 			?> <br><input type="hidden" Name="toMessage" Value="<?php echo $toMessage;?>" >
 			<input type="hidden" Name="toUserID" Value="<?php echo $userID;?>" >

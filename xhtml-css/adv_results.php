@@ -64,8 +64,8 @@ session_start()
 			$gender2=$_POST['gender2'];
 			$lookingFor=$_POST['lookingFor'];
 			$year=$_POST['year'];
-			$firstName=$_POST['firstName'];
-			$lastName=$_POST['lastName'];
+			//$firstName=$_POST['firstName'];
+			//$lastName=$_POST['lastName'];
 			$interest1=$_POST['interest1'];
 			$interest2=$_POST['interest2'];
 			$interest3=$_POST['interest3'];
@@ -95,12 +95,7 @@ session_start()
 			if($year!='No preference'){
 				$query.=" AND c.classification='$year'";
 			}
-			if($firstName!=''){
-				$query.=" AND u.first_name = '$firstName'";
-			}
-			if($lastName!=''){
-				$query.=" AND u.last_name = '$lastName'";
-			}
+			
 			if ($lookingFor=='Date'){
 				$query.=" AND i.interested_in_value = '$gender'";
 			}
