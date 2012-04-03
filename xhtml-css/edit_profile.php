@@ -20,7 +20,7 @@ session_start()
     <div id="menu"> <span class="logo"><a href="index.php""><img src="images/logo.gif" alt="" /></a></span>
       <p>Loneliness is a disease and we are the cure.</p>
       <ul>
-        <li class="first"><a href="index.html">home</a></li>
+        <li class="first"><a href="index.php">home</a></li>
         <li><a href="browse.php">browse profiles</a></li>
         <li><a href="my_profile.php">my profile</a></li>
         <li><a href="advanced_search.php">advanced search</a></li>
