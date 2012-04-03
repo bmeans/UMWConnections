@@ -95,7 +95,7 @@ INSERT INTO Login (email,pw) VALUES
 	('sramirez@mail.umw.edu', SHA ('sramirez')),
 	('fali@mail.umw.edu', SHA('fali')),
 	('yfisher@mail.umw.edu', SHA('yfisher')),
-	('jjacobs@mail.umw.edu' SHA('jjacobs')),
+	('jjacobs@mail.umw.edu', SHA('jjacobs')),
 	('btyler@mail.umw.edu', SHA ('btyler')),
 	('yyurameshi@mail.umw.edu' SHA('yyurameshi')),
 	('sgoku@mail.umw.edu', SHA('sgoku')),
