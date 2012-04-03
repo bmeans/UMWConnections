@@ -81,6 +81,18 @@ CREATE TABLE IF NOT EXISTS Users_Majors (
 	CONSTRAINT majors_major_id_fk FOREIGN KEY (major_id) REFERENCES Majors (major_id)
 )ENGINE = MYISAM;
 
+CREATE TABLE IF NOT EXISTS Messages (
+	from_user_id int NOT NULL,
+	to_user_id int NOT NULL,
+	sent_date DATE NOT NULL,
+	sent_time TIME NOT NULL,
+	message blob NOT NULL,
+	PRIMARY KEY(to_user_id, from_user_id, sent_date, sent_time),
+	CONSTRAINT messages_from_user_id_fk FOREIGN KEY (from_user_id) REFERENCES Users (user_id),
+	CONSTRAINT messages_to_user_id_fk FOREIGN KEY (to_user_id) REFERENCES Users (user_id)
+) ENGINE = MYISAM;
+	
+
 INSERT INTO Login (email,pw) VALUES 
 	('admin',SHA('admin')),
 	('tgray@mail.umw.edu',SHA('tgray')),
@@ -283,4 +295,16 @@ UPDATE Users SET looking_for_id =  (SELECT Looking_For.looking_for_id FROM Looki
 WHERE Looking_For.looking_for_value = 'Sports') WHERE (Users.last_name = 'Ali' OR Users.last_name = 'Uzamaki');
 
 UPDATE Users SET looking_for_id =  (SELECT Looking_For.looking_for_id FROM Looking_For
+<<<<<<< HEAD
 WHERE Looking_For.looking_for_value = 'Relationship') WHERE (Users.last_name = 'Fisher' OR Users.last_name = 'Johnson' OR Users.last_name = 'Granger' OR Users.last_name = 'Tyler');
+=======
+WHERE Looking_For.looking_for_value = 'Relationship') WHERE (Users.last_name = 'Fisher' OR Users.last_name = 'Johnson' OR Users.last_name = 'Ramirez' OR Users.last_name = 'Granger' OR Users.last_name = 'Tyler');
+
+INSERT INTO Messages (from_user_id, to_user_id, sent_date, sent_time, message) VALUES (
+	(SELECT user_id FROM Users WHERE email = 'rhorn@mail.umw.edu'), 
+	(SELECT user_id FROM Users WHERE email = 'tgray@mail.umw.edu'),
+	(SELECT CURRENT_DATE),
+	(SELECT CURRENT_TIME),
+	('This is a test message')
+);
+>>>>>>> 838942a9cdc78f07983f1a91dfa2f7702218442b

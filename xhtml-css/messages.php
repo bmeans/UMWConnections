@@ -30,6 +30,13 @@ session_start()
       </ul>
     </div>
     <!--menu ends-->
+	<div id="banner">
+      <div class="find_love">
+      
+        <!--form container starts-->
+        
+    </div>
+  </div>
 	<!--header begins-->
 	
   <!--header ends-->
@@ -39,132 +46,82 @@ session_start()
     <div id="left_container">
       <div style="padding:20px 15px 30px 15px;">
       
-      <h1 style="color:#2554C7;"><span><?php //echo "Welcome ".$_SESSION['first_name']."!" ?></span></h1>
+      <h1 style="color:#2554C7;"><span></span></h1>
       <div class="ourprojectrow">
-        <h6 class="inner" style="color:#2554C7;"> Your profile details: </h6>
+        
         <div> <img src="images/projectimg1.jpg" alt="" width="210" height="139" class="project-img" /> <br />
          <?php
 	include "db_connect.php";
 
 	
-	if (!isset($_SESSION['email'])){
-		?> <meta http-equiv = "REFRESH" content="0;url=index.html"> <?php
-	}
-	
-	else if($_SESSION['email'] == "admin")
-	{
-		$query = "SELECT * FROM Comments";
-		$result = mysqli_query($db, $query);
+	if (!isset($_SESSION['user_id'])){
+		echo "Please login to see your profile or click create account to make one.";
 		echo "<br>";
-			while($row = mysqli_fetch_array($result)){
-			$name = $row['name'];
-			
-			echo "<br>";
-			echo "<br>";
-			echo "Name: ".$row['name']." ";
-			echo "<br>";
-			echo "Email: ".$row['email'];
-			echo "<br>";
-			echo "Comment/Question: ".$row['comments'];
-			echo "<br>";
-
-			}
-
-			if (mysqli_num_rows($result)==0){
-				echo "There are no comments or questions at this time.";
-			}
-	
-	}
-	else{
-		$email = $_SESSION['email'];
-		$query = "SELECT * FROM Users WHERE email = '$email'";
-		$result = mysqli_query($db, $query);
-		if ($row = mysqli_fetch_array($result)){
-
-			
-      
-			$_SESSION['user_id'] = $row['user_id'];
-			$_SESSION['first_name'] = $row['first_name'];
-			$_SESSION['last_name'] = $row['last_name'];
-			$_SESSION['gender'] = $row['gender'];
-			$_SESSION['phone'] = $row['phone'];
-			$_SESSION['description'] = $row['description'];
-			$interested_in_id = $row['interested_in_id'];
-			$looking_for_id= $row['looking_for_id'];
-			$classification_id= $row['classification_id'];
-										
-			$query = "SELECT interested_in_value FROM InterestedIn WHERE interested_in_id = '$interested_in_id'";
-			$result = mysqli_query($db, $query);
-			if ($row = mysqli_fetch_array($result)){
-				$_SESSION['interested_in'] = $row['interested_in_value'];
-			}
-			else
-			{
-				$_SESSION['interested_in'] = "N/A";
-			}
+		?> 
+		<br>
+		<h3>Returning Members Login</h3>
+		<br>
+			<form method="post" action="login.php">
+		
+				<label for="email">Email address:</label>
+				<input type="text" id="email" name="email" /><br/>
+				<label for="pw">Password:</label>
+				<input type="password" id="pw" name="pw" /></br>
 				
-			
-			$query = "SELECT looking_for_value FROM Looking_For WHERE looking_for_id = '$looking_for_id'";
-			$result = mysqli_query($db, $query);
-			if ($row = mysqli_fetch_array($result)){
-				$_SESSION['looking_for'] = $row['looking_for_value'];
-			}
-			{
-				$_SESSION['looking_for'] = "N/A";
-			}
-			
-			$query = "SELECT classification FROM Classifications WHERE classification_id = '$classification_id'";
-			$result = mysqli_query($db, $query);
-			if ($row = mysqli_fetch_array($result)){
-				$_SESSION['classification'] = $row['classification'];
-			}
-			
-			$query = "SELECT m.major from Users_Majors um NATURAL JOIN Majors m WHERE user_id =".$_SESSION['user_id'].";";
-			$result = mysqli_query($db, $query);
-			$_SESSION['major'] = "";
-			while ($row = mysqli_fetch_array($result)){
-				$_SESSION['major'] = $_SESSION['major'].$row['major'];				
-			}
-			
-			$query = "SELECT i.interest from Users_Interests ui NATURAL JOIN Interests i WHERE user_id =".$_SESSION['user_id'].";";
-			$result = mysqli_query($db, $query);
-			$_SESSION['interests'] = "";
-			while ($row = mysqli_fetch_array($result)){
-				$_SESSION['interests'] = $_SESSION['interests'].$row['interest']." ";
-			}
-			
-			echo "<br>";
-			echo "Name: ".$_SESSION['first_name']." ".$_SESSION['last_name'];
-			echo "<br>";
-			echo "Email: ".$_SESSION['email'];
-			echo "<br>";
-			echo "Gender: ".$_SESSION['gender'];
-			echo "<br>";
-			echo "Phone Number: ".$_SESSION['phone'];
-			echo "<br>";
-			echo "Major: ".$_SESSION['major'];	
-			echo "<br>";
-			echo "Description of yourself: ".$_SESSION['description'];
-			echo "<br>";
-			echo "Interests: " .$_SESSION['interests'];
-			echo "<br>";
-			echo "What you're looking for: ".$_SESSION['looking_for'];
-			echo "<br>";
-			echo "Who you're looking for: ".$_SESSION['interested_in'];
-
-			
-
-		}
+				<center><input type="submit" value="Login" name="submit" /></center>
+			</form>
+			</br>
+			<a href="register.php">Create Account</a>
+		<?php
 	}
+	
+	// else if($_SESSION['email'] == "admin")
+// 	{
+// 		$query = "SELECT * FROM Comments";
+// 		$result = mysqli_query($db, $query);
+// 		echo "<br>";
+// 			while($row = mysqli_fetch_array($result)){
+// 			$name = $row['name'];
+// 			
+// 			echo "<br>";
+// 			echo "<br>";
+// 			echo "Name: ".$row['name']." ";
+// 			echo "<br>";
+// 			echo "Email: ".$row['email'];
+// 			echo "<br>";
+// 			echo "Comment/Question: ".$row['comments'];
+// 			echo "<br>";
+// 
+// 			}
+// 
+// 			if (mysqli_num_rows($result)==0){
+// 				echo "There are no comments or questions at this time.";
+// 			}
+	
+	
+	else{
+		$user_id = $_SESSION['user_id'];
+		$query = "SELECT * FROM Messages WHERE to_user_id = '$user_id'";
+		$result = mysqli_query($db, $query);
+		while ($row = mysqli_fetch_array($result)){
+			$from_user_id = $row['from_user_id'];
+			$query2 = "SELECT first_name, last_name FROM Users WHERE user_id = '$from_user_id'";
+			$result2 = mysqli_query($db, $query2);
+			$row2 = mysqli_fetch_array($result2);
+			echo "<br>";
+			echo "From: ".$row2['first_name']." ".$row2['last_name'];
+			echo "<br>";
+			echo "Received ".$row['sent_date']." at ".$row['sent_time'];
+			echo "<br>";
+			echo "Message: ".$row['message'];
+			echo "<br>";
+			}
+			}
 
 ?>
-<!--		 <br />
 
-            -->
           <div class="clear"></div>
-		  <form action="edit_profile.php" method="post">
-		  <input type="submit" value="Edit Profile" />
-		  </form>
+		  
         </div>
        
  <br />
