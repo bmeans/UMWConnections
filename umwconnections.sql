@@ -114,7 +114,7 @@ INSERT INTO Comments VALUES('Sally Jo','sally@umw.edu','I LOVE THIS SITE!!!!!!! 
 
 INSERT INTO Majors (major) VALUES ('Theater'),('Computer Science'),('Biology'),('Chemistry'),('Mathematics'), ('English'), ('Spanish'),('Political Science'),('International Relations'),('Magic');
 
-INSERT INTO Interests (interest) VALUES ('Marial Arts'),('Acting'),('Surfing'),('Fighting'),('Basketball'),('Soccer'),('Singing'),('Football'),('Hacking'),('Video Games'),('Magic'),('Ju-jitsu');
+INSERT INTO Interests (interest) VALUES ('Martial Arts'),('Acting'),('Surfing'),('Fighting'),('Basketball'),('Soccer'),('Singing'),('Football'),('Hacking'),('Video Games'),('Magic'),('Ju-jitsu');
 
 INSERT INTO InterestedIn (interested_in_value) VALUES ('Male'),('Female'),('No preference');
 
@@ -152,7 +152,7 @@ INSERT INTO Users_Interests SELECT Users.user_id, Interests.interest_id FROM Use
 WHERE Users.last_name = 'Tyler' AND (Interests.interest = 'Surfing');
 
 INSERT INTO Users_Interests SELECT Users.user_id, Interests.interest_id FROM Users, Interests 
-WHERE Users.last_name = 'Urameshi' AND (Interests.interest = 'Fighting');
+WHERE Users.last_name = 'Yurameshi' AND (Interests.interest = 'Fighting');
 
 INSERT INTO Users_Interests SELECT Users.user_id, Interests.interest_id FROM Users, Interests 
 WHERE Users.last_name = 'Goku' AND (Interests.interest = 'Martial Arts');
@@ -198,10 +198,10 @@ INSERT INTO Users_Majors SELECT Users.user_id, Majors.major_id FROM Users, Major
 WHERE Users.last_name = 'Tyler' AND (Majors.major = 'Computer Science');
 
 INSERT INTO Users_Majors SELECT Users.user_id, Majors.major_id FROM Users, Majors 
-WHERE Users.last_name = 'Urameshi' AND (Majors.major = 'English');
+WHERE Users.last_name = 'Yurameshi' AND (Majors.major = 'English');
 
 INSERT INTO Users_Majors SELECT Users.user_id, Majors.major_id FROM Users, Majors 
-WHERE Users.last_name = 'Goku' AND (Majors.major = 'Internatonal Relations');
+WHERE Users.last_name = 'Goku' AND (Majors.major = 'International Relations');
 
 INSERT INTO Users_Majors SELECT Users.user_id, Majors.major_id FROM Users, Majors 
 WHERE Users.last_name = 'Uzamaki' AND (Majors.major = 'Chemistry');
